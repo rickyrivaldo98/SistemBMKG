@@ -259,6 +259,7 @@
                   <a href="<?php echo base_url() . 'admin/hasil_pengaduan' ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
+
               <!-- ./col -->
               <div class="col-md-6">
                 <!-- small box -->
@@ -288,6 +289,8 @@
               <!-- ./col -->
             </div>
           </div>
+          <br>
+          <br>
           <!-- /.row -->
           <!-- Main row -->
 
