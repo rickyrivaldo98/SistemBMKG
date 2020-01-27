@@ -192,6 +192,7 @@
       <!-- Main content -->
       <section class="content">
         <div class="row">
+
           <div class="col-12">
             <!-- /.card-header -->
             <div class="card">
@@ -199,17 +200,22 @@
                         <h3 class="card-title"></h3>
                       </div> -->
               <!-- /.card-header -->
+
               <div class="card-body">
+                <div style="text-align: right">
+                  <a href="" class="btn btn-primary"><i class="fas fa-print"></i> Print Hasil Survey</a>
+                </div>
+                <br>
                 <table id="example1" class="table table-bordered table-striped">
                   <thead style="background-color: white;">
                     <tr>
                       <th>ID</th>
-                      <th>Nama Responden</th>
                       <th>Umur</th>
                       <th>Jenis Kelamin</th>
                       <th>Pendidikan</th>
                       <th>Pekerjaan</th>
                       <th>Email</th>
+                      <th>Jenis Pelayanan</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
@@ -224,12 +230,12 @@
                       ?>
                         <tr>
                           <td><?php echo  $d->ID; ?></td>
-                          <td><?php echo  $d->Nama; ?></td>
                           <td><?php echo  $d->Umur; ?></td>
                           <td><?php echo  $d->Jenis_kelamin; ?></td>
                           <td><?php echo  $d->Pendidikan; ?></td>
                           <td><?php echo  $d->Pekerjaan; ?></td>
                           <td><?php echo  $d->Email; ?></td>
+                          <td><?php echo  $d->Pelayanan; ?></td>
                           <td>
                             <a href="<?php echo base_url() . 'admin/detail_responden/' . $d->ID ?>" class="btn btn-xs btn-block btn-info">Jawaban</a>
                             <a href="<?php echo base_url() . 'admin/hapus_responden/' . $d->ID ?>" class="btn btn-xs btn-block btn-danger">Hapus</a>
@@ -241,12 +247,12 @@
                   <tfoot style="background-color: white;">
                     <tr>
                       <th>ID</th>
-                      <th>Nama Responden</th>
                       <th>Umur</th>
                       <th>Jenis Kelamin</th>
                       <th>Pendidikan</th>
                       <th>Pekerjaan</th>
                       <th>Email</th>
+                      <th>Jenis Pelayanan</th>
                       <th>Aksi</th>
                     </tr>
                   </tfoot>

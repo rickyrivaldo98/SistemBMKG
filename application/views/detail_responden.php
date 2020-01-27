@@ -123,6 +123,15 @@
                 </p>
               </a>
             </li>
+            <li class="nav-header">LAYANAN PENGADUAN BMKG</li>
+            <li class="nav-item">
+              <a href="<?php echo base_url() . 'admin/hasil_pengaduan' ?>" class="nav-link">
+                <i class="nav-icon fas fa-copy"></i>
+                <p>
+                  Hasil Pengaduan
+                </p>
+              </a>
+            </li>
             <li class="nav-header">SISTEM PERMINTAAN DATA</li>
             <li class="nav-item">
               <a href="<?php echo base_url() . 'admin/list_permintaan_data' ?>" class="nav-link">
@@ -171,13 +180,22 @@
       <!-- Content Header (Page header) -->
       <div class="content-header">
         <div class="container-fluid">
+          <div class="row">
+            <div class="col-6">
+              <a class="btn btn-block btn-primary" style="width: 90px; margin-bottom: 20px; margin-left: 9px" href="<?php echo base_url() . 'admin/hasil_survey' ?>">Kembali</a>
+            </div>
+            <div class="col-6" style="text-align: right; margin-bottom: 20px; margin-right: 9px; margin-left: -9px">
+              <a href="" class="btn btn-primary"><i class="fas fa-print"></i> Print Detail Responden</a>
+            </div>
+
+          </div>
           <div class="col mb-2">
-            <a class="btn btn-block btn-primary" style="width: 90px; margin-bottom: 20px" href="<?php echo base_url() . 'admin/hasil_survey' ?>">Kembali</a>
+
             <div class="card card-primary">
               <div class="card-header">
-                <h1 class="">Jawaban Responden
+                <h1 class="">Jawaban Responden No Responden
                   <?php foreach ($data_responden as $d) { ?>
-                    <?php echo  $d->Nama; ?>
+                    <?php echo  $d->ID; ?>
                   <?php } ?>
                 </h1>
               </div>
@@ -201,10 +219,6 @@
                           <input type="text" name="first_name" value="<?php echo  $d->ID; ?>" required class="form-control" disabled="">
                         </div>
                         <div class="form-group">
-                          <h5>Nama Responden</h5>
-                          <input type="text" name="first_name" value="<?php echo  $d->Nama; ?>" required class="form-control" disabled="">
-                        </div>
-                        <div class="form-group">
                           <h5>Umur</h5>
                           <input type="text" name="first_name" value="<?php echo  $d->Umur; ?>" required class="form-control" disabled="">
                         </div>
@@ -224,66 +238,150 @@
                           <h5>Email</h5>
                           <input type="text" name="first_name" value="<?php echo  $d->Email; ?>" required class="form-control" disabled="">
                         </div>
+                        <div class="form-group">
+                          <h5>Jenis Pelayanan</h5>
+                          <input type="text" name="first_name" value="<?php echo  $d->Pelayanan; ?>" required class="form-control" disabled="">
+                        </div>
                       <?php } ?>
                       <!-- /.card-body -->
                     </div>
                     <div class="card-body">
                       <?php foreach ($jawaban as $j) { ?>
                         <div class="form-group">
-                          <h5>Bagaimana pemahaman Saudara tentang kemudahan prosedur pelayanan data dan informasi iklim di Stasklim Semarang.</h5>
-                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi1; ?>" required class="form-control" disabled="">
+                          <h5>1. Bagaimana pendapat Saudara tentang Persyaratan pelayanan terbuka dan jelas di Staklim Semarang.</h5>
+                          <label>Kualitas Pelayanan</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi1a; ?>" required class="form-control" disabled="">
+                          <label>Harapan Konsumen</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi1b; ?>" required class="form-control" disabled="">
                         </div>
                         <div class="form-group">
-                          <h5>Bagaimana pendapat Saudara tentang kesesuaian persyaratan pelayanan dengan jenis pelayanannya</h5>
-                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi2; ?>" required class="form-control" disabled="">
+                          <h5>2. Bagaimana pendapat Saudara tentang Persyaratan pelayanan mudah dipenuhi di Staklim Semarang</h5>
+                          <label>Kualitas Pelayanan</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi2a; ?>" required class="form-control" disabled="">
+                          <label>Harapan Konsumen</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi2b; ?>" required class="form-control" disabled="">
                         </div>
                         <div class="form-group">
-                          <h5>Bagaimana pendapat Saudara tentang kejelasan dan kepastian petugas yang melayani di Staklim Semarang</h5>
-                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi3; ?>" required class="form-control" disabled="">
+                          <h5>3. Bagaimana pendapat Saudara tentang Informasi yang diperoleh dibutuhkan dalam kehidupan sehari-hari</h5>
+                          <label>Kualitas Pelayanan</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi3a; ?>" required class="form-control" disabled="">
+                          <label>Harapan Konsumen</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi3b; ?>" required class="form-control" disabled="">
                         </div>
                         <div class="form-group">
-                          <h5>Bagaimana pendapat Saudara tentang kedisiplinan petugas dalam memberikan pelayanan data dan informasi iklim di Staklim Semarang</h5>
-                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi4; ?>" required class="form-control" disabled="">
+                          <h5>4. Bagaimana pendapat Saudara tentang informasi yang diperoleh mudah diakses</h5>
+                          <label>Kualitas Pelayanan</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi4a; ?>" required class="form-control" disabled="">
+                          <label>Harapan Konsumen</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi4b; ?>" required class="form-control" disabled="">
                         </div>
                         <div class="form-group">
-                          <h5>Bagaimana pendapat Saudara tentang tanggung jawab petugas dalam memberikan pelayanan data dan informasi iklim di Staklim Semarang</h5>
-                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi5; ?>" required class="form-control" disabled="">
+                          <h5>5. Bagaimana pendapat Saudara tentang Informasi yang diperoleh mudah dipahami</h5>
+                          <label>Kualitas Pelayanan</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi5a; ?>" required class="form-control" disabled="">
+                          <label>Harapan Konsumen</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi5b; ?>" required class="form-control" disabled="">
                         </div>
                         <div class="form-group">
-                          <h5>Bagaimana pendapat Saudara tentang kemampuan petugas dalam memberikan pelayanan data dan informasi iklim di Staklim Semarang</h5>
-                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi6; ?>" required class="form-control" disabled="">
+                          <h5>6. Bagaimana pendapat Saudara tentang Informasi yang diperoleh akurat</h5>
+                          <label>Kualitas Pelayanan</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi6a; ?>" required class="form-control" disabled="">
+                          <label>Harapan Konsumen</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi6b; ?>" required class="form-control" disabled="">
                         </div>
                         <div class="form-group">
-                          <h5>Bagaimana pendapat Saudara tentang kecepatan pelayanan data dan informasi iklim di Staklim Semarang</h5>
-                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi7; ?>" required class="form-control" disabled="">
+                          <h5>7. Bagaimana pendapat Saudara tentang Informasi yang diperoleh ketersediaan jenis data dan informasi beragam</h5>
+                          <label>Kualitas Pelayanan</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi7a; ?>" required class="form-control" disabled="">
+                          <label>Harapan Konsumen</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi7b; ?>" required class="form-control" disabled="">
                         </div>
                         <div class="form-group">
-                          <h5>Bagaimana pendapat Saudara tentang keadilan untuk mendapatkan pelayanan di Staklim Semarang</h5>
+                          <h5>8. Bagaimana pendapat Saudara tentang Prosedur pelayanan alur pelayanan jelas dan sederhana di staklim semarang</h5>
+                          <label>Kualitas Pelayanan</label>
                           <input type="text" name="first_name" value="<?php echo  $j->Jopsi8; ?>" required class="form-control" disabled="">
                         </div>
                         <div class="form-group">
-                          <h5>Bagaimana pendapat Saudara tentang kesopanan dan keramahan petugas dalam memberikan pelayanan data dan informasi iklim di Staklim Semarang</h5>
+                          <h5>9. Bagaimana pendapat Saudara tentang sistem dan prosedur pelayanan masih berpeluang menimbulkan KKN di Staklim Semarang</h5>
+                          <label>Kualitas Pelayanan</label>
                           <input type="text" name="first_name" value="<?php echo  $j->Jopsi9; ?>" required class="form-control" disabled="">
                         </div>
                         <div class="form-group">
-                          <h5>Bagaimana pendapat Saudara tentang kewajaran biaya untuk mendapatkan pelayanan data dan informasi iklim di Staklim Semarang</h5>
-                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi10; ?>" required class="form-control" disabled="">
+                          <h5>10. Bagaimana pendapat Saudara tentang Informasi target waktu penyelesaian pelayanan jelas di Staklim Semarang</h5>
+                          <label>Kualitas Pelayanan</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi10a; ?>" required class="form-control" disabled="">
+                          <label>Harapan Konsumen</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi10b; ?>" required class="form-control" disabled="">
                         </div>
                         <div class="form-group">
-                          <h5>Bagaimana pendapat Saudara tentang kesesuaian antara biaya yang dibayarkan dengan biaya yang telah ditetapkan di Staklim Semarang</h5>
-                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi11; ?>" required class="form-control" disabled="">
+                          <h5>11. Bagaimana pendapat Saudara tentang Penyelesaian pelayanan sesuai target waktu di Staklim Semarang</h5>
+                          <label>Kualitas Pelayanan</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi11a; ?>" required class="form-control" disabled="">
+                          <label>Harapan Konsumen</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi11b; ?>" required class="form-control" disabled="">
                         </div>
                         <div class="form-group">
-                          <h5>Bagaimana pendapat Saudara tentang ketepatan pelaksanaan terhadap jadwal waktu pelayanan data dan informasi iklim di Staklim Semarang</h5>
-                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi12; ?>" required class="form-control" disabled="">
+                          <h5>12. Bagaimana pendapat Saudara tentang biaya pelayanan jelas dan terbuka di Staklim Semarang</h5>
+                          <label>Kualitas Pelayanan</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi12a; ?>" required class="form-control" disabled="">
+                          <label>Harapan Konsumen</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi12b; ?>" required class="form-control" disabled="">
                         </div>
                         <div class="form-group">
-                          <h5>Bagaimana pendapat Saudara tentang kenyamanan di lingkungan unit pelayanan data di Staklim Semarang</h5>
-                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi13; ?>" required class="form-control" disabled="">
+                          <h5>13. Bagaimana pendapat Saudara tentang Informasi daftar produk/jasa layanan terbuka dan jelas di Staklim Semarang</h5>
+                          <label>Kualitas Pelayanan</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi13a; ?>" required class="form-control" disabled="">
+                          <label>Harapan Konsumen</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi13b; ?>" required class="form-control" disabled="">
                         </div>
                         <div class="form-group">
-                          <h5>Bagaimana pendapat Saudara tentang keamanan pelayanan data di Staklim Semarang</h5>
-                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi14; ?>" required class="form-control" disabled="">
+                          <h5>14. Bagaimana pendapat Saudara tentang Sarana pengaduan/keluhan pelayanan publik tersedia di Staklim Semarang</h5>
+                          <label>Kualitas Pelayanan</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi14a; ?>" required class="form-control" disabled="">
+                          <label>Harapan Konsumen</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi14b; ?>" required class="form-control" disabled="">
+                        </div>
+                        <div class="form-group">
+                          <h5>15. Bagaimana pendapat Saudara tentang Prosedur dan tindak lanjut penanganan pengaduan jelas di Staklim Semarang</h5>
+                          <label>Kualitas Pelayanan</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi15a; ?>" required class="form-control" disabled="">
+                          <label>Harapan Konsumen</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi15b; ?>" required class="form-control" disabled="">
+                        </div>
+                        <div class="form-group">
+                          <h5>16. Bagaimana pendapat Saudara tentang keberadaan petugas jelas di Staklim Semarang</h5>
+                          <label>Kualitas Pelayanan</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi16a; ?>" required class="form-control" disabled="">
+                          <label>Harapan Konsumen</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi16b; ?>" required class="form-control" disabled="">
+                        </div>
+                        <div class="form-group">
+                          <h5>17. Bagaimana pendapat Saudara tentang Petugas sigap, ahli dan cekatan di Staklim Semarang</h5>
+                          <label>Kualitas Pelayanan</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi17a; ?>" required class="form-control" disabled="">
+                          <label>Harapan Konsumen</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi17b; ?>" required class="form-control" disabled="">
+                        </div>
+                        <div class="form-group">
+                          <h5>18. Bagaimana pendapat Saudara tentang Sikap dan perilaku petugas pelayanan baik dan bertanggungjawab di Staklim Semarang</h5>
+                          <label>Kualitas Pelayanan</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi18a; ?>" required class="form-control" disabled="">
+                          <label>Harapan Konsumen</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi18b; ?>" required class="form-control" disabled="">
+                        </div>
+                        <div class="form-group">
+                          <h5>19. Bagaimana pendapat Saudara tentang Sarana dan prasarana pelayanan aman, nyaman dan mudah dijangkau di Staklim Semarang</h5>
+                          <label>Kualitas Pelayanan</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi19a; ?>" required class="form-control" disabled="">
+                          <label>Harapan Konsumen</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi19b; ?>" required class="form-control" disabled="">
+                        </div>
+                        <div class="form-group">
+                          <h5>20. Bagaimana pendapat Saudara tentang Pelayanan publik pada instansi ini sudah berjalan dengan baik di Staklim Semarang</h5>
+                          <label>Kualitas Pelayanan</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi20a; ?>" required class="form-control" disabled="">
+                          <label>Harapan Konsumen</label>
+                          <input type="text" name="first_name" value="<?php echo  $j->Jopsi20b; ?>" required class="form-control" disabled="">
                         </div>
 
                       <?php } ?>
