@@ -185,7 +185,7 @@
               <a class="btn btn-block btn-primary" style="width: 90px; margin-bottom: 20px; margin-left: 9px" href="<?php echo base_url() . 'admin/hasil_survey' ?>">Kembali</a>
             </div>
             <div class="col-6" style="text-align: right; margin-bottom: 20px; margin-right: 9px; margin-left: -9px">
-              <a href="" class="btn btn-primary"><i class="fas fa-print"></i> Print Detail Responden</a>
+              <a href="" class="btn btn-primary"><i class="fas fa-print"></i> Export Detail Responden</a>
             </div>
 
           </div>

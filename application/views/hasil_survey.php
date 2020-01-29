@@ -203,7 +203,7 @@
 
               <div class="card-body">
                 <div style="text-align: right">
-                  <a href="" class="btn btn-primary"><i class="fas fa-print"></i> Print Hasil Survey</a>
+                  <a href="<?php echo base_url() . 'admin/export_hasil_survey' ?>" class="btn btn-primary"><i class="fas fa-print"></i> Export Hasil Survey</a>
                 </div>
                 <br>
                 <table id="example1" class="table table-bordered table-striped">

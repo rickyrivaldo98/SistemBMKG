@@ -583,4 +583,12 @@ class Admin extends CI_Controller
     {
         $this->load->view('test');
     }
+
+    public function export_hasil_survey()
+    {
+        $this->load->library('mypdf.php');
+        $data['data_responden'] = $this->db->query('select * from data_responden')->result();
+        $data['data_responden'] = $this->modelresponden->get_data('data_responden')->result();
+        $this->mypdf->generate('export_hasil_survey', $data);
+    }
 }

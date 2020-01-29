@@ -1,0 +1,78 @@
+StartFontMetrics 4.1
+Notice Converted by PHP-font-lib
+Comment https://github.com/PhenX/php-font-lib
+EncodingScheme FontSpecific
+FontName summernote
+FontSubfamily Regular
+UniqueID FontForge 2.0 : summernote : 20-2-2019
+FullName summernote
+Version Version 001.000 
+PostScriptName summernote
+Weight Medium
+ItalicAngle 0
+IsFixedPitch true
+UnderlineThickness 49
+UnderlinePosition -125
+FontHeightOffset 90
+Ascender 1045
+Descender -285
+FontBBox -211 -285 1209 1045
+StartCharMetrics 59
+U 61697 ; WX 1000 ; N align-center ; G 3
+U 61698 ; WX 1000 ; N align-indent ; G 4
+U 61699 ; WX 1000 ; N align-justify ; G 5
+U 61700 ; WX 1000 ; N align-left ; G 6
+U 61701 ; WX 1000 ; N align-outdent ; G 7
+U 61702 ; WX 1000 ; N align-right ; G 8
+U 61703 ; WX 1000 ; N align ; G 9
+U 61704 ; WX 1000 ; N arrow-circle-down ; G 10
+U 61705 ; WX 1000 ; N arrow-circle-left ; G 11
+U 61706 ; WX 1000 ; N arrow-circle-right ; G 12
+U 61707 ; WX 1000 ; N arrow-circle-up ; G 13
+U 61708 ; WX 1000 ; N arrows-alt ; G 14
+U 61709 ; WX 1000 ; N arrows-h ; G 15
+U 61710 ; WX 1000 ; N arrows-v ; G 16
+U 61711 ; WX 1000 ; N bold ; G 17
+U 61712 ; WX 1000 ; N caret ; G 18
+U 61713 ; WX 1000 ; N chain-broken ; G 19
+U 61714 ; WX 1000 ; N circle ; G 20
+U 61715 ; WX 1000 ; N close ; G 21
+U 61716 ; WX 1000 ; N code ; G 22
+U 61717 ; WX 1000 ; N col-after ; G 23
+U 61718 ; WX 1000 ; N col-before ; G 24
+U 61719 ; WX 1000 ; N col-remove ; G 25
+U 61720 ; WX 1000 ; N eraser ; G 26
+U 61721 ; WX 1000 ; N float-left ; G 27
+U 61722 ; WX 1000 ; N float-none ; G 28
+U 61723 ; WX 1000 ; N float-right ; G 29
+U 61724 ; WX 1000 ; N font ; G 30
+U 61725 ; WX 1000 ; N frame ; G 31
+U 61726 ; WX 1000 ; N italic ; G 32
+U 61727 ; WX 1000 ; N link ; G 33
+U 61728 ; WX 1000 ; N magic ; G 34
+U 61729 ; WX 1000 ; N menu-check ; G 35
+U 61730 ; WX 1000 ; N minus ; G 36
+U 61731 ; WX 1000 ; N orderedlist ; G 37
+U 61732 ; WX 1000 ; N pencil ; G 38
+U 61733 ; WX 1000 ; N picture ; G 39
+U 61734 ; WX 1000 ; N question ; G 40
+U 61735 ; WX 1000 ; N redo ; G 41
+U 61736 ; WX 1000 ; N rollback ; G 42
+U 61737 ; WX 1000 ; N row-above ; G 43
+U 61738 ; WX 1000 ; N row-below ; G 44
+U 61739 ; WX 1000 ; N row-remove ; G 45
+U 61740 ; WX 1000 ; N special-character ; G 46
+U 61741 ; WX 1000 ; N square ; G 47
+U 61742 ; WX 1000 ; N strikethrough ; G 48
+U 61743 ; WX 1000 ; N subscript ; G 49
+U 61744 ; WX 1000 ; N summernote ; G 50
+U 61745 ; WX 1000 ; N superscript ; G 51
+U 61746 ; WX 1000 ; N table ; G 52
+U 61747 ; WX 1000 ; N text-height ; G 53
+U 61748 ; WX 1000 ; N trash ; G 54
+U 61749 ; WX 1000 ; N underline ; G 55
+U 61750 ; WX 1000 ; N undo ; G 56
+U 61751 ; WX 1000 ; N unorderedlist ; G 57
+U 61752 ; WX 1000 ; N video ; G 58
+EndCharMetrics
+EndFontMetrics

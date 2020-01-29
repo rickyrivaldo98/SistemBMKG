@@ -201,7 +201,7 @@
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <div style="text-align: right">
-                                    <a href="" class="btn btn-primary"><i class="fas fa-print"></i> Print Hasil Pengaduan</a>
+                                    <a href="" class="btn btn-primary"><i class="fas fa-print"></i> Export Hasil Pengaduan</a>
                                 </div>
                                 <br>
                                 <table id="example1" class="table table-bordered table-striped">

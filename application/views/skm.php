@@ -61,7 +61,7 @@
                                 <legend class="col-form-label col-sm-2 pt-0">Umur: *</legend>
                                 <div class="col-sm-10">
                                     <div class="custom-control custom-radio">
-                                        <input required class="custom-control-input" type="radio" name="Umur" id="gridRadios1" value="<15">
+                                        <input required class="custom-control-input" type="radio" name="Umur" id="gridRadios1" value="Dibawah 15">
                                         <label class="custom-control-label" for="gridRadios1">
                                             Dibawah 15 Tahun
                                         </label>
@@ -85,7 +85,7 @@
                                         </label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input class="custom-control-input" type="radio" name="Umur" id="gridRadios5" value=">46">
+                                        <input class="custom-control-input" type="radio" name="Umur" id="gridRadios5" value="Diatas 46">
                                         <label class="custom-control-label" for="gridRadios5">
                                             Diatas 46 tahun
                                         </label>

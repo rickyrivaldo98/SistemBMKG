@@ -189,7 +189,7 @@
 
             </div>
             <div class="col-sm-6" style="text-align: right">
-              <a href="" class="btn btn-primary"><i class="fas fa-print"></i> Print Statistika Hasil</a>
+              <a href="" class="btn btn-primary"><i class="fas fa-print"></i> Export Statistika Hasil</a>
             </div>
           </div>
         </div>
