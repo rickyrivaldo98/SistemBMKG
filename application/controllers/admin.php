@@ -589,6 +589,16 @@ class Admin extends CI_Controller
         $this->load->library('mypdf.php');
         $data['data_responden'] = $this->db->query('select * from data_responden')->result();
         $data['data_responden'] = $this->modelresponden->get_data('data_responden')->result();
-        $this->mypdf->generate('export_hasil_survey', $data);
+        $this->mypdf->generate_hasil_survey('export_hasil_survey', $data);
+    }
+
+    public function export_detail_responden($id)
+    {
+        $this->load->library('mypdf.php');
+        $data['data_responden'] = $this->db->query("select * from data_responden where ID=$id")->result();
+        $data['data_responden'] = $this->modelresponden->get_data('data_responden')->result();
+        $data['jawaban'] = $this->db->query("select * from jawaban where ID=$id")->result();
+        $data['jawaban'] = $this->modelresponden->get_data('jawaban')->result();
+        $this->mypdf->generate_detail_responden('export_detail_responden', $data);
     }
 }

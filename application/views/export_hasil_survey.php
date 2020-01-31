@@ -4,9 +4,6 @@
 <head>
 
     <head>
-        <!-- <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>Laporan</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -16,13 +13,7 @@
                 border-style: inset;
                 border-top: 1px solid #000;
             }
-
-            /* * {
-                font-family: DejaVu Sans, sans-serif;
-            } */
         </style>
-        <!-- <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'> -->
-
     </head>
 </head>
 
@@ -31,13 +22,11 @@
     <table style="width: 100%;">
         <tr>
             <td align="center">
-                <span style="line-height: 1.6; font-weight:bold;">
+                <span style="line-height: 2.5; font-weight:bold;">
                     BADAN METEOROLOGI, KLIMATOLOGI DAN GEOFISIKA
                 </span><br>
                 <small>JAWA TENGAH</small>
                 <br>
-
-
             </td>
         </tr>
     </table>
@@ -55,7 +44,6 @@
                 <th>Pekerjaan</th>
                 <th>Email</th>
                 <th>Jenis Pelayanan</th>
-
             </tr>
             <tbody>
                 <?php foreach ($data_responden as $d) :

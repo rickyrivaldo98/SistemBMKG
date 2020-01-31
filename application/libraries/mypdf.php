@@ -12,7 +12,18 @@ class Mypdf
         $this->ci = &get_instance();
     }
 
-    public function generate($view, $data = array(), $filename = 'Laporan', $paper = 'A4', $orientation = 'potrait')
+    public function generate_hasil_survey($view, $data = array(), $filename = 'Laporan Hasil Survey', $paper = 'A4', $orientation = 'potrait')
+    {
+        $dompdf = new Dompdf();
+        $html = $this->ci->load->view($view, $data, TRUE);
+        $html = mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8');
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper($paper, $orientation);
+        $dompdf->render();
+        $dompdf->stream($filename . ".pdf", array("Attachment" => 0));
+    }
+
+    public function generate_detail_responden($view, $data = array(), $filename = 'Laporan Detail Responden', $paper = 'A4', $orientation = 'potrait')
     {
         $dompdf = new Dompdf();
         $html = $this->ci->load->view($view, $data, TRUE);
