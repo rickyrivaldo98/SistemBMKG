@@ -399,12 +399,6 @@ class Admin extends CI_Controller
 
     public function list_data()
     {
-        $this->load->view('list_data');
-    }
-
-
-    public function list_data()
-    {
         $data["data_hujan"] = $this->CSVModel->getAll();
         $this->load->view("list_data", $data);
     }
