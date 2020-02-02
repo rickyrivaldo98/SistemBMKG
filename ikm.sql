@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2020 at 01:22 PM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: Feb 02, 2020 at 01:56 PM
+-- Server version: 10.4.10-MariaDB
+-- PHP Version: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `ikm`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_hujan`
+--
+
+CREATE TABLE `data_hujan` (
+  `id_data` varchar(50) NOT NULL,
+  `Bulan` varchar(50) NOT NULL,
+  `Tahun` varchar(50) NOT NULL,
+  `CSV` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `data_hujan`
+--
+
+INSERT INTO `data_hujan` (`id_data`, `Bulan`, `Tahun`, `CSV`) VALUES
+('5e36c1db6c88a', 'Februari', '2020', '5e36c1db6c88a.csv');
 
 -- --------------------------------------------------------
 
@@ -145,6 +165,12 @@ CREATE TABLE `user` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `data_hujan`
+--
+ALTER TABLE `data_hujan`
+  ADD PRIMARY KEY (`id_data`);
 
 --
 -- Indexes for table `data_responden`
