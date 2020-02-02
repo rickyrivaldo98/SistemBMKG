@@ -9,7 +9,8 @@ class Admin extends CI_Controller
         parent::__construct();
         $this->load->model('CSVModel');
         $this->load->model('modelresponden');
-        $this->load->helper('url');
+        $this->load->model('modelupload');
+        $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
     }
 
@@ -605,24 +606,41 @@ class Admin extends CI_Controller
 
     public function kritik()
     {
-        $this->load->view('kritik');
+        $data = array();
+        if ($this->input->post('submit')) { // Jika user menekan tombol Submit (Simpan) pada form
+            // lakukan upload file dengan memanggil function upload yang ada di GambarModel.php
+            $upload = $this->modelupload->upload();
+
+            if ($upload['result'] == "success") { // Jika proses upload sukses
+                // Panggil function save yang ada di GambarModel.php untuk menyimpan data ke database
+                $this->modelupload->save($upload);
+
+                redirect(base_url() . 'admin/kritik'); // Redirect kembali ke halaman awal / halaman view data
+            } else { // Jika proses upload gagal
+                $data['message'] = $upload['error']; // Ambil pesan error uploadnya untuk dikirim ke file form dan ditampilkan
+            }
+        }
+        $this->load->view('kritik', $data);
     }
 
-    public function tambah_kritik()
-    {
+    // public function tambah_kritik()
+    // {
+    //     $data = array();
+    //     if ($this->input->post('submit')) { // Jika user menekan tombol Submit (Simpan) pada form
+    //         // lakukan upload file dengan memanggil function upload yang ada di GambarModel.php
+    //         $upload = $this->modelupload->upload();
 
-        $nama = $this->input->post('Nama');
-        $email = $this->input->post('Email');
-        $kritik = $this->input->post('Kritik');
-        $data = array(
-            'Kritik' => $kritik,
-            'Email' => $email,
-            'Nama' => $nama
+    //         if ($upload['result'] == "success") { // Jika proses upload sukses
+    //             // Panggil function save yang ada di GambarModel.php untuk menyimpan data ke database
+    //             $this->modelupload->save($upload);
 
-        );
-        $this->modelresponden->insert_data($data, 'kritik');
-        redirect(base_url() . 'admin/kritik');
-    }
+    //             redirect(base_url() . 'admin/kritik'); // Redirect kembali ke halaman awal / halaman view data
+    //         } else { // Jika proses upload gagal
+    //             $data['message'] = $upload['error']; // Ambil pesan error uploadnya untuk dikirim ke file form dan ditampilkan
+    //             redirect(base_url() . 'admin/skm');
+    //         }
+    //     }
+    // }
 
     public function hasil_pengaduan()
     {
@@ -659,9 +677,7 @@ class Admin extends CI_Controller
     {
         $this->load->library('mypdf.php');
         $data['data_responden'] = $this->db->query("select * from data_responden where ID=$id")->result();
-        $data['data_responden'] = $this->modelresponden->get_data('data_responden')->result();
         $data['jawaban'] = $this->db->query("select * from jawaban where ID=$id")->result();
-        $data['jawaban'] = $this->modelresponden->get_data('jawaban')->result();
         $this->mypdf->generate_detail_responden('export_detail_responden', $data);
     }
 }
