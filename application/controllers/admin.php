@@ -6,9 +6,10 @@ class Admin extends CI_Controller
 
     public function __construct()
     {
-        parent::__construct();
+        $this->load->model('CSVModel');
         $this->load->model('modelresponden');
         $this->load->helper('url');
+        $this->load->library('form_validation');
     }
 
 
@@ -400,9 +401,76 @@ class Admin extends CI_Controller
         $this->load->view('list_data');
     }
 
+
+    public function list_data()
+    {
+        $data["data_hujan"] = $this->CSVModel->getAll();
+        $this->load->view("list_data", $data);
+    }
+
+    // public function load_csv(){
+    //     $this->load->database();
+
+    //     $data['csv'] = $this->db->query("select CSV as csv,COUNT(csv) as count from data_hujan group by csv")->result();
+    //     $csv = $data['csv'];
+    //     $data = [];
+
+    //     foreach($csv as $c){
+    //         $data['csv'][]=$c->csv;
+    //         $data['datacsv'][]=$c->count;
+    //     }
+    // $data['csv_data'] = json_encode($data);
+    // $this->load->view('list_data',$data);
+    // }
+
     public function upload_data()
     {
-        $this->load->view('upload_data');
+        $data_hujan = $this->CSVModel;
+        $validation = $this->form_validation;
+        $validation->set_rules($data_hujan->rules());
+
+        if ($validation->run()) {
+            $data_hujan->save();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+        }
+        $this->load->view("upload_data");
+    }
+
+    public function edit_data($id = null)
+    {       
+        $data_hujan = $this->CSVModel;
+        $validation = $this->form_validation;
+        $validation->set_rules($data_hujan->rules());
+
+        if ($validation->run()) {
+            $data_hujan->update();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+            redirect(site_url('admin/list_data'));
+        }
+
+        $data["data_hujan"] = $data_hujan->getById($id);
+        if (!$data["data_hujan"]) show_404();
+        $this->load->view("edit_data", $data);
+    }
+
+    public function detail_data($id = null)
+    {
+        $data_hujan = $this->CSVModel;
+        $validation = $this->form_validation;
+        $validation->set_rules($data_hujan->rules());
+        $data["data_hujan"] = $this->CSVModel->getAll();
+        $data["data_hujan"] = $data_hujan->getById($id);
+
+        $this->load->view("detail_data", $data);
+    }
+
+    public function delete_data($id = null)
+    {
+        if (!isset($id)) show_404();
+
+        if ($this->CSVModel->delete($id)) {
+            redirect(site_url('admin/list_data'));
+        }
     }
 
     public function skm()
