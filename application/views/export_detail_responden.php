@@ -34,9 +34,10 @@
     <p align="center">
         LAPORAN HASIL SURVEY KEPUASAN MASYARAKAT
     </p>
-    <p align="center">Responden ID<?php foreach ($data_responden as $d) { ?>
-        <?php echo  $d->ID; ?>
-    <?php } ?></p>
+    <p align="center">Responden ID
+        <?php foreach ($data_responden as $d) { ?>
+            <?php echo  $d->ID; ?>
+        <?php } ?></p>
 
     <!-- <div style="font-size: 10px;">
         <table class="table table-bordered">
