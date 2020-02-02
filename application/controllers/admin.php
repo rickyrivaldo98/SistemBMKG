@@ -6,6 +6,7 @@ class Admin extends CI_Controller
 
     public function __construct()
     {
+        parent::__construct();
         $this->load->model('CSVModel');
         $this->load->model('modelresponden');
         $this->load->helper('url');
