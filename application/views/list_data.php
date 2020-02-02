@@ -197,7 +197,7 @@
                                   <th>ID Data</th>
                                   <th>Bulan</th>
                                   <th>Tahun</th>
-                                  <th>CSV</th>
+                                  <th>Data Peta</th>
                                   <th>Aksi</th>
                                 </tr>
                               </thead>
@@ -214,7 +214,7 @@
                                       <td><?php echo  $h->id_data; ?></td>
                                       <td><?php echo  $h->Bulan; ?></td>
                                       <td><?php echo  $h->Tahun; ?></td>
-                                      <td><?php echo  $h->CSV; ?></td>
+                                      <td>Tersedia</td>
                                       <td>
                                         <a href="<?php echo site_url() . 'admin/detail_data/' . $h->id_data ?>" class="btn btn-xs btn-block btn-info">Lihat</a>
                                         <a href="<?php echo site_url('admin/edit_data/' . $h->id_data) ?>" class="btn btn-xs btn-block btn-success">Edit</a>
@@ -229,7 +229,7 @@
                                   <th>ID Data</th>
                                   <th>Bulan</th>
                                   <th>Tahun</th>
-                                  <th>CSV</th>
+                                  <th>Data Peta</th>
                                   <th>Aksi</th>
                                 </tr>
                               </tfoot>
