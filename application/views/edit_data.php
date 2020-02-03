@@ -202,7 +202,8 @@
                                 <div class="card-body">
                                     <form action="<?php echo base_url('admin/edit_data') ?>" method="post" enctype="multipart/form-data">
                                         <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>" />
-                                        <input type="hidden" name="id" value="<?php echo $data_hujan->id_data ?>" />
+                                        <input type="hidden" name="id" value="<?php echo $data_hujan->id ?>" />
+                                        <input type="hidden" name="id_data" value="<?php echo $data_hujan->id_data ?>" />
                                         <div class="form-group">
                                             <label for="Bulan">Bulan*</label>
                                             <input class="form-control <?php echo form_error('Bulan') ? 'is-invalid' : '' ?>" type="text" name="Bulan" placeholder="Bulan" value="<?php echo $data_hujan->Bulan ?>" />

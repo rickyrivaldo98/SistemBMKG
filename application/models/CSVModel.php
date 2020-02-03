@@ -33,7 +33,7 @@ class CSVModel extends CI_Model
 
     public function getById($id)
     {
-        return $this->db->get_where($this->_table, ["id_data" => $id])->row();
+        return $this->db->get_where($this->_table, ["id" => $id])->row();
     }
 
     public function save()
@@ -49,7 +49,8 @@ class CSVModel extends CI_Model
     public function update()
     {
         $post = $this->input->post();
-        $this->id_data = $post["id"];
+        $this->id = $post["id"];
+        $this->id_data = $post["id_data"];
         $this->Bulan = $post["Bulan"];
         $this->Tahun = $post["Tahun"];
         if (!empty($_FILES["CSV"]["name"])) {
@@ -57,7 +58,7 @@ class CSVModel extends CI_Model
         } else {
             $this->CSV = $post["old_data"];
         }
-        return $this->db->update($this->_table, $this, array('id_data' => $post['id']));
+        return $this->db->update($this->_table, $this, array('id' => $post['id']));
     }
 
     public function delete($id)

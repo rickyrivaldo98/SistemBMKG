@@ -203,7 +203,7 @@
                             <table id="example1" class="table table-bordered table-striped">
                               <thead style="background-color: white;">
                                 <tr>
-                                  <th>ID Data</th>
+                                  <th>ID</th>
                                   <th>Bulan</th>
                                   <th>Tahun</th>
                                   <th>Data Peta</th>
@@ -220,14 +220,14 @@
                                   <?php foreach ($data_hujan as $h) {
                                   ?>
                                     <tr>
-                                      <td><?php echo  $h->id_data; ?></td>
+                                      <td><?php echo  $h->id; ?></td>
                                       <td><?php echo  $h->Bulan; ?></td>
                                       <td><?php echo  $h->Tahun; ?></td>
                                       <td>Tersedia</td>
                                       <td>
-                                        <a href="<?php echo site_url() . 'admin/detail_data/' . $h->id_data ?>" class="btn btn-xs btn-block btn-info">Lihat</a>
-                                        <a href="<?php echo site_url('admin/edit_data/' . $h->id_data) ?>" class="btn btn-xs btn-block btn-success">Edit</a>
-                                        <a onclick="deleteConfirm('<?php echo site_url('admin/delete_data/' . $h->id_data) ?>')" href="#!" class="btn btn-xs btn-block btn-danger">Hapus</a>
+                                        <a href="<?php echo site_url() . 'admin/detail_data/' . $h->id ?>" class="btn btn-xs btn-block btn-info">Lihat</a>
+                                        <a href="<?php echo site_url('admin/edit_data/' . $h->id) ?>" class="btn btn-xs btn-block btn-success">Edit</a>
+                                        <a onclick="deleteConfirm('<?php echo site_url('admin/delete_data/' . $h->id) ?>')" href="#!" class="btn btn-xs btn-block btn-danger">Hapus</a>
                                       </td>
                                     </tr>
                                   <?php } ?>
@@ -235,7 +235,7 @@
                               </div>
                               <tfoot style="background-color: white;">
                                 <tr>
-                                  <th>ID Data</th>
+                                  <th>ID</th>
                                   <th>Bulan</th>
                                   <th>Tahun</th>
                                   <th>Data Peta</th>
