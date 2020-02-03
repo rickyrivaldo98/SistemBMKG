@@ -211,6 +211,7 @@
                                             <th>Nama Pengadu</th>
                                             <th>Email</th>
                                             <th>Kritik & Saran</th>
+                                            <th>File Pendukung</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -228,8 +229,19 @@
                                                     <td><?php echo  $k->Nama; ?></td>
                                                     <td><?php echo  $k->Email; ?></td>
                                                     <td><?php echo  $k->Kritik; ?></td>
+                                                    <td><?php
+                                                        if ($k->File == null) {
+                                                            echo  "Tidak ada File Pendukung";
+                                                        } else {
+                                                            echo $k->File;
+                                                        } ?></td>
                                                     <td>
-                                                        <a href="<?php echo base_url() . 'admin/hapus_kritik/' . $k->ID ?>" class="btn btn-xs btn-block btn-danger">Hapus</a>
+                                                        <?php if ($k->File == null) { ?>
+                                                            <a href="<?php echo base_url() . 'admin/hapus_kritik/' . $k->ID ?>" class="btn btn-xs btn-block btn-danger">Hapus</a>
+                                                        <?php } else { ?>
+                                                            <a href="<?php echo base_url() . 'admin/download/' . $k->ID ?>" class="btn btn-xs btn-block btn-success">Download</a>
+                                                            <a href="<?php echo base_url() . 'admin/hapus_kritik/' . $k->ID ?>" class="btn btn-xs btn-block btn-danger">Hapus</a>
+                                                        <?php } ?>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -241,6 +253,7 @@
                                             <th>Nama Pengadu</th>
                                             <th>Email</th>
                                             <th>Kritik & Saran</th>
+                                            <th>File Pendukung</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </tfoot>

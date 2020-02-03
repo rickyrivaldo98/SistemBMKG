@@ -41,4 +41,10 @@ class modelupload extends CI_Model
 		// $this->modelresponden->insert_data($data, 'kritik');
 		$this->db->insert('kritik', $data);
 	}
+
+	public function download($id)
+	{
+		$query = $this->db->get_where('kritik', array('ID' => $id));
+		return $query->row_array();
+	}
 }

@@ -433,7 +433,7 @@ class Admin extends CI_Controller
     }
 
     public function edit_data($id = null)
-    {       
+    {
         $data_hujan = $this->CSVModel;
         $validation = $this->form_validation;
         $validation->set_rules($data_hujan->rules());
@@ -607,6 +607,7 @@ class Admin extends CI_Controller
     public function kritik()
     {
         $data = array();
+        $data['kritik'] = $this->modelupload->getRows();
         if ($this->input->post('submit')) { // Jika user menekan tombol Submit (Simpan) pada form
             // lakukan upload file dengan memanggil function upload yang ada di GambarModel.php
             $upload = $this->modelupload->upload();
@@ -679,5 +680,12 @@ class Admin extends CI_Controller
         $data['data_responden'] = $this->db->query("select * from data_responden where ID=$id")->result();
         $data['jawaban'] = $this->db->query("select * from jawaban where ID=$id")->result();
         $this->mypdf->generate_detail_responden('export_detail_responden', $data);
+    }
+    public function download($id)
+    {
+        $this->load->helper('download');
+        $fileinfo = $this->modelupload->download($id);
+        $file = 'upload/kritik/' . $fileinfo['File'];
+        force_download($file, NULL);
     }
 }
