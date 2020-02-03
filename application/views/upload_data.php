@@ -123,6 +123,15 @@
                 </p>
               </a>
             </li>
+            <li class="nav-header">LAYANAN PENGADUAN BMKG</li>
+            <li class="nav-item">
+              <a href="<?php echo base_url() . 'admin/hasil_pengaduan' ?>" class="nav-link">
+                <i class="nav-icon fas fa-copy"></i>
+                <p>
+                  Hasil Pengaduan
+                </p>
+              </a>
+            </li>
             <li class="nav-header">SISTEM PERMINTAAN DATA</li>
             <li class="nav-item">
               <a href="<?php echo base_url() . 'admin/list_permintaan_data' ?>" class="nav-link">
