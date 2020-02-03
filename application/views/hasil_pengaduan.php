@@ -239,7 +239,7 @@
                                                         <?php if ($k->File == null) { ?>
                                                             <a href="<?php echo base_url() . 'admin/hapus_kritik/' . $k->ID ?>" class="btn btn-xs btn-block btn-danger">Hapus</a>
                                                         <?php } else { ?>
-                                                            <a href="<?php echo base_url() . '' . $k->ID ?>" class="btn btn-xs btn-block btn-success">Download</a>
+                                                            <a href="<?php echo base_url() . 'admin/download/' . $k->ID ?>" class="btn btn-xs btn-block btn-success">Download</a>
                                                             <a href="<?php echo base_url() . 'admin/hapus_kritik/' . $k->ID ?>" class="btn btn-xs btn-block btn-danger">Hapus</a>
                                                         <?php } ?>
                                                     </td>
