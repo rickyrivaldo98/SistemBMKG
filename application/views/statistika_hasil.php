@@ -47,7 +47,7 @@
 
 
       <!-- Right navbar links -->
-      <ul class="navbar-nav ml-auto">a
+      <ul class="navbar-nav ml-auto">
 
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
@@ -216,6 +216,22 @@
                       <h3>Pengisi</h3>
                       <p>Responden</p>
                     </div>
+                    <!-- <?php
+                          $a = array(1, 2, 3);
+                          $jumlah = array_sum($a);
+                          echo $jumlah;
+                          //maka akan menampilkan 6
+                          ?> -->
+                  </div>
+                </div>
+              </div>
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">Total Grafik Indeks Responden</h3>
+                </div>
+                <div class="card-body">
+                  <div class="chart">
+                    <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                   </div>
                 </div>
               </div>
@@ -297,11 +313,14 @@
                       <label>Kualitas Pelayanan</label>
                       <canvas id="jopsi1a" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                       <br>
-                      <label><?php foreach ($jopsi1a as $j1a) { ?>
-                          <?php echo  $j1a->jopsi1a; ?>:
-                          <?php echo  $j1a->count; ?>&nbsp;&nbsp;&nbsp
-                        <?php } ?>
-                      </label>
+                      <div class="col">
+                        <label><?php foreach ($jopsi1a as $j1a) { ?>
+                            <?php echo  $j1a->jopsi1a; ?>:
+                            <?php echo  $j1a->count; ?>&nbsp;&nbsp;&nbsp
+                          <?php } ?>
+                        </label>
+                        <br>
+                      </div>
                     </div>
                     <div class="col-md-6">
                       <label>Harapan Konsumen</label>
@@ -935,10 +954,85 @@
         });
       });
 
+      var chart_data = JSON.parse('<?php echo $chart_data ?>');
+      // console.log(chart_data.Total1);
+      function sum(input) {
+
+        if (toString.call(input) !== "[object Array]")
+          return false;
+
+        var total = 0;
+        for (var i = 0; i < input.length; i++) {
+          if (isNaN(input[i])) {
+            continue;
+          }
+          total += Number(input[i]);
+        }
+        return total;
+      }
+
+      // console.log(chart_data.Total);
+      // console.log(chart_data.datajopsi1b);
+      // console.log(chart_data.datajopsi1a);
+
+      var areaChartData = {
+        labels: ['Pertanyaan 1', 'Pertanyaan 2', 'Pertanyaan 3', 'Pertanyaan 4', 'Pertanyaan 5', 'Pertanyaan 6', 'Pertanyaan 7', 'Pertanyaan 8', 'Pertanyaan 9', 'Pertanyaan 10', 'Pertanyaan 11', 'Pertanyaan 12', 'Pertanyaan 13', 'Pertanyaan 14', 'Pertanyaan 15', 'Pertanyaan 16', 'Pertanyaan 17', 'Pertanyaan 18', 'Pertanyaan 19', 'Pertanyaan 20'],
+        datasets: [{
+            label: 'Harapan Konsumen',
+            backgroundColor: 'rgba(60,141,188,0.9)',
+            borderColor: 'rgba(60,141,188,0.8)',
+            pointRadius: false,
+            pointColor: '#3b8bba',
+            pointStrokeColor: 'rgba(60,141,188,1)',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: 'rgba(60,141,188,1)',
+            data: chart_data.Total2,
+
+          },
+          {
+            label: 'Kualitas Pelayanan',
+            backgroundColor: '#00a65a',
+            borderColor: 'rgba(210, 214, 222, 1)',
+            pointRadius: false,
+            pointColor: 'rgba(210, 214, 222, 1)',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: 'rgba(220,220,220,1)',
+            data: chart_data.Total,
+          },
+        ]
+      }
+
+      var barChartCanvas = $('#barChart').get(0).getContext('2d')
+      var barChartData = jQuery.extend(true, {}, areaChartData)
+      var temp0 = areaChartData.datasets[0]
+      var temp1 = areaChartData.datasets[1]
+      barChartData.datasets[0] = temp1
+      barChartData.datasets[1] = temp0
+
+      var barChartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        datasetFill: false,
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+
+      var barChart = new Chart(barChartCanvas, {
+        type: 'bar',
+        data: barChartData,
+        options: barChartOptions
+      })
+
 
 
       var donutChartCanvas = $('#umur_responden').get(0).getContext('2d')
-      var chart_data = JSON.parse('<?php echo $chart_data ?>');
+
 
       // $.post("<?php base_url() . 'admin/statisumur' ?>",
       // function (data) {
