@@ -13,7 +13,7 @@ class modelupload extends CI_Model
 	{
 		$config['upload_path'] = './upload/kritik/';
 		$config['allowed_types'] = '*';
-		$config['max_size']	= '10000';
+		$config['max_size']	= '1024';
 		$config['remove_space'] = TRUE;
 
 		$this->load->library('upload', $config); // Load konfigurasi uploadnya

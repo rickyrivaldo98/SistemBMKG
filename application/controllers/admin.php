@@ -607,7 +607,7 @@ class Admin extends CI_Controller
     public function kritik()
     {
         $data = array();
-        $data['kritik'] = $this->modelupload->getRows();
+        // $data['kritik'] = $this->modelupload->getRows();
         if ($this->input->post('submit')) { // Jika user menekan tombol Submit (Simpan) pada form
             // lakukan upload file dengan memanggil function upload yang ada di GambarModel.php
             $upload = $this->modelupload->upload();
