@@ -606,6 +606,7 @@ class Admin extends CI_Controller
 
         foreach ($jopsi13a as $j13a) {
             $data['labeljopsi13a'][] = $j13a->jopsi13a;
+            $data['datajopsi13a'][] = $j13a->count;
             if ($j13a->jopsi13a == 'Sangat Setuju') {
                 $test13[] = $j13a->count * 4;
             }
@@ -622,8 +623,8 @@ class Admin extends CI_Controller
                 $test13[] = $j13a->count * 1;
             }
         }
-
         $testsum13 = array_sum($test13);
+
         $data['jopsi13b'] = $this->db->query("select Jopsi13b as jopsi13b,COUNT(jopsi13b) as count from jawaban group by jopsi13b")->result();
         $jopsi13b = $data['jopsi13b'];
 
