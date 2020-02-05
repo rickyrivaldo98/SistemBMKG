@@ -192,7 +192,7 @@
                                 <div class="card-body">
                                     <!-- <a id="fileinput"><?php echo  $data_hujan->Bulan; ?></a> -->
                                     <form action="<?= site_url('admin/edit_data') ?>" method="post" enctype="multipart/form-data">
-                                        <input id="fileinput" type="hidden" name="id" value="<?php echo $data_hujan->id ?>" />
+                                        <input type="hidden" name="id" value="<?php echo $data_hujan->id ?>" />
                                         <input id="fileinput" type="hidden" name="id_data" value="<?php echo $data_hujan->id_data ?>" />
                                         <div class="form-group">
                                             <label for="Bulan">Bulan</label>
