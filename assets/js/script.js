@@ -34,9 +34,8 @@ var rainData = {};
 
 // Asynchronous tasks, load topojson map and data
 d3.queue()
-  .defer(d3.json, "https://gist.githubusercontent.com/darknowns/00d601a7618f8f0fac0e6c5eb3498430/raw/0083f8abe727890c5cda6de9a2a85ddf4e2dbe1e/jateng-topo.json")
+  .defer(d3.json, '/BMKG/' + "upload/data/jateng-topo.json")
   .defer(d3.csv, '/BMKG/' + "upload/data/" + document.getElementById("fileinput").value + ".csv")
-  // .defer(d3.csv, "#fileinput")
   .await(ready);
 
 // Callback function
