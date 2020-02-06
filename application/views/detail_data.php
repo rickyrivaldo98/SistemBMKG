@@ -28,6 +28,41 @@
     <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/summernote/summernote-bs4.css' ?>">
     <!-- Google Font: Source Sans Pro -->
     <link href="<?php echo base_url() . 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700' ?>" rel="stylesheet">
+    <style>
+        .background {
+            fill: none;
+            pointer-events: all;
+        }
+
+        #subunits .active {
+            fill: lightblue;
+        }
+
+        #state-borders {
+            fill: none;
+            stroke: #fff;
+            stroke-width: 0.1px;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+            pointer-events: none;
+        }
+
+        #info-location {
+            text-align: center;
+            font-size: 26px;
+            font-weight: medium;
+        }
+
+        #info-details {
+            text-align: center;
+            font-size: 22px;
+        }
+
+        #info-peta {
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -181,92 +216,84 @@
             <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
-                        <div id="title" class="col-sm-6">
-                            <h1 class="m-0 text-dark">Detail Data</h1>
+                        <div id="title" class="col-sm-12">
+                            <a href="<?php echo site_url('admin/list_data/') ?>" class="btn btn-md btn-primary">Kembali</a>
                             <br>
-                            <div class="card mb-3">
-                                <div class="card-header">
-                                    <a href="<?php echo site_url('admin/list_data/') ?>"><i class="fas fa-arrow-left"></i>
-                                        Kembali</a>
-                                </div>
-                                <div class="card-body">
-                                    <!-- <a id="fileinput"><?php echo  $data_hujan->Bulan; ?></a> -->
+                            <br>
+                            <div class=" card mb-3">
+                                <div class=" card-body">
+                                    <!-- <a id=" fileinput"><?php echo  $data_hujan->Bulan; ?></a> -->
                                     <form action="<?= site_url('admin/edit_data') ?>" method="post" enctype="multipart/form-data">
                                         <input type="hidden" name="id" value="<?php echo $data_hujan->id ?>" />
                                         <input id="fileinput" type="hidden" name="id_data" value="<?php echo $data_hujan->id_data ?>" />
-                                        <div class="form-group">
-                                            <label for="Bulan">Bulan</label>
-                                            <input class="form-control <?php echo form_error('Bulan') ? 'is-invalid' : '' ?>" type="text" name="Bulan" placeholder="Bulan" value="<?php echo $data_hujan->Bulan ?>" disabled="" />
-                                            <div class="invalid-feedback">
-                                                <?php echo form_error('Bulan') ?>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="Tahun">Tahun</label>
-                                            <input class="form-control <?php echo form_error('Bulan') ? 'is-invalid' : '' ?>" type="text" name="Tahun" placeholder="Tahun" value="<?php echo $data_hujan->Tahun ?>" disabled="" />
-                                            <div class="invalid-feedback">
-                                                <?php echo form_error('Tahun') ?>
-                                            </div>
-                                        </div>
                                     </form>
+                                    <div id="info">
+                                        <div id="info-location">Perkiraan Curah Hujan Bulan <?php echo $data_hujan->Bulan ?> Tahun <?php echo $data_hujan->Tahun ?> di Jawa Tengah</div>
+                                        <div id="info-details"></div>
+                                        <div id="info-peta">Source: BMKG Jawa Tengah, Evaluasi Curah Hujan.</div>
+                                        <br>
+                                    </div>
                                 </div>
-                            </div>
-                            <p class="subtitle has-text-centered">Source: BMKG Jawa Tengah.</p>
-                        </div><!-- /.col -->
-
-                        <!-- /.content-wrapper -->
-                        <footer class="main-footer fixed-bottom">
-                            <strong>Copyright &copy; Turu Teams
-                                All rights reserved.
-                                <div class="float-right d-none d-sm-inline-block">
-                                    <b>Version</b> 0.0.1
-                                </div>
-                        </footer>
-
-
+                        </div>
                     </div>
-                    <!-- ./wrapper -->
-                    <!-- D3.js Source -->
-                    <script src="https://d3js.org/d3.v4.min.js"></script>
-                    <script src="https://d3js.org/topojson.v3.min.js"></script>
-                    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+                </div>
+            </div>
+        </div>
 
-                    <!-- Script -->
-                    <script type="text/javascript" src="<?php echo base_url() . 'assets/js/script.js' ?>"></script>
-                    <!-- jQuery -->
-                    <script src="<?php echo base_url() . 'assets/plugins/jquery/jquery.min.js' ?>"></script>
-                    <!-- jQuery UI 1.11.4 -->
-                    <script src="<?php echo base_url() . 'assets/plugins/jquery-ui/jquery-ui.min.js' ?>"></script>
-                    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-                    <script>
-                        $.widget.bridge('uibutton', $.ui.button)
-                    </script>
-                    <!-- Bootstrap 4 -->
-                    <script src="<?php echo base_url() . 'assets/plugins/bootstrap/js/bootstrap.bundle.min.js' ?>"></script>
-                    <!-- ChartJS -->
-                    <script src="<?php echo base_url() . 'assets/plugins/chart.js/Chart.min.js' ?>"></script>
-                    <!-- Sparkline -->
-                    <script src="<?php echo base_url() . 'assets/plugins/sparklines/sparkline.js' ?>"></script>
-                    <!-- JQVMap -->
-                    <script src="<?php echo base_url() . 'assets/plugins/jqvmap/jquery.vmap.min.js' ?>"></script>
-                    <script src="<?php echo base_url() . 'assets/plugins/jqvmap/maps/jquery.vmap.usa.js' ?>"></script>
-                    <!-- jQuery Knob Chart -->
-                    <script src="<?php echo base_url() . 'assets/plugins/jquery-knob/jquery.knob.min.js' ?>"></script>
-                    <!-- daterangepicker -->
-                    <script src="<?php echo base_url() . 'assets/plugins/moment/moment.min.js' ?>"></script>
-                    <script src="<?php echo base_url() . 'assets/plugins/daterangepicker/daterangepicker.js' ?>"></script>
-                    <!-- Tempusdominus Bootstrap 4 -->
-                    <script src="<?php echo base_url() . 'assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' ?>"></script>
-                    <!-- Summernote -->
-                    <script src="<?php echo base_url() . 'assets/plugins/summernote/summernote-bs4.min.js' ?>"></script>
-                    <!-- overlayScrollbars -->
-                    <script src="<?php echo base_url() . 'assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' ?>"></script>
-                    <!-- AdminLTE App -->
-                    <script src="<?php echo base_url() . 'assets/js/adminlte.js' ?>"></script>
-                    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-                    <script src="<?php echo base_url() . 'assets/js/pages/dashboard.js' ?>"></script>
-                    <!-- AdminLTE for demo purposes -->
-                    <script src="<?php echo base_url() . 'assets/js/demo.js' ?>"></script>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer fixed-bottom">
+            <strong>Copyright &copy; Turu Teams
+                All rights reserved.
+                <div class="float-right d-none d-sm-inline-block">
+                    <b>Version</b> 0.0.1
+                </div>
+        </footer>
+
+
+    </div>
+    <!-- ./wrapper -->
+    <!-- D3.js Source -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+
+    <!-- Script -->
+    <script type="text/javascript" src="<?php echo base_url() . 'assets/js/script.js' ?>"></script>
+    <!-- jQuery -->
+    <script src="<?php echo base_url() . 'assets/plugins/jquery/jquery.min.js' ?>"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="<?php echo base_url() . 'assets/plugins/jquery-ui/jquery-ui.min.js' ?>"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="<?php echo base_url() . 'assets/plugins/bootstrap/js/bootstrap.bundle.min.js' ?>"></script>
+    <!-- ChartJS -->
+    <script src="<?php echo base_url() . 'assets/plugins/chart.js/Chart.min.js' ?>"></script>
+    <!-- Sparkline -->
+    <script src="<?php echo base_url() . 'assets/plugins/sparklines/sparkline.js' ?>"></script>
+    <!-- JQVMap -->
+    <script src="<?php echo base_url() . 'assets/plugins/jqvmap/jquery.vmap.min.js' ?>"></script>
+    <script src="<?php echo base_url() . 'assets/plugins/jqvmap/maps/jquery.vmap.usa.js' ?>"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="<?php echo base_url() . 'assets/plugins/jquery-knob/jquery.knob.min.js' ?>"></script>
+    <!-- daterangepicker -->
+    <script src="<?php echo base_url() . 'assets/plugins/moment/moment.min.js' ?>"></script>
+    <script src="<?php echo base_url() . 'assets/plugins/daterangepicker/daterangepicker.js' ?>"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="<?php echo base_url() . 'assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' ?>"></script>
+    <!-- Summernote -->
+    <script src="<?php echo base_url() . 'assets/plugins/summernote/summernote-bs4.min.js' ?>"></script>
+    <!-- overlayScrollbars -->
+    <script src="<?php echo base_url() . 'assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' ?>"></script>
+    <!-- AdminLTE App -->
+    <script src="<?php echo base_url() . 'assets/js/adminlte.js' ?>"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="<?php echo base_url() . 'assets/js/pages/dashboard.js' ?>"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="<?php echo base_url() . 'assets/js/demo.js' ?>"></script>
 </body>
 
 </html>
