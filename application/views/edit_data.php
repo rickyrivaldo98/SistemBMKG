@@ -218,22 +218,26 @@
                                                 <?php echo form_error('Tahun') ?>
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <label for="name">Data CSV*</label>
                                             <input class="form-control-file <?php echo form_error('CSV') ? 'is-invalid' : '' ?>" type="file" name="CSV" />
                                             <input type="hidden" name="old_data" value="<?php echo $data_hujan->CSV ?>" />
                                             <div class="invalid-feedback">
                                                 <?php echo form_error('CSV') ?>
                                             </div>
-                                        </div>
-                                        <!-- <div class="form-group">
-                                            <label for="name">Photo</label>
-                                            <input class="form-control-file <?php echo form_error('image') ? 'is-invalid' : '' ?>" type="file" name="image" />
-                                            <input type="hidden" name="old_image" value="<?php echo $product->image ?>" />
-                                            <div class="invalid-feedback">
-                                                <?php echo form_error('image') ?>
-                                            </div>
                                         </div> -->
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">Data CSV*</label>
+                                            <a href="<?php echo base_url() . 'upload/data/default.csv' ?>" class="float-right btn btn-xs btn-info">Download Format Data CSV</a>
+                                            <div class="custom-file">
+                                                <input name="CSV" type="file" class="custom-file-input <?php echo form_error('CSV') ? 'is-invalid' : '' ?>" id="exampleInputFile"></input>
+                                                <label class="custom-file-label" for="exampleInputFile">Masukkan File CSV Baru</label>
+                                                <input type="hidden" name="old_data" value="<?php echo $data_hujan->CSV ?>" />
+                                                <div class="invalid-feedback">
+                                                    <?php echo form_error('CSV') ?>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <input class="btn btn-success" type="submit" name="btn" value="Simpan" />
                                     </form>
 
@@ -298,6 +302,12 @@
                     <script src="<?php echo base_url() . 'assets/js/pages/dashboard.js' ?>"></script>
                     <!-- AdminLTE for demo purposes -->
                     <script src="<?php echo base_url() . 'assets/js/demo.js' ?>"></script>
+                    <script src="<?php echo base_url() . 'assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js' ?>"></script>
+                    <script>
+                        $(document).ready(function() {
+                            bsCustomFileInput.init();
+                        });
+                    </script>
 </body>
 
 </html>

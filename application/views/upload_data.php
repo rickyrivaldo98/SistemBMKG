@@ -199,14 +199,14 @@
                   <form action="<?php echo site_url('admin/upload_data') ?>" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                       <label for="Bulan">Bulan*</label>
-                      <input class="form-control <?php echo form_error('Bulan') ? 'is-invalid' : '' ?>" type="text" name="Bulan" placeholder="Bulan" />
+                      <input class="form-control <?php echo form_error('Bulan') ? 'is-invalid' : '' ?>" type="text" name="Bulan" placeholder="Masukkan Bulan" />
                       <div class="invalid-feedback">
                         <?php echo form_error('Bulan') ?>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="Tahun">Tahun*</label>
-                      <input class="form-control <?php echo form_error('Tahun') ? 'is-invalid' : '' ?>" type="text" name="Tahun" placeholder="Tahun" />
+                      <input class="form-control <?php echo form_error('Tahun') ? 'is-invalid' : '' ?>" type="text" name="Tahun" placeholder="Masukkan Tahun" />
                       <div class="invalid-feedback">
                         <?php echo form_error('Tahun') ?>
                       </div>
