@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/daterangepicker/daterangepicker.css' ?>">
   <!-- summernote -->
   <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/summernote/summernote-bs4.css' ?>">
-  <link rel="stylesheet" href="<?php echo base_url().'assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css'?>">
+  <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css' ?>">
   <!-- Google Font: Source Sans Pro -->
   <link href="<?php echo base_url() . 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700' ?>" rel="stylesheet">
 </head>
@@ -187,70 +187,53 @@
               <br>
               <section class="content">
                 <div class="card mb-3">
-                  <div class="card-header">
-                    <a href="<?php echo site_url('admin/upload_data') ?>"><i class="fas fa-plus"></i> Tambah Baru</a>
-                  </div>
                   <div class="card-body">
-                    <div class="row">
-                      <div class="col-12">
-                        <!-- /.card-header -->
-                        <div class="card">
-                          <!-- <div class="card-header">
-                        <h3 class="card-title"></h3>
-                      </div> -->
-                          <!-- /.card-header -->
-                          <div class="card-body">
-                            <table id="example1" class="table table-bordered table-striped">
-                              <thead style="background-color: white;">
-                                <tr>
-                                  <th>ID</th>
-                                  <th>Bulan</th>
-                                  <th>Tahun</th>
-                                  <th>Data Peta</th>
-                                  <th>Aksi</th>
-                                </tr>
-                              </thead>
-                              <style>
-                                tbody.belang tr:nth-child(even) {
-                                  background-color: white;
-                                }
-                              </style>
-                              <div>
-                                <tbody class="belang">
-                                  <?php foreach ($data_hujan as $h) {
-                                  ?>
-                                    <tr>
-                                      <td><?php echo  $h->id; ?></td>
-                                      <td><?php echo  $h->Bulan; ?></td>
-                                      <td><?php echo  $h->Tahun; ?></td>
-                                      <td>Tersedia</td>
-                                      <td>
-                                        <a href="<?php echo site_url() . 'admin/detail_data/' . $h->id ?>" class="btn btn-xs btn-block btn-info">Lihat</a>
-                                        <a href="<?php echo site_url('admin/edit_data/' . $h->id) ?>" class="btn btn-xs btn-block btn-success">Edit</a>
-                                        <a onclick="deleteConfirm('<?php echo site_url('admin/delete_data/' . $h->id) ?>')" href="#!" class="btn btn-xs btn-block btn-danger">Hapus</a>
-                                      </td>
-                                    </tr>
-                                  <?php } ?>
-                                </tbody>
-                              </div>
-                              <tfoot style="background-color: white;">
-                                <tr>
-                                  <th>ID</th>
-                                  <th>Bulan</th>
-                                  <th>Tahun</th>
-                                  <th>Data Peta</th>
-                                  <th>Aksi</th>
-                                </tr>
-                              </tfoot>
-                            </table>
-                          </div>
-                          <!-- /.card-body -->
-                        </div>
-                        <!-- /.card -->
+                    <table id="example1" class="table table-bordered table-striped">
+                      <thead style="background-color: white;">
+                        <tr>
+                          <th>ID</th>
+                          <th>Bulan</th>
+                          <th>Tahun</th>
+                          <th>Data Peta</th>
+                          <th>Aksi</th>
+                        </tr>
+                      </thead>
+                      <style>
+                        tbody.belang tr:nth-child(even) {
+                          background-color: white;
+                        }
+                      </style>
+                      <div>
+                        <tbody class="belang">
+                          <?php foreach ($data_hujan as $h) {
+                          ?>
+                            <tr>
+                              <td><?php echo  $h->id; ?></td>
+                              <td><?php echo  $h->Bulan; ?></td>
+                              <td><?php echo  $h->Tahun; ?></td>
+                              <td>Tersedia</td>
+                              <td>
+                                <a href="<?php echo site_url() . 'admin/detail_data/' . $h->id ?>" class="btn btn-xs btn-block btn-info">Lihat</a>
+                                <a href="<?php echo site_url('admin/edit_data/' . $h->id) ?>" class="btn btn-xs btn-block btn-success">Edit</a>
+                                <a onclick="deleteConfirm('<?php echo site_url('admin/delete_data/' . $h->id) ?>')" href="#!" class="btn btn-xs btn-block btn-danger">Hapus</a>
+                              </td>
+                            </tr>
+                          <?php } ?>
+                        </tbody>
                       </div>
-                      <!-- /.col -->
-                    </div>
-                    <!-- /.row -->
+                      <tfoot style="background-color: white;">
+                        <tr>
+                          <th>ID</th>
+                          <th>Bulan</th>
+                          <th>Tahun</th>
+                          <th>Data Peta</th>
+                          <th>Aksi</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                </div>
+                <!-- /.row -->
               </section>
               <!-- Logout Delete Confirmation-->
               <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -329,23 +312,23 @@
             <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
             <script src="<?php echo base_url() . 'assets/js/pages/dashboard.js' ?>"></script>
             <!-- AdminLTE for demo purposes -->
-            <script src="<?php echo base_url() . 'assets/js/demo.js' ?>"></script>  
-            <script src="<?php echo base_url().'assets/plugins/datatables/jquery.dataTables.js'?>"></script>
-<script src="<?php echo base_url().'assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js'?>"></script>
-    <!-- page script -->
-<script>
-  $(function () {
-    $("#example1").DataTable();
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-    });
-  });
-</script>
+            <script src="<?php echo base_url() . 'assets/js/demo.js' ?>"></script>
+            <script src="<?php echo base_url() . 'assets/plugins/datatables/jquery.dataTables.js' ?>"></script>
+            <script src="<?php echo base_url() . 'assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js' ?>"></script>
+            <!-- page script -->
+            <script>
+              $(function() {
+                $("#example1").DataTable();
+                $('#example2').DataTable({
+                  "paging": true,
+                  "lengthChange": false,
+                  "searching": false,
+                  "ordering": true,
+                  "info": true,
+                  "autoWidth": false,
+                });
+              });
+            </script>
 </body>
 
 </html>

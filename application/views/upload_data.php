@@ -195,9 +195,6 @@
                 </div>
               <?php endif; ?>
               <div class="card mb-3">
-                <div class="card-header">
-                  <a href="<?php echo site_url('admin/list_data') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
-                </div>
                 <div class="card-body">
                   <form action="<?php echo site_url('admin/upload_data') ?>" method="post" enctype="multipart/form-data">
                     <div class="form-group">
@@ -215,10 +212,14 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label for="CSV">Data CSV*</label>
-                      <input class="form-control-file <?php echo form_error('CSV') ? 'is-invalid' : '' ?>" type="file" name="CSV" />
-                      <div class="invalid-feedback">
-                        <?php echo form_error('CSV') ?>
+                      <label for="exampleInputFile">Data CSV*</label>
+                      <a href="<?php echo base_url() . 'upload/data/default.csv' ?>" class="float-right btn btn-xs btn-info">Download Format Data CSV</a>
+                      <div class="custom-file">
+                        <input name="CSV" type="file" class="custom-file-input <?php echo form_error('CSV') ? 'is-invalid' : '' ?>" id="exampleInputFile"></input>
+                        <label class="custom-file-label" for="exampleInputFile">Masukkan File CSV</label>
+                        <div class="invalid-feedback">
+                          <?php echo form_error('CSV') ?>
+                        </div>
                       </div>
                     </div>
                     <input class="btn btn-success" type="submit" name="btn" value="Simpan" />
@@ -280,6 +281,12 @@
     <script src="<?php echo base_url() . 'assets/js/pages/dashboard.js' ?>"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="<?php echo base_url() . 'assets/js/demo.js' ?>"></script>
+    <script src="<?php echo base_url() . 'assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js' ?>"></script>
+    <script>
+      $(document).ready(function() {
+        bsCustomFileInput.init();
+      });
+    </script>
 </body>
 
 </html>
