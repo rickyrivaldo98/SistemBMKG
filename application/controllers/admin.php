@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Admin extends CI_Controller
+class Admin extends MY_Controller
 {
 
     public function __construct()
@@ -10,6 +10,7 @@ class Admin extends CI_Controller
         $this->load->model('CSVModel');
         $this->load->model('modelresponden');
         $this->load->model('modelupload');
+        $this->load->model('LoginModel');
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
     }
@@ -27,11 +28,8 @@ class Admin extends CI_Controller
         $this->load->database();
         $data['jawaban'] = $this->db->query('select * from jawaban')->result();
         $data['data_responden'] = $this->db->query('select * from data_responden')->result();
-
         $this->load->view('hasil_survey', $data);
     }
-
-
 
     public function statistika_hasil()
     {
