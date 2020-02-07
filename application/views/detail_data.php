@@ -40,8 +40,8 @@
 
         #state-borders {
             fill: none;
-            stroke: #fff;
-            stroke-width: 0.1px;
+            stroke: black;
+            stroke-width: 0.2px;
             stroke-linejoin: round;
             stroke-linecap: round;
             pointer-events: none;
@@ -221,24 +221,25 @@
                             <br>
                             <br>
                             <div class=" card mb-3">
-                                <div class=" card-body">
+                                <div class="card-body">
                                     <!-- <a id=" fileinput"><?php echo  $data_hujan->Bulan; ?></a> -->
                                     <form action="<?= site_url('admin/edit_data') ?>" method="post" enctype="multipart/form-data">
                                         <input type="hidden" name="id" value="<?php echo $data_hujan->id ?>" />
                                         <input id="fileinput" type="hidden" name="id_data" value="<?php echo $data_hujan->id_data ?>" />
                                     </form>
-                                    <div id="info">
+                                    <div id="info" class="col-12">
                                         <div id="info-location">Perkiraan Curah Hujan Bulan <?php echo $data_hujan->Bulan ?> Tahun <?php echo $data_hujan->Tahun ?> di Jawa Tengah</div>
                                         <div id="info-details"></div>
                                         <div id="info-peta">Source: BMKG Jawa Tengah, Evaluasi Curah Hujan.</div>
-                                        <br>
-                                    </div>
+                                        </div>
                                 </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
 
         <!-- /.content-wrapper -->
         <footer class="main-footer fixed-bottom">
@@ -248,8 +249,6 @@
                     <b>Version</b> 0.0.1
                 </div>
         </footer>
-
-
     </div>
     <!-- ./wrapper -->
     <!-- D3.js Source -->
