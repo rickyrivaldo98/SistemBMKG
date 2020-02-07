@@ -1300,4 +1300,48 @@ class Admin extends CI_Controller
         $file = 'upload/kritik/' . $fileinfo['File'];
         force_download($file, NULL);
     }
+
+    public function excel()
+    {
+        $data['umur'] = $this->db->query("select Umur as umur,COUNT(umur) as count from data_responden group by umur")->result();
+        $umur = $data['umur'];
+
+        require(APPPATH . 'PHPExcel-1.8/Classes/PHPExcel.php');
+        require(APPPATH . 'PHPExcel-1.8/Classes/PHPExcel/Writer/Excel2007.php');
+
+        $object = new PHPexcel();
+
+        $object->getProperties()->setCreator("Team Turu");
+        $object->getProperties()->setLastModifiedBy("Team Turu");
+        $object->getProperties()->setTitle("Statistika_hasil");
+
+        $object->setActiveSheetIndex(0);
+        $object->getActiveSheet()->setCellValue('A1', 'NO');
+        $object->getActiveSheet()->setCellValue('B1', 'Dibawah 15 Tahun');
+        $object->getActiveSheet()->setCellValue('C1', '16 Tahun - 25 Tahun');
+        $object->getActiveSheet()->setCellValue('D1', '26 Tahun - 35 Tahun');
+        $object->getActiveSheet()->setCellValue('E1', '36 Tahun - 45 Tahun');
+        $object->getActiveSheet()->setCellValue('F1', 'Diatas 46 Tahun');
+
+        $baris = 2;
+        $no = 1;
+
+        foreach ($umur as $u) {
+
+            $object->getActiveSheet()->setCellValue('A' . $baris, $no++);
+            $object->getActiveSheet()->setCellValue($baris, $u->count);
+            $baris++;
+        }
+        $filename = "Statistika_hasil" . '.xlsx';
+
+        $object->getActiveSheet()->setTitle("Statistika_hasil");
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename="' . $filename . '"');
+        header('Cache-Control: max-age=0');
+
+        $writer = PHPExcel_IOFactory::createwriter($object, 'Excel2007');
+        $writer->save('php://output');
+
+        exit;
+    }
 }
