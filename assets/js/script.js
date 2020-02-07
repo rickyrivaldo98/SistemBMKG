@@ -1,5 +1,5 @@
-var width = 1600,
-  height = 800,
+var width = window.innerWidth,
+  height = window.innerHeight,
   centered,
   rainDomain;
 
@@ -8,8 +8,8 @@ var rainDomain = [0, 21, 51, 101, 151, 201, 301, 401, 501];
 
 // Projection and path
 var projection = d3.geoMercator()
-  .center([110, -7.6])
-  .scale(width * 11)
+  .center([110.5, -7.6])
+  .scale(width * 10)
   .translate([width / 2, height / 2]);
 
 var path = d3.geoPath()
@@ -77,7 +77,7 @@ function resize() {
   width = window.innerWidth;
   height = window.innerHeight;
 
-  projection.scale(width * 11)
+  projection.scale(width * 10)
     .translate([width / 2, height / 2]);
 
   d3.select("svg")
