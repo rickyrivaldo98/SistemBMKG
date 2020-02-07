@@ -1276,6 +1276,14 @@ class Admin extends MY_Controller
         $this->mypdf->generate_hasil_survey('export_hasil_survey', $data);
     }
 
+    public function export_hasil_pengaduan()
+    {
+        $this->load->library('mypdf.php');
+        $data['kritik'] = $this->db->query('select * from kritik')->result();
+        $data['kritik'] = $this->modelresponden->get_data('kritik')->result();
+        $this->mypdf->generate_hasil_pengaduan('export_hasil_pengaduan', $data);
+    }
+
     public function export_detail_responden($id)
     {
         $this->load->library('mypdf.php');
