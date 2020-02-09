@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 05, 2020 at 09:51 AM
+-- Generation Time: Feb 09, 2020 at 03:34 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -42,7 +42,8 @@ CREATE TABLE `data_hujan` (
 
 INSERT INTO `data_hujan` (`id`, `id_data`, `Bulan`, `Tahun`, `CSV`) VALUES
 (1, '5e3797a0a42c0', 'Januari', '2020', '5e3797a0a42c0.csv'),
-(2, '5e3a814c3b6cb', 'Februari', '2020', '5e3a814c3b6cb.csv');
+(2, '5e3a814c3b6cb', 'Februari', '2020', '5e3a814c3b6cb.csv'),
+(3, '5e3bffe2090be', 'Januari', '2019', '5e3bffe2090be.csv');
 
 -- --------------------------------------------------------
 
@@ -167,6 +168,13 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`Id_user`, `Username`, `Password`, `Level`) VALUES
+(1, '24060117130082', '123', 1);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -209,7 +217,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `data_hujan`
 --
 ALTER TABLE `data_hujan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `data_responden`
@@ -233,7 +241,7 @@ ALTER TABLE `kritik`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `Id_user` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
