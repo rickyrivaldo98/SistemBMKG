@@ -9,6 +9,11 @@
 </head>
 
 <body>
+    <?php foreach ($jeniskelamin as $j) {
+        $testarray = array($j->count);
+        print_r($testarray);
+    } ?>
+    <br>
     <button id="tombol">
         klik
     </button>

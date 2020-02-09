@@ -59,7 +59,6 @@ class Admin extends MY_Controller
         $data['jeniskelamin'] = $this->db->query("select Jenis_kelamin as jenis_kelamin,COUNT(jenis_kelamin) as count from data_responden group by jenis_kelamin")->result();
         $jeniskelamin = $data['jeniskelamin'];
 
-
         foreach ($jeniskelamin as $j) {
             $data['labeljeniskelamin'][] = $j->jenis_kelamin;
             $data['datajeniskelamin'][] = $j->count;
@@ -1265,7 +1264,10 @@ class Admin extends MY_Controller
     }
     public function test()
     {
-        $this->load->view('test');
+        $data['jeniskelamin'] = $this->db->query("select Jenis_kelamin as jenis_kelamin,COUNT(jenis_kelamin) as count from data_responden group by jenis_kelamin")->result();
+        // $jeniskelamin = $data['jeniskelamin'];
+
+        $this->load->view('test', $data);
     }
 
     public function export_hasil_survey()
@@ -1301,8 +1303,93 @@ class Admin extends MY_Controller
 
     public function excel()
     {
+        // $data['jeniskelamin'] = $this->db->query("select Jenis_kelamin as jenis_kelamin,COUNT(jenis_kelamin) as count from data_responden group by jenis_kelamin")->result();
+        // $jeniskelamin = $data['jeniskelamin'];
         $data['umur'] = $this->db->query("select Umur as umur,COUNT(umur) as count from data_responden group by umur")->result();
         $umur = $data['umur'];
+        $data['jeniskelamin'] = $this->db->query("select Jenis_kelamin as jenis_kelamin,COUNT(jenis_kelamin) as count from data_responden group by jenis_kelamin")->result();
+        $jeniskelamin = $data['jeniskelamin'];
+        $data['pendidikan'] = $this->db->query("select Pendidikan as pendidikan,COUNT(pendidikan) as count from data_responden group by pendidikan")->result();
+        $pendidikan = $data['pendidikan'];
+        $data['pekerjaan'] = $this->db->query("select Pekerjaan as pekerjaan,COUNT(pekerjaan) as count from data_responden group by pekerjaan")->result();
+        $pekerjaan = $data['pekerjaan'];
+        $data['jopsi1a'] = $this->db->query("select Jopsi1a as jopsi1a,COUNT(jopsi1a) as count from jawaban group by jopsi1a")->result();
+        $jopsi1a = $data['jopsi1a'];
+        $data['jopsi1b'] = $this->db->query("select Jopsi1b as jopsi1b,COUNT(jopsi1b) as count from jawaban group by jopsi1b")->result();
+        $jopsi1b = $data['jopsi1b'];
+        $data['jopsi2a'] = $this->db->query("select Jopsi2a as jopsi2a,COUNT(jopsi2a) as count from jawaban group by jopsi2a")->result();
+        $jopsi2a = $data['jopsi2a'];
+        $data['jopsi2b'] = $this->db->query("select Jopsi2b as jopsi2b,COUNT(jopsi2b) as count from jawaban group by jopsi2b")->result();
+        $jopsi2b = $data['jopsi2b'];
+        $data['jopsi3a'] = $this->db->query("select Jopsi3a as jopsi3a,COUNT(jopsi1a) as count from jawaban group by jopsi3a")->result();
+        $jopsi3a = $data['jopsi3a'];
+        $data['jopsi3b'] = $this->db->query("select Jopsi3b as jopsi3b,COUNT(jopsi3b) as count from jawaban group by jopsi3b")->result();
+        $jopsi3b = $data['jopsi3b'];
+        $data['jopsi4a'] = $this->db->query("select Jopsi4a as jopsi4a,COUNT(jopsi4a) as count from jawaban group by jopsi4a")->result();
+        $jopsi4a = $data['jopsi4a'];
+        $data['jopsi4b'] = $this->db->query("select Jopsi4b as jopsi4b,COUNT(jopsi4b) as count from jawaban group by jopsi4b")->result();
+        $jopsi4b = $data['jopsi4b'];
+        $data['jopsi5a'] = $this->db->query("select Jopsi5a as jopsi5a,COUNT(jopsi5a) as count from jawaban group by jopsi5a")->result();
+        $jopsi5a = $data['jopsi5a'];
+        $data['jopsi5b'] = $this->db->query("select Jopsi5b as jopsi5b,COUNT(jopsi5b) as count from jawaban group by jopsi5b")->result();
+        $jopsi5b = $data['jopsi5b'];
+        $data['jopsi6a'] = $this->db->query("select Jopsi6a as jopsi6a,COUNT(jopsi6a) as count from jawaban group by jopsi6a")->result();
+        $jopsi6a = $data['jopsi6a'];
+        $data['jopsi6b'] = $this->db->query("select Jopsi6b as jopsi6b,COUNT(jopsi6b) as count from jawaban group by jopsi6b")->result();
+        $jopsi6b = $data['jopsi6b'];
+        $data['jopsi7a'] = $this->db->query("select Jopsi7a as jopsi7a,COUNT(jopsi7a) as count from jawaban group by jopsi7a")->result();
+        $jopsi7a = $data['jopsi7a'];
+        $data['jopsi7b'] = $this->db->query("select Jopsi7b as jopsi7b,COUNT(jopsi7b) as count from jawaban group by jopsi7b")->result();
+        $jopsi7b = $data['jopsi7b'];
+        $data['jopsi8'] = $this->db->query("select Jopsi8 as jopsi8,COUNT(jopsi8) as count from jawaban group by jopsi8")->result();
+        $jopsi8 = $data['jopsi8'];
+        $data['jopsi9'] = $this->db->query("select Jopsi9 as jopsi9,COUNT(jopsi9) as count from jawaban group by jopsi9")->result();
+        $jopsi9 = $data['jopsi9'];
+        $data['jopsi10a'] = $this->db->query("select Jopsi10a as jopsi10a,COUNT(jopsi10a) as count from jawaban group by jopsi10a")->result();
+        $jopsi10a = $data['jopsi10a'];
+        $data['jopsi10b'] = $this->db->query("select Jopsi10b as jopsi10b,COUNT(jopsi10b) as count from jawaban group by jopsi10b")->result();
+        $jopsi10b = $data['jopsi10b'];
+        $data['jopsi11a'] = $this->db->query("select Jopsi11a as jopsi11a,COUNT(jopsi11a) as count from jawaban group by jopsi11a")->result();
+        $jopsi11a = $data['jopsi11a'];
+        $data['jopsi11b'] = $this->db->query("select Jopsi11b as jopsi11b,COUNT(jopsi11b) as count from jawaban group by jopsi11b")->result();
+        $jopsi11b = $data['jopsi11b'];
+        $data['jopsi12a'] = $this->db->query("select Jopsi12a as jopsi12a,COUNT(jopsi12a) as count from jawaban group by jopsi12a")->result();
+        $jopsi12a = $data['jopsi12a'];
+        $data['jopsi12b'] = $this->db->query("select Jopsi12b as jopsi12b,COUNT(jopsi12b) as count from jawaban group by jopsi12b")->result();
+        $jopsi12b = $data['jopsi12b'];
+        $data['jopsi13a'] = $this->db->query("select Jopsi13a as jopsi13a,COUNT(jopsi13a) as count from jawaban group by jopsi13a")->result();
+        $jopsi13a = $data['jopsi13a'];
+        $data['jopsi13b'] = $this->db->query("select Jopsi13b as jopsi13b,COUNT(jopsi13b) as count from jawaban group by jopsi13b")->result();
+        $jopsi13b = $data['jopsi13b'];
+        $data['jopsi14a'] = $this->db->query("select Jopsi14a as jopsi14a,COUNT(jopsi14a) as count from jawaban group by jopsi14a")->result();
+        $jopsi14a = $data['jopsi14a'];
+        $data['jopsi14b'] = $this->db->query("select Jopsi14b as jopsi14b,COUNT(jopsi14b) as count from jawaban group by jopsi14b")->result();
+        $jopsi14b = $data['jopsi14b'];
+        $data['jopsi15a'] = $this->db->query("select Jopsi15a as jopsi15a,COUNT(jopsi15a) as count from jawaban group by jopsi15a")->result();
+        $jopsi15a = $data['jopsi15a'];
+        $data['jopsi15b'] = $this->db->query("select Jopsi15b as jopsi15b,COUNT(jopsi15b) as count from jawaban group by jopsi15b")->result();
+        $jopsi15b = $data['jopsi15b'];
+        $data['jopsi16a'] = $this->db->query("select Jopsi16a as jopsi16a,COUNT(jopsi16a) as count from jawaban group by jopsi16a")->result();
+        $jopsi16a = $data['jopsi16a'];
+        $data['jopsi16b'] = $this->db->query("select Jopsi16b as jopsi16b,COUNT(jopsi16b) as count from jawaban group by jopsi16b")->result();
+        $jopsi16b = $data['jopsi16b'];
+        $data['jopsi17a'] = $this->db->query("select Jopsi17a as jopsi17a,COUNT(jopsi17a) as count from jawaban group by jopsi17a")->result();
+        $jopsi17a = $data['jopsi17a'];
+        $data['jopsi17b'] = $this->db->query("select Jopsi17b as jopsi17b,COUNT(jopsi17b) as count from jawaban group by jopsi17b")->result();
+        $jopsi17b = $data['jopsi17b'];
+        $data['jopsi18a'] = $this->db->query("select Jopsi18a as jopsi18a,COUNT(jopsi18a) as count from jawaban group by jopsi18a")->result();
+        $jopsi18a = $data['jopsi18a'];
+        $data['jopsi18b'] = $this->db->query("select Jopsi18b as jopsi18b,COUNT(jopsi18b) as count from jawaban group by jopsi18b")->result();
+        $jopsi18b = $data['jopsi18b'];
+        $data['jopsi19a'] = $this->db->query("select Jopsi19a as jopsi19a,COUNT(jopsi19a) as count from jawaban group by jopsi19a")->result();
+        $jopsi19a = $data['jopsi19a'];
+        $data['jopsi19b'] = $this->db->query("select Jopsi19b as jopsi19b,COUNT(jopsi19b) as count from jawaban group by jopsi19b")->result();
+        $jopsi19b = $data['jopsi19b'];
+        $data['jopsi20a'] = $this->db->query("select Jopsi20a as jopsi20a,COUNT(jopsi20a) as count from jawaban group by jopsi20a")->result();
+        $jopsi20a = $data['jopsi20a'];
+        $data['jopsi20b'] = $this->db->query("select Jopsi20b as jopsi20b,COUNT(jopsi20b) as count from jawaban group by jopsi20b")->result();
+        $jopsi20b = $data['jopsi20b'];
+
 
         require(APPPATH . 'PHPExcel-1.8/Classes/PHPExcel.php');
         require(APPPATH . 'PHPExcel-1.8/Classes/PHPExcel/Writer/Excel2007.php');
@@ -1314,22 +1401,468 @@ class Admin extends MY_Controller
         $object->getProperties()->setTitle("Statistika_hasil");
 
         $object->setActiveSheetIndex(0);
-        $object->getActiveSheet()->setCellValue('A1', 'NO');
-        $object->getActiveSheet()->setCellValue('B1', 'Dibawah 15 Tahun');
-        $object->getActiveSheet()->setCellValue('C1', '16 Tahun - 25 Tahun');
-        $object->getActiveSheet()->setCellValue('D1', '26 Tahun - 35 Tahun');
-        $object->getActiveSheet()->setCellValue('E1', '36 Tahun - 45 Tahun');
-        $object->getActiveSheet()->setCellValue('F1', 'Diatas 46 Tahun');
+        $object->getActiveSheet()->mergeCells('A1:G1');
+        $object->getActiveSheet()->setCellValue('A1', 'Tabel Kuisoner Indeks Kepuasan Pelanggan dan Public Awarness');
+        $object->getActiveSheet()->mergeCells('A2:B2');
+        $object->getActiveSheet()->setCellValue('A2', 'Umur Responden');
+        $object->getActiveSheet()->mergeCells('A4:B4');
+        $object->getActiveSheet()->setCellValue('A4', 'Jenis Kelamin');
+        $object->getActiveSheet()->mergeCells('A6:B6');
+        $object->getActiveSheet()->setCellValue('A6', 'Pendidikan Terakhir');
+        $object->getActiveSheet()->mergeCells('A8:B8');
+        $object->getActiveSheet()->setCellValue('A8', 'Pekerjaan Utama');
+        // $object->getActiveSheet()->setCellValue('E1', '36 Tahun - 45 Tahun');
+        // $object->getActiveSheet()->setCellValue('F1', 'Diatas 46 Tahun');
+        // PHPExcel_Shared_Font::setAutoSizeMethod(PHPExcel_Shared_Font::AUTOSIZE_METHOD_EXACT);
+        $object->getActiveSheet()->mergeCells('A3:B3');
+        $object->getActiveSheet()->mergeCells('A5:B5');
+        $object->getActiveSheet()->mergeCells('A7:B7');
+        $object->getActiveSheet()->mergeCells('A9:B9');
 
-        $baris = 2;
-        $no = 1;
 
-        foreach ($umur as $u) {
-
-            $object->getActiveSheet()->setCellValue('A' . $baris, $no++);
-            $object->getActiveSheet()->setCellValue($baris, $u->count);
-            $baris++;
+        $column = 2;
+        foreach (range('A', 'L') as $test) {
+            $object->getActiveSheet()->getColumnDimension($test)->setAutoSize(true);
         }
+        $border_style = array('borders' => array('allborders' => array('style' =>
+        PHPExcel_Style_Border::BORDER_THICK, 'color' => array('argb' => '766f6e'),)));
+        $sheet = $object->getActiveSheet();
+        $sheet->getStyle("A1:F9")->applyFromArray($border_style);
+        $sheet2 = $object->getActiveSheet();
+        $sheet2->getStyle("A13:J66")->applyFromArray($border_style);
+        // $object->getActiveSheet()->getStyle('A1:F2')->applyFromArray(
+        //     array(
+        //         'borders' => array(
+        //             'allborders' => array(
+        //                 'style' => PHPExcel_Style_Border::BORDER_THIN,
+        //                 'color' => array('rgb' => 'DDDDDD')
+        //             )
+        //         )
+        //     )
+        // );
+        foreach ($umur as $u) {
+            $dataset = $u->count;
+            $datalabel = $u->umur;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 2, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 3, $dataset);
+            $column++;
+        }
+        $column = 2;
+        foreach ($jeniskelamin as $j) {
+            $dataset = $j->count;
+            $datalabel = $j->jenis_kelamin;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 4, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 5, $dataset);
+            $column++;
+        }
+        $column = 2;
+        foreach ($pendidikan as $p) {
+            $dataset = $p->count;
+            $datalabel = $p->pendidikan;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 6, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 7, $dataset);
+            $column++;
+        }
+        $column = 2;
+        foreach ($pekerjaan as $pj) {
+            $dataset = $pj->count;
+            $datalabel = $pj->pekerjaan;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 8, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 9, $dataset);
+            $column++;
+        }
+        $object->getActiveSheet()->mergeCells('A11:B11');
+        $object->getActiveSheet()->setCellValue('A11', 'Aspek Pelayanan');
+        $object->getActiveSheet()->mergeCells('A13:A14');
+        $object->getActiveSheet()->setCellValue('A13', 'No');
+        $object->getActiveSheet()->mergeCells('B13:B14');
+        $object->getActiveSheet()->setCellValue('B13', 'RINCIAN PERTANYAAN');
+        $object->getActiveSheet()->mergeCells('C13:F14');
+        $object->getActiveSheet()->setCellValue('C13', 'KUALITAS PELAYANAN');
+        $object->getActiveSheet()->mergeCells('G13:J14');
+        $object->getActiveSheet()->setCellValue('G13', 'HARAPAN KONSUMEN');
+        $object->getActiveSheet()->setCellValue('A15', 'A');
+        $object->getActiveSheet()->setCellValue('B15', 'Persyaratan Pelayanan');
+        $object->getActiveSheet()->setCellValue('A16', '1');
+        $object->getActiveSheet()->setCellValue('B16', 'Persyaratan Pelayanan Terbuka dan jelas');
+        $column = 2;
+        foreach ($jopsi1a as $j1a) {
+            $dataset = $j1a->count;
+            $datalabel = $j1a->jopsi1a;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 16, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 17, $dataset);
+            $column++;
+        }
+        $column = 6;
+        foreach ($jopsi1b as $j1b) {
+            $dataset = $j1b->count;
+            $datalabel = $j1b->jopsi1b;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 16, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 17, $dataset);
+            $column++;
+        }
+        $object->getActiveSheet()->setCellValue('A18', '2');
+        $object->getActiveSheet()->setCellValue('B18', 'Persyaratan Pelayanan Mudah Dipenuhi');
+        $column = 2;
+        foreach ($jopsi2a as $j2a) {
+            $dataset = $j2a->count;
+            $datalabel = $j2a->jopsi2a;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 18, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 19, $dataset);
+            $column++;
+        }
+        $column = 6;
+        foreach ($jopsi2b as $j2b) {
+            $dataset = $j2b->count;
+            $datalabel = $j2b->jopsi2b;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 18, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 19, $dataset);
+            $column++;
+        }
+        $object->getActiveSheet()->setCellValue('A20', 'B');
+        $object->getActiveSheet()->setCellValue('B20', 'Informasi Yang Diperoleh');
+        $object->getActiveSheet()->setCellValue('A21', '3');
+        $object->getActiveSheet()->setCellValue('B21', 'Dibutuhkan dalam kehidupan sehari-hari');
+        $column = 2;
+        foreach ($jopsi3a as $j3a) {
+            $dataset = $j3a->count;
+            $datalabel = $j3a->jopsi3a;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 21, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 22, $dataset);
+            $column++;
+        }
+        $column = 6;
+        foreach ($jopsi3b as $j3b) {
+            $dataset = $j3b->count;
+            $datalabel = $j3b->jopsi3b;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 21, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 22, $dataset);
+            $column++;
+        }
+        $object->getActiveSheet()->setCellValue('A23', '4');
+        $object->getActiveSheet()->setCellValue('B23', 'Mudah Diakses');
+        $column = 2;
+        foreach ($jopsi4a as $j4a) {
+            $dataset = $j4a->count;
+            $datalabel = $j4a->jopsi4a;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 23, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 24, $dataset);
+            $column++;
+        }
+        $column = 6;
+        foreach ($jopsi4b as $j4b) {
+            $dataset = $j4b->count;
+            $datalabel = $j4b->jopsi4b;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 23, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 24, $dataset);
+            $column++;
+        }
+        $object->getActiveSheet()->setCellValue('A25', '5');
+        $object->getActiveSheet()->setCellValue('B25', 'Mudah Dipahami');
+        $column = 2;
+        foreach ($jopsi5a as $j5a) {
+            $dataset = $j5a->count;
+            $datalabel = $j5a->jopsi5a;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 25, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 26, $dataset);
+            $column++;
+        }
+        $column = 6;
+        foreach ($jopsi5b as $j5b) {
+            $dataset = $j5b->count;
+            $datalabel = $j5b->jopsi5b;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 25, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 26, $dataset);
+            $column++;
+        }
+        $object->getActiveSheet()->setCellValue('A27', '6');
+        $object->getActiveSheet()->setCellValue('B27', 'Akurat');
+        $column = 2;
+        foreach ($jopsi6a as $j6a) {
+            $dataset = $j6a->count;
+            $datalabel = $j6a->jopsi6a;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 27, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 28, $dataset);
+            $column++;
+        }
+        $column = 6;
+        foreach ($jopsi6b as $j6b) {
+            $dataset = $j6b->count;
+            $datalabel = $j6b->jopsi6b;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 27, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 28, $dataset);
+            $column++;
+        }
+        $object->getActiveSheet()->setCellValue('A29', '7');
+        $object->getActiveSheet()->setCellValue('B29', 'Ketersediaan jenis data dan informasi beragam');
+        $column = 2;
+        foreach ($jopsi7a as $j7a) {
+            $dataset = $j7a->count;
+            $datalabel = $j7a->jopsi7a;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 29, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 30, $dataset);
+            $column++;
+        }
+        $column = 6;
+        foreach ($jopsi7b as $j7b) {
+            $dataset = $j7b->count;
+            $datalabel = $j7b->jopsi7b;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 29, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 30, $dataset);
+            $column++;
+        }
+        $object->getActiveSheet()->setCellValue('A31', 'C');
+        $object->getActiveSheet()->setCellValue('B31', 'Prosedur pelayanan');
+        $object->getActiveSheet()->setCellValue('A32', '8');
+        $object->getActiveSheet()->setCellValue('B32', 'Alur pelayanan jelas dan sederhana');
+        $column = 2;
+        foreach ($jopsi8 as $j8) {
+            $dataset = $j8->count;
+            $datalabel = $j8->jopsi8;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 32, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 33, $dataset);
+            $column++;
+        }
+        $object->getActiveSheet()->setCellValue('A34', '9');
+        $object->getActiveSheet()->setCellValue('B34', 'Sistem dan prosedur pelayanan masih berpeluang menimbulkan KKN');
+        $column = 2;
+        foreach ($jopsi9 as $j9) {
+            $dataset = $j9->count;
+            $datalabel = $j9->jopsi9;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 34, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 35, $dataset);
+            $column++;
+        }
+        $object->getActiveSheet()->setCellValue('A36', 'D');
+        $object->getActiveSheet()->setCellValue('B36', 'Waktu Pelayanan');
+        $object->getActiveSheet()->setCellValue('A37', '10');
+        $object->getActiveSheet()->setCellValue('B37', 'Informasi target waktu penyelesaian pelayanan jelas');
+        $column = 2;
+        foreach ($jopsi10a as $j10a) {
+            $dataset = $j10a->count;
+            $datalabel = $j10a->jopsi10a;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 37, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 38, $dataset);
+            $column++;
+        }
+        $column = 6;
+        foreach ($jopsi10b as $j10b) {
+            $dataset = $j10b->count;
+            $datalabel = $j10b->jopsi10b;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 37, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 38, $dataset);
+            $column++;
+        }
+        $object->getActiveSheet()->setCellValue('A39', '11');
+        $object->getActiveSheet()->setCellValue('B39', 'Penyelesaian pelayanan sesuai dengan target waktu');
+        $column = 2;
+        foreach ($jopsi11a as $j11a) {
+            $dataset = $j11a->count;
+            $datalabel = $j11a->jopsi11a;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 39, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 40, $dataset);
+            $column++;
+        }
+        $column = 6;
+        foreach ($jopsi11b as $j11b) {
+            $dataset = $j11b->count;
+            $datalabel = $j11b->jopsi11b;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 39, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 40, $dataset);
+            $column++;
+        }
+        $object->getActiveSheet()->setCellValue('A41', 'E');
+        $object->getActiveSheet()->setCellValue('B41', 'Biaya Tarif');
+        $object->getActiveSheet()->setCellValue('A42', '12');
+        $object->getActiveSheet()->setCellValue('B42', 'Biaya pelayanan jelas dan terbuka');
+        $column = 2;
+        foreach ($jopsi12a as $j12a) {
+            $dataset = $j12a->count;
+            $datalabel = $j12a->jopsi12a;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 42, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 43, $dataset);
+            $column++;
+        }
+        $column = 6;
+        foreach ($jopsi12b as $j12b) {
+            $dataset = $j12b->count;
+            $datalabel = $j12b->jopsi12b;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 42, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 43, $dataset);
+            $column++;
+        }
+        $object->getActiveSheet()->setCellValue('A44', 'F');
+        $object->getActiveSheet()->setCellValue('B44', 'produk/jasa spesifikasi jenis layanan');
+        $object->getActiveSheet()->setCellValue('A45', '13');
+        $object->getActiveSheet()->setCellValue('B45', 'Informasi daftar produk/jasa layanan terbuka dan jelas');
+        $column = 2;
+        foreach ($jopsi13a as $j13a) {
+            $dataset = $j13a->count;
+            $datalabel = $j13a->jopsi13a;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 45, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 46, $dataset);
+            $column++;
+        }
+        $column = 6;
+        foreach ($jopsi13b as $j13b) {
+            $dataset = $j13b->count;
+            $datalabel = $j13b->jopsi13b;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 45, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 46, $dataset);
+            $column++;
+        }
+        $object->getActiveSheet()->setCellValue('A47', 'G');
+        $object->getActiveSheet()->setCellValue('B47', 'Penanganan, pengaduan, saran dan masukan');
+        $object->getActiveSheet()->setCellValue('A48', '14');
+        $object->getActiveSheet()->setCellValue('B48', 'Sarana pengaduan/keluhan pelayanan publik tersedia');
+        $column = 2;
+        foreach ($jopsi14a as $j14a) {
+            $dataset = $j14a->count;
+            $datalabel = $j14a->jopsi14a;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 48, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 49, $dataset);
+            $column++;
+        }
+        $column = 6;
+        foreach ($jopsi14b as $j14b) {
+            $dataset = $j14b->count;
+            $datalabel = $j14b->jopsi14b;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 48, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 49, $dataset);
+            $column++;
+        }
+        $object->getActiveSheet()->setCellValue('A50', '15');
+        $object->getActiveSheet()->setCellValue('B50', 'Prosedur dan tindak lanjut penangan pengaduan jelas');
+        $column = 2;
+        foreach ($jopsi15a as $j15a) {
+            $dataset = $j15a->count;
+            $datalabel = $j15a->jopsi15a;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 50, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 51, $dataset);
+            $column++;
+        }
+        $column = 6;
+        foreach ($jopsi15b as $j15b) {
+            $dataset = $j15b->count;
+            $datalabel = $j15b->jopsi15b;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 50, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 51, $dataset);
+            $column++;
+        }
+        $object->getActiveSheet()->setCellValue('A52', 'H');
+        $object->getActiveSheet()->setCellValue('B52', 'produk/jasa spesifikasi jenis layanan');
+        $object->getActiveSheet()->setCellValue('A53', '16');
+        $object->getActiveSheet()->setCellValue('B53', 'Keberadaan petugas pelayanan jelas');
+        $column = 2;
+        foreach ($jopsi16a as $j16a) {
+            $dataset = $j16a->count;
+            $datalabel = $j16a->jopsi16a;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 53, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 54, $dataset);
+            $column++;
+        }
+        $column = 6;
+        foreach ($jopsi16b as $j16b) {
+            $dataset = $j16b->count;
+            $datalabel = $j16b->jopsi16b;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 53, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 54, $dataset);
+            $column++;
+        }
+        $object->getActiveSheet()->setCellValue('A55', 'I');
+        $object->getActiveSheet()->setCellValue('B55', 'produk/jasa spesifikasi jenis layanan');
+        $object->getActiveSheet()->setCellValue('A56', '17');
+        $object->getActiveSheet()->setCellValue('B56', 'Petugas sigap, ahli dan cekatan');
+        $column = 2;
+        foreach ($jopsi17a as $j17a) {
+            $dataset = $j17a->count;
+            $datalabel = $j17a->jopsi17a;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 56, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 57, $dataset);
+            $column++;
+        }
+        $column = 6;
+        foreach ($jopsi17b as $j17b) {
+            $dataset = $j17b->count;
+            $datalabel = $j17b->jopsi17b;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 56, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 57, $dataset);
+            $column++;
+        }
+        $object->getActiveSheet()->setCellValue('A58', 'J');
+        $object->getActiveSheet()->setCellValue('B58', 'perilaku pelaksana');
+        $object->getActiveSheet()->setCellValue('A59', '18');
+        $object->getActiveSheet()->setCellValue('B59', 'Sikap dan perilaku petugas pelayanan');
+        $column = 2;
+        foreach ($jopsi18a as $j18a) {
+            $dataset = $j18a->count;
+            $datalabel = $j18a->jopsi18a;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 59, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 60, $dataset);
+            $column++;
+        }
+        $column = 6;
+        foreach ($jopsi18b as $j18b) {
+            $dataset = $j18b->count;
+            $datalabel = $j18b->jopsi18b;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 59, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 60, $dataset);
+            $column++;
+        }
+        $object->getActiveSheet()->setCellValue('A61', 'K');
+        $object->getActiveSheet()->setCellValue('B61', 'Keamanan dan keanyamanan sarana prasarana');
+        $object->getActiveSheet()->setCellValue('A62', '19');
+        $object->getActiveSheet()->setCellValue('B62', 'Sarana dan prasarana pelayanan aman, nyaman dan mudah dijangkau');
+        $column = 2;
+        foreach ($jopsi19a as $j19a) {
+            $dataset = $j19a->count;
+            $datalabel = $j19a->jopsi19a;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 62, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 63, $dataset);
+            $column++;
+        }
+        $column = 6;
+        foreach ($jopsi19b as $j19b) {
+            $dataset = $j19b->count;
+            $datalabel = $j19b->jopsi19b;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 62, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 63, $dataset);
+            $column++;
+        }
+        $object->getActiveSheet()->setCellValue('A64', 'L');
+        $object->getActiveSheet()->setCellValue('B64', 'Komitmen penyelenggara layanan dalam pelayanan publik');
+        $object->getActiveSheet()->setCellValue('A65', '20');
+        $object->getActiveSheet()->setCellValue('B65', 'Pelayanan publik pada instansi ini sudah berjalan dengan baik');
+        $column = 2;
+        foreach ($jopsi20a as $j20a) {
+            $dataset = $j20a->count;
+            $datalabel = $j20a->jopsi20a;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 65, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 66, $dataset);
+            $column++;
+        }
+        $column = 6;
+        foreach ($jopsi20b as $j20b) {
+            $dataset = $j20b->count;
+            $datalabel = $j20b->jopsi20b;
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 65, $datalabel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 66, $dataset);
+            $column++;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         $filename = "Statistika_hasil" . '.xlsx';
 
         $object->getActiveSheet()->setTitle("Statistika_hasil");
