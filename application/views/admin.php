@@ -41,7 +41,7 @@
           <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="" class="nav-link">Home</a>
+          <a href="<?php echo base_url() . 'admin/index' ?>" class="nav-link">Home</a>
         </li>
       </ul>
 
@@ -61,7 +61,7 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="index3.html" class="brand-link">
+      <a href="<?php echo base_url() . 'admin/index' ?>" class="brand-link">
         <img src="<?php echo base_url() . 'assets/img/logo-bmkg.png' ?>" alt="logo" class="brand-image elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light"> BMKG Jawa Tengah</span>
       </a>
@@ -243,25 +243,33 @@
                 <!-- small box -->
                 <div class="small-box bg-warning">
                   <div class="inner">
-                    <h3 style="color: white">44 Data</h3>
-
+                    <div class="row" style="padding-left:6px">
+                      <h3 style="color: white" class="count"><?php foreach ($data_hujan as $h) { ?>
+                          <?php echo  $h->count; ?>
+                        <?php } ?></h3>
+                      <h3 style="padding-left:10px;color: white" >Data</h3>
+                    </div>
                     <p style="color: white">Sistem Permintaan Data</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-stats-bars"></i>
                   </div>
-                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a href="<?php echo base_url() . 'admin/list_permintaan_data' ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
                 <div class="small-box bg-primary">
                   <div class="inner">
-                    <h3>44 Data</h3>
-
+                    <div class="row" style="padding-left:6px">
+                      <h3 class="count"><?php foreach ($data_hujan as $h) { ?>
+                          <?php echo  $h->count; ?>
+                        <?php } ?></h3>
+                      <h3 style="padding-left:10px">Data</h3>
+                    </div>
                     <p>Sistem Curah Hujan</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-stats-bars"></i>
                   </div>
-                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a href="<?php echo base_url() . 'admin/list_data' ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
               <!-- ./col -->

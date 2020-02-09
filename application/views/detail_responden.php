@@ -41,7 +41,7 @@
           <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="index" class="nav-link">Home</a>
+          <a href="<?php echo base_url() . 'admin/index' ?>" class="nav-link">Home</a>
         </li>
       </ul>
 
@@ -61,7 +61,7 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="index3.html" class="brand-link">
+      <a href="<?php echo base_url() . 'admin/index' ?>" class="brand-link">
         <img src="<?php echo base_url() . 'assets/img/logo-bmkg.png' ?>" alt="logo" class="brand-image elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light"> BMKG Jawa Tengah</span>
       </a>

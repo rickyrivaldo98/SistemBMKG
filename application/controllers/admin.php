@@ -20,6 +20,7 @@ class Admin extends MY_Controller
     {
         $data['data_responden'] = $this->db->query('select ID as id,COUNT(ID) as count from data_responden')->result();
         $data['kritik'] = $this->db->query('select ID as id,COUNT(ID) as count from kritik')->result();
+        $data['data_hujan'] = $this->db->query('select id as id,COUNT(id) as count from data_hujan')->result();
         $this->load->view('admin', $data);
     }
 
