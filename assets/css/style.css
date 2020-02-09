@@ -1,0 +1,140 @@
+/* bg warna dasar */
+
+body {
+    background-color: rgb(252, 252, 252);
+}
+
+
+/* Navbar */
+
+.jumbotron {
+    background-image: url(../img/bmkg.jpg);
+    background-size: cover;
+    height: 500px;
+    /* margin-top: -75px; */
+    background-attachment: fixed;
+    text-align: center;
+}
+
+.jumbotron .display-4 {
+    font-size: 31px;
+}
+
+#text {
+    color: white !important;
+    margin-top: 150px;
+}
+
+#text2 {
+    font-size: 31px;
+    text-align: center;
+}
+
+#video {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+    background-color: white;
+    transform: scale(0.45);
+}
+
+.info-panel {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+}
+
+#kotak-info {
+    padding: 10px 0px;
+    margin-bottom: 18px;
+}
+
+.card {
+    background-image: url(../img/bmkg.jpg);
+    background-size: cover;
+    /* margin-top: -75px; */
+    background-attachment: fixed;
+    /* text-align: center; */
+    height: 500px;
+}
+
+#tes {
+    color: white;
+}
+
+#tes h1 {
+    font-size: 70px;
+}
+
+.icon {
+    transition: transform .2s;
+    /* Animation */
+}
+
+.icon:hover {
+    transform: scale(1.1);
+    color: aquamarine;
+}
+
+a.icon-link {
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+
+a.icon-link:hover {
+    color: cornflowerblue;
+}
+
+#apa {
+    transform: scale(0.9);
+}
+
+
+/* logo muncul */
+
+.logo {
+    width: 30%;
+    /* text-align: center; */
+}
+
+
+/* akhir logo */
+
+
+/* DESKTOP VERSION */
+
+@media (min-width: 992px) {
+    .nav-link {
+        margin-right: 30px;
+    }
+    .nav-link:hover::after {
+        content: '';
+        display: block;
+        border-bottom: 2px solid rgb(255, 255, 255);
+        width: 50%;
+        margin: auto;
+        transition: ease-in-out 0.3s;
+    }
+    .jumbotron {
+        background-size: cover;
+        background-attachment: fixed;
+        margin-top: -75px;
+        height: 900px;
+    }
+    .jumbotron .display-4 {
+        font-size: 55px;
+    }
+    .navbar-brand,
+    .nav-link {
+        color: white !important;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3)
+    }
+    #text2 {
+        font-size: 55px;
+    }
+    #video {
+        transform: scale(1);
+    }
+    .card {
+        height: 300px;
+    }
+}
