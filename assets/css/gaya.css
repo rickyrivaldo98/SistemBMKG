@@ -1,0 +1,21 @@
+#selamat {
+    text-shadow: 2px 2px 8px #000000;
+    position: absolute;
+}
+
+#logo {
+    width: 10%;
+    height: 10%;
+    /* padding: 0%; */
+}
+
+.landing-page {
+    background-image: url('../img/bmkg.jpg');
+    height: auto;
+    width: 100%;
+}
+
+#gambar {
+    width: 100%;
+    height: auto;
+}
