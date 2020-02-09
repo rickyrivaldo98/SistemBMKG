@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 09, 2020 at 03:34 PM
--- Server version: 10.4.10-MariaDB
--- PHP Version: 7.3.12
+-- Generation Time: Feb 09, 2020 at 05:17 PM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -157,6 +157,36 @@ INSERT INTO `kritik` (`ID`, `Nama`, `Email`, `Kritik`, `File`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pemohon`
+--
+
+CREATE TABLE `pemohon` (
+  `idpemohon` varchar(10) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `nohp` varchar(14) NOT NULL,
+  `alamat` varchar(200) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `instansi` varchar(50) NOT NULL,
+  `informasi` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pemohon`
+--
+
+INSERT INTO `pemohon` (`idpemohon`, `nama`, `nohp`, `alamat`, `email`, `instansi`, `informasi`) VALUES
+('12121', 'asda', '', '', '', '', ''),
+('1215hgsgs', 'sdfsdfsd', '', '', '', '', ''),
+('56756756', '54675', '', '', '', '', ''),
+('980', 'Haikal Rahmadi', '091191919', 'jl Bulusan ', 'rahmadiihaikal@gmail.com', 'Undip', 'Mau minta informasi ini '),
+('AWAWAWAW', 'awawawa', '', '', '', '', ''),
+('BMKG-0001 ', 'sds', '', '', '', '', ''),
+('dfas', 'adasd', '', '', '', '', ''),
+('hai', 'haikal Rahmadi', '081372814632', 'Jl. Fajar 1 no 30d', 'rahmadiihaikal@gmail.com', 'Diponegoro University', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -202,6 +232,12 @@ ALTER TABLE `jawaban`
 --
 ALTER TABLE `kritik`
   ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `pemohon`
+--
+ALTER TABLE `pemohon`
+  ADD PRIMARY KEY (`idpemohon`);
 
 --
 -- Indexes for table `user`
