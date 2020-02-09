@@ -89,7 +89,7 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item">
-                    <a class="nav-link" href="auth/logout">
+                    <a class="nav-link" href="<?php echo base_url() . 'auth/logout' ?>">
                         <span class="">Keluar</span>
                         <i class="fas fa-sign-out-alt"></i>
                     </a>
