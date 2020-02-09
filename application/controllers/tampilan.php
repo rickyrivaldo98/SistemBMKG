@@ -51,7 +51,7 @@ class Tampilan extends CI_Controller
         $this->load->view('landing');
     }
 
-    public function landingpage(){
+    public function index(){
         $this->load->view('landingpage/index');
     }
     public function bantuan(){
