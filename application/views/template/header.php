@@ -1,6 +1,30 @@
 
 
 <!-- Navbar  -->
+<style>
+    .navbar{
+        color: white !important;   
+        background-color: #0099ff;
+    }
+    a.navbar-brand{
+        color: white !important;
+    }
+    a.nav-item{
+        color: white !important;
+
+
+    }
+    .nav-item:hover::after{
+        content: '';
+        display: block;
+        border-bottom: 2px solid rgb(255, 255, 255);
+        width: 50%;
+        margin: auto;
+
+    }
+
+
+</style>
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
         <a class="navbar-brand" href="<?php echo base_url()?>">BMKG</a>
