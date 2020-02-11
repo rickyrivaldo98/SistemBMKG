@@ -213,7 +213,7 @@
                                     <div id="info" class="col-12">
                                         <div id="info-location">Perkiraan Curah Hujan Bulan <?php echo $data_hujan->Bulan ?> Tahun <?php echo $data_hujan->Tahun ?> di Jawa Tengah</div>
                                         <div id="info-details"></div>
-                                        <div id="info-peta">Source: BMKG Jawa Tengah, Evaluasi Curah Hujan.</div>
+                                        <div id="info-peta"><p><img src="<?php echo base_url() . 'assets/img/legenda.png' ?>" alt="Smiley face" style="float:center;width:511px;height:238px;"></p></div>
                                     </div>
                                 </div>
                             </div>

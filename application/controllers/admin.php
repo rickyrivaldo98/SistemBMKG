@@ -1043,7 +1043,7 @@ class Admin extends MY_Controller
         if ($validation->run()) {
             $data_hujan->update();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
-            redirect(site_url('admin/list_data'));
+            redirect(site_url('admin/edit_data/' . $data_hujan->id));
         }
 
         $data["data_hujan"] = $data_hujan->getById($id);

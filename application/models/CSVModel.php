@@ -4,6 +4,7 @@ class CSVModel extends CI_Model
 {
     private $_table = "data_hujan";
 
+    public $id;
     public $id_data;
     public $Bulan;
     public $Tahun;
@@ -34,6 +35,11 @@ class CSVModel extends CI_Model
     public function getById($id)
     {
         return $this->db->get_where($this->_table, ["id" => $id])->row();
+    }
+
+    public function getByIdData($id)
+    {
+        return $this->db->get_where($this->_table, ["id_data" => $id])->row();
     }
 
     public function save()
@@ -93,7 +99,7 @@ class CSVModel extends CI_Model
 
     public function _deleteCSV($id)
     {
-        $data_hujan = $this->getById($id);
+        $data_hujan = $this->getByIdData($id);
         if ($data_hujan->CSV != "default.csv") {
             $filename = explode(".", $data_hujan->CSV)[0];
             return array_map('unlink', glob(FCPATH . "upload/data/$filename.*"));
