@@ -1,5 +1,5 @@
 <?php
-class modeltest extends CI_Model
+class modellayanan extends CI_Model
 {
     public function get_pencarian($keyword){
         $keyword = array(

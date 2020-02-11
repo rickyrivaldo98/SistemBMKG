@@ -14,23 +14,24 @@
 
 <body>
 
-<?php
+    <?php
 
     $this->load->view('template/header');
 
     ?>
+    <br><br>
 
 
     <br>
     <div class="container">
         <div class="card">
-            <div style="background-color:#0099ff; color:white;"  class="card-header">
+            <div style="background-color:#0099ff; color:white;" class="card-header">
                 <div class="section-headline text-center">
                     <h2>Formulir Permohonan Data </h2>
                 </div>
             </div>
 
-            <form action="<?php echo base_url() . 'tampilan/tambah_pemohon'; ?>" method="POST">
+            <form action="<?php echo base_url() . 'page/tambah_pemohon'; ?>" method="POST">
 
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="card-body">
@@ -76,7 +77,7 @@
 
         </div>
     </div>
-
+    <br><br><br>
     <?php
 
     $this->load->view('template/footer');

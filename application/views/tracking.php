@@ -22,7 +22,7 @@
             <h2>Tracking Permohonan </h2>
             <p>| Membantu mengetahui status permohonan anda |</p>
         </div>
-        <form   action="<?php echo base_url(). 'tampilan/search'; ?>" method="POST">
+        <form   action="<?php echo base_url(). 'page/search'; ?>" method="POST">
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="form-group">
                     <label for="idpemohon">No. Tiket</label>

@@ -1,15 +1,15 @@
 <?php 
 defined('BASEPATH') or exit('No direct script access allowes');
 
-class Tampilan extends CI_Controller
+class Page extends CI_Controller
 {
     public function __construct(){
         parent::__construct();
-        $this->load->model('modeltest');
+        $this->load->model('modellayanan');
         $this->load->helper('url');
     }
-    public function indextes(){
-        $this->load->view('indextes');
+    public function form(){
+        $this->load->view('formberbayar');
     }
     public function tambah_pemohon(){
         $id = $this->input->post('idpemohon');
@@ -30,8 +30,8 @@ class Tampilan extends CI_Controller
             'email'=> $email,
             'informasi' => $informasi
         );
-        $this->modeltest->insert_data($data, 'pemohon');
-        redirect(base_url(). 'tampilan/indextes');
+        $this->modellayanan->insert_data($data, 'pemohon');
+        redirect(base_url(). 'page/formberbayar');
 
 
     }
@@ -39,7 +39,7 @@ class Tampilan extends CI_Controller
 
 
         $keyword = $this->input->post('keyword');
-        $data['pencarian']=$this->modeltest->get_pencarian($keyword);
+        $data['pencarian']=$this->modellayanan->get_pencarian($keyword);
         $this->load->view('search',$data);
 
 
@@ -47,10 +47,6 @@ class Tampilan extends CI_Controller
     public function tracking(){
         $this->load->view('tracking');
     }
-    public function landing(){
-        $this->load->view('landing');
-    }
-
     public function index(){
         $this->load->view('landingpage/index');
     }
