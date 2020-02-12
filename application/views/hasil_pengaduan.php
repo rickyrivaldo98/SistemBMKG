@@ -11,7 +11,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/fontawesome-free/css/all.min.css' ?>">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="<?php echo base_url() . 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' ?>">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bbootstrap 4 -->
     <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' ?>">
     <!-- iCheck -->
@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/summernote/summernote-bs4.css' ?>">
     <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css' ?>">
     <!-- Google Font: Source Sans Pro -->
-    <link href="<?php echo base_url() . 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700' ?>" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -72,10 +72,10 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="<?php echo base_url() . 'assets/img/user2-160x160.jpg' ?>" class="img-circle elevation-2" alt="User Image">
+                        <img src="<?php echo base_url() . 'assets/img/avatar5.png' ?>" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Ricky Rivaldo</a>
+                        <a href="#" class="d-block">Admin</a>
                     </div>
                 </div>
 
@@ -84,7 +84,6 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                    with font-awesome or any other icon font library -->
-                        <li class="nav-header">MENU APLIKASI</li>
                         <li class="nav-header">SISTEM KEPUASAN MASYARAKAT</li>
                         <li class="nav-item">
                             <a href="<?php echo base_url() . 'admin/hasil_survey' ?>" class="nav-link">
@@ -215,10 +214,10 @@
                                                         } ?></td>
                                                     <td>
                                                         <?php if ($k->File == null) { ?>
-                                                            <a href="<?php echo base_url() . 'admin/hapus_kritik/' . $k->ID ?>" class="btn btn-xs btn-block btn-danger">Hapus</a>
+                                                            <a onclick="deleteConfirm('<?php echo base_url() . 'admin/hapus_kritik/' . $k->ID ?>')" href="#!" class="btn btn-xs btn-block btn-danger">Hapus</a>
                                                         <?php } else { ?>
                                                             <a href="<?php echo base_url() . 'admin/download/' . $k->ID ?>" class="btn btn-xs btn-block btn-success">Download</a>
-                                                            <a href="<?php echo base_url() . 'admin/hapus_kritik/' . $k->ID ?>" class="btn btn-xs btn-block btn-danger">Hapus</a>
+                                                            <a onclick="deleteConfirm('<?php echo base_url() . 'admin/hapus_kritik/' . $k->ID ?>')" href="#!" class="btn btn-xs btn-block btn-danger">Hapus</a>
                                                         <?php } ?>
                                                     </td>
                                                 </tr>
@@ -246,6 +245,24 @@
                 <!-- /.row -->
             </section>
             <!-- /.content -->
+            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Data yang dihapus tidak akan bisa dikembalikan.</div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                            <a id="btn-delete" class="btn btn-danger" href="#">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
         <br>
@@ -300,6 +317,12 @@
     <script src="<?php echo base_url() . 'assets/plugins/datatables/jquery.dataTables.js' ?>"></script>
     <script src="<?php echo base_url() . 'assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js' ?>"></script>
     <!-- page script -->
+    <script>
+        function deleteConfirm(url) {
+            $('#btn-delete').attr('href', url);
+            $('#deleteModal').modal();
+        }
+    </script>
     <script>
         $(function() {
             $("#example1").DataTable();

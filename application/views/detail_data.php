@@ -11,7 +11,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/fontawesome-free/css/all.min.css' ?>">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="<?php echo base_url() . 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' ?>">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bbootstrap 4 -->
     <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' ?>">
     <!-- iCheck -->
@@ -27,7 +27,7 @@
     <!-- summernote -->
     <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/summernote/summernote-bs4.css' ?>">
     <!-- Google Font: Source Sans Pro -->
-    <link href="<?php echo base_url() . 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700' ?>" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <style>
         body {
             overflow-x: hidden;
@@ -36,6 +36,10 @@
         .background {
             fill: none;
             pointer-events: all;
+        }
+
+        svg {
+            width: inherit;
         }
 
         #subunits .active {
@@ -111,10 +115,10 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="<?php echo base_url() . 'assets/img/user2-160x160.jpg' ?>" class="img-circle elevation-2" alt="User Image">
+                        <img src="<?php echo base_url() . 'assets/img/avatar5.png' ?>" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Ricky Rivaldo</a>
+                        <a href="#" class="d-block">Admin</a>
                     </div>
                 </div>
 
@@ -123,7 +127,6 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                    with font-awesome or any other icon font library -->
-                        <li class="nav-header">MENU APLIKASI</li>
                         <li class="nav-header">SISTEM KEPUASAN MASYARAKAT</li>
                         <li class="nav-item active">
                             <a href="<?php echo base_url() . 'admin/hasil_survey' ?>" class="nav-link">
@@ -203,7 +206,7 @@
                             <a href="<?php echo site_url('admin/list_data/') ?>" class="btn btn-md btn-primary">Kembali</a>
                             <br>
                             <br>
-                            <div class=" card mb-3">
+                            <div class="card mb-3">
                                 <div class="card-body">
                                     <!-- <a id=" fileinput"><?php echo  $data_hujan->Bulan; ?></a> -->
                                     <form action="<?= site_url('admin/edit_data') ?>" method="post" enctype="multipart/form-data">
@@ -213,7 +216,9 @@
                                     <div id="info" class="col-12">
                                         <div id="info-location">Perkiraan Curah Hujan Bulan <?php echo $data_hujan->Bulan ?> Tahun <?php echo $data_hujan->Tahun ?> di Jawa Tengah</div>
                                         <div id="info-details"></div>
-                                        <div id="info-peta"><p><img src="<?php echo base_url() . 'assets/img/legenda.png' ?>" alt="Smiley face" style="float:center;width:511px;height:238px;"></p></div>
+                                        <div id="info-peta">
+                                            <p><img class="img-fluid" src="<?php echo base_url() . 'assets/img/legenda.png' ?>" alt="Smiley face" style="float:center;width:511px;height:238px;"></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
