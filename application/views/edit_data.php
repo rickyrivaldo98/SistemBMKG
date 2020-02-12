@@ -26,6 +26,10 @@
     <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/daterangepicker/daterangepicker.css' ?>">
     <!-- summernote -->
     <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/summernote/summernote-bs4.css' ?>">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/select2/css/select2.min.css' ?>">
+    <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css' ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -178,32 +182,38 @@
                                         Kembali</a>
                                 </div>
                                 <div class="card-body">
-                                    <form action="<?php echo base_url('admin/edit_data') ?>" method="post" enctype="multipart/form-data">
+                                    <form action="<?php echo base_url('admin/edit_data') ?>" method="post" enctype="multipart/form-data" autocomplete="off">
                                         <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>" />
                                         <input type="hidden" name="id" value="<?php echo $data_hujan->id ?>" />
                                         <input type="hidden" name="id_data" value="<?php echo $data_hujan->id_data ?>" />
                                         <div class="form-group">
                                             <label for="Bulan">Bulan*</label>
-                                            <input class="form-control <?php echo form_error('Bulan') ? 'is-invalid' : '' ?>" type="text" name="Bulan" placeholder="Bulan" value="<?php echo $data_hujan->Bulan ?>" />
+                                            <select class="form-control select2bs4 <?php echo form_error('Bulan') ? 'is-invalid' : '' ?>" name="Bulan" tabindex="-1">
+                                                <option value="<?php echo $data_hujan->Bulan ?>"><?php echo $data_hujan->Bulan ?></option>
+                                                <option value="Januari">Januari</option>;
+                                                <option value="Februari">Februari</option>;
+                                                <option value="Maret">Maret</option>;
+                                                <option value="April">April</option>;
+                                                <option value="Mei">Mei</option>;
+                                                <option value="Juni">Juni</option>;
+                                                <option value="Juli">Juli</option>;
+                                                <option value="Agustus">Agustus</option>;
+                                                <option value="September">September</option>;
+                                                <option value="Oktober">Oktober</option>;
+                                                <option value="November">November</option>;
+                                                <option value="Desember">Desember</option>;
+                                            </select>
                                             <div class="invalid-feedback">
                                                 <?php echo form_error('Bulan') ?>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="Tahun">Tahun*</label>
-                                            <input class="form-control <?php echo form_error('Tahun') ? 'is-invalid' : '' ?>" type="text" name="Tahun" placeholder="Tahun" value="<?php echo $data_hujan->Tahun ?>" />
-                                            <div class="invalid-feedback">
+                                            <input class="date-own form-control <?php echo form_error('Tahun') ? 'is-invalid' : '' ?>" style="width: 100%;" name="Tahun" type="text" placeholder="Masukkan Tahun" value="<?php echo $data_hujan->Tahun ?>">
+                                            <div class=" invalid-feedback">
                                                 <?php echo form_error('Tahun') ?>
                                             </div>
                                         </div>
-                                        <!-- <div class="form-group">
-                                            <label for="name">Data CSV*</label>
-                                            <input class="form-control-file <?php echo form_error('CSV') ? 'is-invalid' : '' ?>" type="file" name="CSV" />
-                                            <input type="hidden" name="old_data" value="<?php echo $data_hujan->CSV ?>" />
-                                            <div class="invalid-feedback">
-                                                <?php echo form_error('CSV') ?>
-                                            </div>
-                                        </div> -->
                                         <div class="form-group">
                                             <label for="exampleInputFile">Data CSV*</label>
                                             <a href="<?php echo base_url() . 'upload/data/default.csv' ?>" class="float-right btn btn-xs btn-info">Download Format Data CSV</a>
@@ -270,6 +280,8 @@
                     <script src="<?php echo base_url() . 'assets/plugins/daterangepicker/daterangepicker.js' ?>"></script>
                     <!-- Tempusdominus Bootstrap 4 -->
                     <script src="<?php echo base_url() . 'assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' ?>"></script>
+                    <!-- Select2 -->
+                    <script src="<?php echo base_url() . 'assets/plugins/select2/js/select2.full.min.js' ?>"></script>
                     <!-- Summernote -->
                     <script src="<?php echo base_url() . 'assets/plugins/summernote/summernote-bs4.min.js' ?>"></script>
                     <!-- overlayScrollbars -->
@@ -278,12 +290,27 @@
                     <script src="<?php echo base_url() . 'assets/js/adminlte.js' ?>"></script>
                     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
                     <script src="<?php echo base_url() . 'assets/js/pages/dashboard.js' ?>"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
                     <!-- AdminLTE for demo purposes -->
                     <script src="<?php echo base_url() . 'assets/js/demo.js' ?>"></script>
                     <script src="<?php echo base_url() . 'assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js' ?>"></script>
                     <script>
                         $(document).ready(function() {
                             bsCustomFileInput.init();
+                        });
+
+                        $(function() {
+                            $('.date-own').datepicker({
+                                minViewMode: 2,
+                                format: 'yyyy'
+                            })
+
+                            $('.select2').select2()
+
+                            //Initialize Select2 Elements
+                            $('.select2bs4').select2({
+                                theme: 'bootstrap4',
+                            })
                         });
                     </script>
 </body>

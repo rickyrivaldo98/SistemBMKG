@@ -180,9 +180,7 @@
                   <form action="<?php echo site_url('admin/upload_data') ?>" method="post" enctype="multipart/form-data" autocomplete="off">
                     <div class="form-group">
                       <label for="Bulan">Bulan*</label>
-                      <!-- <input class="form-control <?php echo form_error('Bulan') ? 'is-invalid' : '' ?>" type="text" name="Bulan" placeholder="Masukkan Bulan" /> -->
                       <select class="form-control select2bs4 <?php echo form_error('Bulan') ? 'is-invalid' : '' ?>" name="Bulan" tabindex="-1">
-                        <!-- <option selected disabled>Masukkan Bulan</option> -->
                         <option value=""></option>
                         <option value="Januari">Januari</option>;
                         <option value="Februari">Februari</option>;
@@ -203,7 +201,6 @@
                     </div>
                     <div class="form-group">
                       <label for="Tahun">Tahun*</label>
-                      <!-- <input class="form-control <?php echo form_error('Tahun') ? 'is-invalid' : '' ?>" type="text" name="Tahun" placeholder="Masukkan Tahun" /> -->
                       <input class="date-own form-control <?php echo form_error('Tahun') ? 'is-invalid' : '' ?>" style="width: 100%;" name="Tahun" type="text" placeholder="Masukkan Tahun">
                       <div class="invalid-feedback">
                         <?php echo form_error('Tahun') ?>
