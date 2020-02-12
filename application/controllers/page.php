@@ -31,7 +31,7 @@ class Page extends CI_Controller
             'informasi' => $informasi
         );
         $this->modellayanan->insert_data($data, 'pemohon');
-        redirect(base_url(). 'page/formberbayar');
+        redirect(base_url(). 'page/form');
 
 
     }

@@ -214,10 +214,10 @@
                                                         } ?></td>
                                                     <td>
                                                         <?php if ($k->File == null) { ?>
-                                                            <a href="<?php echo base_url() . 'admin/hapus_kritik/' . $k->ID ?>" class="btn btn-xs btn-block btn-danger">Hapus</a>
+                                                            <a onclick="deleteConfirm('<?php echo base_url() . 'admin/hapus_kritik/' . $k->ID ?>')" href="#!" class="btn btn-xs btn-block btn-danger">Hapus</a>
                                                         <?php } else { ?>
                                                             <a href="<?php echo base_url() . 'admin/download/' . $k->ID ?>" class="btn btn-xs btn-block btn-success">Download</a>
-                                                            <a href="<?php echo base_url() . 'admin/hapus_kritik/' . $k->ID ?>" class="btn btn-xs btn-block btn-danger">Hapus</a>
+                                                            <a onclick="deleteConfirm('<?php echo base_url() . 'admin/hapus_kritik/' . $k->ID ?>')" href="#!" class="btn btn-xs btn-block btn-danger">Hapus</a>
                                                         <?php } ?>
                                                     </td>
                                                 </tr>
@@ -245,6 +245,24 @@
                 <!-- /.row -->
             </section>
             <!-- /.content -->
+            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Data yang dihapus tidak akan bisa dikembalikan.</div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                            <a id="btn-delete" class="btn btn-danger" href="#">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
         <br>
@@ -299,6 +317,12 @@
     <script src="<?php echo base_url() . 'assets/plugins/datatables/jquery.dataTables.js' ?>"></script>
     <script src="<?php echo base_url() . 'assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js' ?>"></script>
     <!-- page script -->
+    <script>
+        function deleteConfirm(url) {
+            $('#btn-delete').attr('href', url);
+            $('#deleteModal').modal();
+        }
+    </script>
     <script>
         $(function() {
             $("#example1").DataTable();

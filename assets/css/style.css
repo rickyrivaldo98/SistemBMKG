@@ -112,7 +112,7 @@ a.icon-link:hover {
         border-bottom: 2px solid rgb(255, 255, 255);
         width: 50%;
         margin: auto;
-        transition: ease-in-out 0.3s;
+        transition: 0.3s;
     }
     .jumbotron {
         background-size: cover;
