@@ -11,7 +11,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/fontawesome-free/css/all.min.css' ?>">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="<?php echo base_url() . 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' ?>">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bbootstrap 4 -->
   <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' ?>">
   <!-- iCheck -->
@@ -26,8 +26,12 @@
   <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/daterangepicker/daterangepicker.css' ?>">
   <!-- summernote -->
   <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/summernote/summernote-bs4.css' ?>">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/select2/css/select2.min.css' ?>">
+  <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css' ?>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
   <!-- Google Font: Source Sans Pro -->
-  <link href="<?php echo base_url() . 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700' ?>" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -71,10 +75,10 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="<?php echo base_url() . 'assets/img/user2-160x160.jpg' ?>" class="img-circle elevation-2" alt="User Image">
+            <img src="<?php echo base_url() . 'assets/img/avatar5.png' ?>" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">Ricky Rivaldo</a>
+            <a href="#" class="d-block">Admin</a>
           </div>
         </div>
 
@@ -83,7 +87,6 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                    with font-awesome or any other icon font library -->
-            <li class="nav-header">MENU APLIKASI</li>
             <li class="nav-header">SISTEM KEPUASAN MASYARAKAT</li>
             <li class="nav-item active">
               <a href="<?php echo base_url() . 'admin/hasil_survey' ?>" class="nav-link">
@@ -174,17 +177,34 @@
               <?php endif; ?>
               <div class="card mb-3">
                 <div class="card-body">
-                  <form action="<?php echo site_url('admin/upload_data') ?>" method="post" enctype="multipart/form-data">
+                  <form action="<?php echo site_url('admin/upload_data') ?>" method="post" enctype="multipart/form-data" autocomplete="off">
                     <div class="form-group">
                       <label for="Bulan">Bulan*</label>
-                      <input class="form-control <?php echo form_error('Bulan') ? 'is-invalid' : '' ?>" type="text" name="Bulan" placeholder="Masukkan Bulan" />
+                      <!-- <input class="form-control <?php echo form_error('Bulan') ? 'is-invalid' : '' ?>" type="text" name="Bulan" placeholder="Masukkan Bulan" /> -->
+                      <select class="form-control select2bs4 <?php echo form_error('Bulan') ? 'is-invalid' : '' ?>" name="Bulan" tabindex="-1">
+                        <!-- <option selected disabled>Masukkan Bulan</option> -->
+                        <option value=""></option>
+                        <option value="Januari">Januari</option>;
+                        <option value="Februari">Februari</option>;
+                        <option value="Maret">Maret</option>;
+                        <option value="April">April</option>;
+                        <option value="Mei">Mei</option>;
+                        <option value="Juni">Juni</option>;
+                        <option value="Juli">Juli</option>;
+                        <option value="Agustus">Agustus</option>;
+                        <option value="September">September</option>;
+                        <option value="Oktober">Oktober</option>;
+                        <option value="November">November</option>;
+                        <option value="Desember">Desember</option>;
+                      </select>
                       <div class="invalid-feedback">
                         <?php echo form_error('Bulan') ?>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="Tahun">Tahun*</label>
-                      <input class="form-control <?php echo form_error('Tahun') ? 'is-invalid' : '' ?>" type="text" name="Tahun" placeholder="Masukkan Tahun" />
+                      <!-- <input class="form-control <?php echo form_error('Tahun') ? 'is-invalid' : '' ?>" type="text" name="Tahun" placeholder="Masukkan Tahun" /> -->
+                      <input class="date-own form-control <?php echo form_error('Tahun') ? 'is-invalid' : '' ?>" style="width: 100%;" name="Tahun" type="text" placeholder="Masukkan Tahun">
                       <div class="invalid-feedback">
                         <?php echo form_error('Tahun') ?>
                       </div>
@@ -251,10 +271,13 @@
     <script src="<?php echo base_url() . 'assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' ?>"></script>
     <!-- Summernote -->
     <script src="<?php echo base_url() . 'assets/plugins/summernote/summernote-bs4.min.js' ?>"></script>
+    <!-- Select2 -->
+    <script src="<?php echo base_url() . 'assets/plugins/select2/js/select2.full.min.js' ?>"></script>
     <!-- overlayScrollbars -->
     <script src="<?php echo base_url() . 'assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' ?>"></script>
     <!-- AdminLTE App -->
     <script src="<?php echo base_url() . 'assets/js/adminlte.js' ?>"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="<?php echo base_url() . 'assets/js/pages/dashboard.js' ?>"></script>
     <!-- AdminLTE for demo purposes -->
@@ -263,6 +286,22 @@
     <script>
       $(document).ready(function() {
         bsCustomFileInput.init();
+      });
+
+      $(function() {
+        $('.date-own').datepicker({
+          minViewMode: 2,
+          format: 'yyyy'
+        })
+
+        $('.select2').select2()
+
+        //Initialize Select2 Elements
+        $('.select2bs4').select2({
+          theme: 'bootstrap4',
+          placeholder: "Masukkan Bulan",
+          allowClear: true
+        })
       });
     </script>
 </body>
