@@ -88,6 +88,7 @@ function resize() {
     .attr("d", path);
 }
 
+
 function regionName(region) {
   return region.properties.kabkot + " : " + rainData[region.properties.kabkot];
 }

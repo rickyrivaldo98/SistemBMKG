@@ -38,6 +38,10 @@
             pointer-events: all;
         }
 
+        svg {
+            width: inherit;
+        }
+
         #subunits .active {
             fill: lightblue;
         }
@@ -202,7 +206,7 @@
                             <a href="<?php echo site_url('admin/list_data/') ?>" class="btn btn-md btn-primary">Kembali</a>
                             <br>
                             <br>
-                            <div class=" card mb-3">
+                            <div class="card mb-3">
                                 <div class="card-body">
                                     <!-- <a id=" fileinput"><?php echo  $data_hujan->Bulan; ?></a> -->
                                     <form action="<?= site_url('admin/edit_data') ?>" method="post" enctype="multipart/form-data">
@@ -213,7 +217,7 @@
                                         <div id="info-location">Perkiraan Curah Hujan Bulan <?php echo $data_hujan->Bulan ?> Tahun <?php echo $data_hujan->Tahun ?> di Jawa Tengah</div>
                                         <div id="info-details"></div>
                                         <div id="info-peta">
-                                            <p><img src="<?php echo base_url() . 'assets/img/legenda.png' ?>" alt="Smiley face" style="float:center;width:511px;height:238px;"></p>
+                                            <p><img class="img-fluid" src="<?php echo base_url() . 'assets/img/legenda.png' ?>" alt="Smiley face" style="float:center;width:511px;height:238px;"></p>
                                         </div>
                                     </div>
                                 </div>
