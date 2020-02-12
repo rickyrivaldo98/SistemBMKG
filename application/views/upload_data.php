@@ -296,8 +296,7 @@
         //Initialize Select2 Elements
         $('.select2bs4').select2({
           theme: 'bootstrap4',
-          placeholder: "Masukkan Bulan",
-          allowClear: true
+          placeholder: "Masukkan Bulan"
         })
       });
     </script>
