@@ -32,10 +32,15 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
 </head>
+
+<?php
+    $this->load->view('template/header'); ?>
 <br>
 <br>
 
 <body>
+  
+    
     <div class="container">
         <div class="col-md6">
             <div class="card card-primary">
@@ -1507,6 +1512,10 @@
             </div>
         </div>
     </div>
+
+    
+<?php
+    $this->load->view('template/footer'); ?>
 
     <script>
         document.querySelector("#submit").addEventListener('click', function() {

@@ -8,7 +8,18 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <style>
+        .jumbotron {
+    background-image: url(../img/bmkg.jpg);
+    background-size: cover;
+    height: 200px;
+    /* margin-top: -75px; */
+    background-attachment: fixed;
+    text-align: center;
+}
 
+
+    </style>
 
 
     <title>Selamat datang di website</title>
@@ -21,6 +32,18 @@
     $this->load->view('template/header');
     ?>
     <!-- akhir navbar -->
+
+    <!-- Jumbotron -->
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div id="text" class="text-center">
+                <h3 class="display-4"> Cari kebingungan kamu disini </h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- akhir jumbotron -->
 
     <div class="container my-5" id="content">
         <div class="card shadow">

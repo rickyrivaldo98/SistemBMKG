@@ -18,10 +18,17 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
+
+
+<?php $this->load->view('template/header'); ?>
+
+
 <br>
 <br>
+<br><br><br>
 
 <body>
+
     <div class="container">
         <div style="color: red;"><?php echo (isset($message)) ? $message : ""; ?></div>
         <div class="col-md6">
@@ -70,6 +77,10 @@
         </div>
     </div>
     </div>
+    <br><br><br><br><br>
+
+<?php $this->load->view('template/footer'); ?>
+
     <script src="<?php echo base_url() . 'assets/plugins/jquery/jquery.min.js' ?>"></script>
     <script src="<?php echo base_url() . 'assets/plugins/bootstrap/js/bootstrap.bundle.min.js' ?>"></script>
     <script src="<?php echo base_url() . 'assets/js/adminlte.min.js' ?>"></script>

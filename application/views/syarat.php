@@ -13,14 +13,14 @@
             margin-top: 50px;
         }
 
-       .btn {
+        .btn {
             border: white;
             transition: .3s;
             border-radius: 40px;
             margin-top: 10px;
             margin-bottom: 10px;
             padding: 10px 25px;
-          
+
         }
 
         .btn:hover {
@@ -66,7 +66,7 @@ $this->load->view('template/header');
                 <ol>
                     <li>Untuk kegiatan no 1-5 melampirkan kartu indentitas dan surat pengantar dari instansi</li>
                     <div class="row justify-content-center">
-                    <a id="tombol1" class="btn btn-primary" href="#">Form Pengajuan</a>
+                        <a id="tombol1" class="btn btn-primary"  href="<?php echo base_url(). 'page/form1'?>">Form Pengajuan</a>
                     </div>
 
                     <li>Untuk kegiatan no 6 melampirkan persyaratan sebagai berikut:</li>
@@ -78,7 +78,7 @@ $this->load->view('template/header');
                         <li>Kartu identitas</li>
                     </ol>
                     <div class="row justify-content-center">
-                    <a  id="tombol2" class="btn btn-primary" href="#">Form Pengajuan</a>
+                        <a id="tombol2" class="btn btn-primary" href="<?php echo base_url(). 'page/form2'?>">Form Pengajuan</a>
                     </div>
 
                 </ol>
@@ -86,6 +86,8 @@ $this->load->view('template/header');
         </div>
     </div>
 
+
+    <?php $this->load->view('template/footer');  ?>
 
 
     <!-- Optional JavaScript -->

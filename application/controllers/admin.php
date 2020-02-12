@@ -992,12 +992,18 @@ class Admin extends MY_Controller
 
     public function list_permintaan_data()
     {
-        $this->load->view('list_permintaan_data');
+        // $this->load->view('list_permintaan_data');
+        $this->load->database();
+        $data['pemohon'] = $this->db->query('select * from pemohon')->result();
+
+        $this->load->view('list_permintaan_data', $data);
     }
 
     public function list_ketersediaan_data()
     {
         $this->load->view('list_ketersediaan_data');
+
+       
     }
 
     public function list_data()
@@ -1073,10 +1079,13 @@ class Admin extends MY_Controller
 
     public function skm()
     {
+   
+
         $data['jawaban'] = $this->db->query('select * from jawaban')->result();
         $data['data_responden'] = $this->db->query('select * from data_responden')->result();
 
         $this->load->view('skm');
+
     }
 
     public function detail_responden($id)
@@ -1262,6 +1271,16 @@ class Admin extends MY_Controller
 
 
         redirect(base_url() . 'admin/hasil_pengaduan');
+    }
+    public function hapus_data($id)
+    {
+        $where = array(
+            'idpemohon' => $id
+        );
+        $this->modelresponden->delete_data($where, 'pemohon');
+
+
+        redirect(base_url() . 'admin/list_permintaan_data');
     }
     public function test()
     {

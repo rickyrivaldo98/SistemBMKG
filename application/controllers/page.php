@@ -10,6 +10,7 @@ class Page extends CI_Controller
         $this->load->library('form_validation');
     }
     public function form(){
+
         $this->load->view('formberbayar');
     }
     public function form1(){
@@ -121,10 +122,22 @@ class Page extends CI_Controller
 
     }
     public function tracking(){
+    $this->load->view('template/header');
+
         $this->load->view('tracking');
+    $this->load->view('template/footer');
+
     }
+    public function redirect(){
+        $this->load->view('dataonline');
+
+    }
+
     public function index(){
-        $this->load->view('landingpage/index');
+        $data['data_pemohon'] = $this->db->query('select idpemohon as id,COUNT(idpemohon) as count from pemohon')->result();
+      
+
+        $this->load->view('landingpage/index', $data);
     }
     public function bantuan(){
         $this->load->view('bantuan');

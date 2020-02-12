@@ -34,7 +34,7 @@
                 <div class="navbar-nav ml-auto">
                     <a class="nav-item nav-link active" href="#">hehehe<span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="#">Tentang</a>
-                    <a class="nav-item nav-link" href="#">Bantuan</a>
+                    <a class="nav-item nav-link" href="<?php echo base_url() . 'page/bantuan' ?>">Bantuan</a>
                 </div>
             </div>
         </div>
@@ -79,7 +79,7 @@
 
             <div class="col-lg-4 col-md-4">
                 <div id="kotak-info" class="info-panel text-center">
-                    <a class="icon-link" href="">
+                    <a class="icon-link" href="<?php echo base_url() . 'page/form' ?>">
                         <img id="berbayar" href="www.google.com" class="icon" src="https://img.icons8.com/wired/60/000000/pay-wall.png">
                         <h4>Berbayar</h4>
                         <p>Lorem, ipsum dolor.</p>
@@ -88,7 +88,7 @@
             </div>
             <div class="col-lg-4 col-md-4">
                 <div id="kotak-info" class="info-panel text-center">
-                    <a class="icon-link" href="">
+                    <a class="icon-link" href="<?php echo base_url() . 'page/syarat' ?>">
                         <img id="0-rupiah" class="icon" src="https://img.icons8.com/wired/60/000000/gift.png">
                         <h4>0 Rupiah</h4>
                         <p>Lorem, ipsum dolor.</p>
@@ -97,7 +97,7 @@
             </div>
             <div class="col-lg-4 col-md-4">
                 <div id="kotak-info" class="info-panel text-center">
-                    <a class="icon-link" href="">
+                    <a class="icon-link" href="<?php echo base_url() . 'page/redirect' ?>" target="blank">
                         <img id="free-icon" class="icon" src="https://img.icons8.com/carbon-copy/60/000000/service.png">
                         <div class="tulisan">
                             <h4>Informasi Gratis</h4>
@@ -110,7 +110,7 @@
 
 
                 <div id="kotak-info" class="info-panel text-center">
-                    <a class="icon-link" href="<?php echo base_url() . 'tampilan/tracking' ?>">
+                    <a class="icon-link" href="<?php echo base_url() . 'admin/skm' ?>">
 
                         <img id="survey" class="icon" src="https://img.icons8.com/ios/60/000000/survey.png">
 
@@ -121,7 +121,7 @@
             </div>
             <div class="col-lg-4 col-md-4">
                 <div id="kotak-info" class="info-panel text-center">
-                    <a class="icon-link" href="">
+                    <a class="icon-link" href="<?php echo base_url() . 'admin/kritik' ?>">
 
                         <img id="timbangan" class="icon" src="https://img.icons8.com/dotty/60/000000/scales.png">
 
@@ -132,7 +132,7 @@
             </div>
             <div class="col-lg-4 col-md-4">
                 <div id="kotak-info" class="info-panel text-center">
-                    <a class="icon-link" href="<?php echo base_url() . 'tampilan/tracking' ?>">
+                    <a class="icon-link" href="<?php echo base_url() . 'page/tracking' ?>">
 
                         <img id="track-icon" class="icon" src="https://img.icons8.com/dotty/60/000000/order-shipped.png">
 
@@ -166,7 +166,9 @@
                 <div id="tes" class="row text-center">
 
                     <div id="kotak" class="col-lg-4 col-md-12">
-                        <h1>1</h1>
+                        <h1><?php foreach ($data_pemohon as $d) { ?>
+                          <?php echo  $d->count; ?>
+                        <?php } ?></h1>
                         <p>Informasi berbayar</p>
                     </div>
                     <div id="kotak" class="col-lg-4 col-md-12">
