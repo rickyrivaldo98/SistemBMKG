@@ -164,6 +164,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum2 = array_sum($test2);
+        $testsum2 = $testsum2*0.25;
 
 
 
@@ -187,6 +188,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum2b = array_sum($test2b);
+        $testsum2b = $testsum2b*0.25;
 
         $data['jopsi3a'] = $this->db->query("select Jopsi3a as jopsi3a,COUNT(jopsi3a) as count from jawaban group by jopsi3a")->result();
         $jopsi3a = $data['jopsi3a'];
@@ -211,6 +213,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum3 = array_sum($test3);
+        $testsum3 = $testsum3*0.25;
 
 
         $data['jopsi3b'] = $this->db->query("select Jopsi3b as jopsi3b,COUNT(jopsi3b) as count from jawaban group by jopsi3b")->result();
@@ -233,6 +236,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum3b = array_sum($test3b);
+        $testsum3b = $testsum3b*0.25;
 
         $data['jopsi4a'] = $this->db->query("select Jopsi4a as jopsi4a,COUNT(jopsi4a) as count from jawaban group by jopsi4a")->result();
         $jopsi4a = $data['jopsi4a'];
@@ -257,6 +261,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum4 = array_sum($test4);
+        $testsum4 = $testsum4*0.25;
 
         $data['jopsi4b'] = $this->db->query("select Jopsi4b as jopsi4b,COUNT(jopsi4b) as count from jawaban group by jopsi4b")->result();
         $jopsi4b = $data['jopsi4b'];
@@ -278,6 +283,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum4b = array_sum($test4b);
+        $testsum4b = $testsum4b*0.25;
 
         $data['jopsi5a'] = $this->db->query("select Jopsi5a as jopsi5a,COUNT(jopsi5a) as count from jawaban group by jopsi5a")->result();
         $jopsi5a = $data['jopsi5a'];
@@ -302,6 +308,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum5 = array_sum($test5);
+        $testsum5 = $testsum5*0.25;
 
         $data['jopsi5b'] = $this->db->query("select Jopsi5b as jopsi5b,COUNT(jopsi5b) as count from jawaban group by jopsi5b")->result();
         $jopsi5b = $data['jopsi5b'];
@@ -323,6 +330,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum5b = array_sum($test5b);
+        $testsum5b = $testsum5b*0.25;
 
         $data['jopsi6a'] = $this->db->query("select Jopsi6a as jopsi6a,COUNT(jopsi6a) as count from jawaban group by jopsi6a")->result();
         $jopsi6a = $data['jopsi6a'];
@@ -347,6 +355,8 @@ class Admin extends MY_Controller
             }
         }
         $testsum6 = array_sum($test6);
+        $testsum6 = $testsum6*0.25;
+
         $data['jopsi6b'] = $this->db->query("select Jopsi6b as jopsi6b,COUNT(jopsi6b) as count from jawaban group by jopsi6b")->result();
         $jopsi6b = $data['jopsi6b'];
 
@@ -367,6 +377,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum6b = array_sum($test6b);
+        $testsum6b = $testsum6b*0.25;
 
         $data['jopsi7a'] = $this->db->query("select Jopsi7a as jopsi7a,COUNT(jopsi7a) as count from jawaban group by jopsi7a")->result();
         $jopsi7a = $data['jopsi7a'];
@@ -392,6 +403,7 @@ class Admin extends MY_Controller
         }
 
         $testsum7 = array_sum($test7);
+        $testsum7 = $testsum7*0.25;
 
         $data['jopsi7b'] = $this->db->query("select Jopsi7b as jopsi7b,COUNT(jopsi7b) as count from jawaban group by jopsi7b")->result();
         $jopsi7b = $data['jopsi7b'];
@@ -413,6 +425,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum7b = array_sum($test7b);
+        $testsum7b = $testsum7b*0.25;
 
         $data['jopsi8'] = $this->db->query("select Jopsi8 as jopsi8,COUNT(jopsi8) as count from jawaban group by jopsi8")->result();
         $jopsi8 = $data['jopsi8'];
@@ -438,6 +451,7 @@ class Admin extends MY_Controller
         }
 
         $testsum8 = array_sum($test8);
+        $testsum8 = $testsum8*0.25;
 
         $data['jopsi9'] = $this->db->query("select Jopsi9 as jopsi9,COUNT(jopsi9) as count from jawaban group by jopsi9")->result();
         $jopsi9 = $data['jopsi9'];
@@ -463,6 +477,7 @@ class Admin extends MY_Controller
         }
 
         $testsum9 = array_sum($test9);
+        $testsum9 = $testsum9*0.25;
 
         $data['jopsi10a'] = $this->db->query("select Jopsi10a as jopsi10a,COUNT(jopsi10a) as count from jawaban group by jopsi10a")->result();
         $jopsi10a = $data['jopsi10a'];
@@ -488,6 +503,7 @@ class Admin extends MY_Controller
         }
 
         $testsum10 = array_sum($test10);
+        $testsum10 = $testsum10*0.25;
 
         $data['jopsi10b'] = $this->db->query("select Jopsi10b as jopsi10b,COUNT(jopsi10b) as count from jawaban group by jopsi10b")->result();
         $jopsi10b = $data['jopsi10b'];
@@ -509,6 +525,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum10b = array_sum($test10b);
+        $testsum10b = $testsum10b*0.25;
 
         $data['jopsi11a'] = $this->db->query("select Jopsi11a as jopsi11a,COUNT(jopsi11a) as count from jawaban group by jopsi11a")->result();
         $jopsi11a = $data['jopsi11a'];
@@ -534,6 +551,8 @@ class Admin extends MY_Controller
         }
 
         $testsum11 = array_sum($test11);
+        $testsum11 = $testsum11*0.25;
+
         $data['jopsi11b'] = $this->db->query("select Jopsi11b as jopsi11b,COUNT(jopsi11b) as count from jawaban group by jopsi11b")->result();
         $jopsi11b = $data['jopsi11b'];
 
@@ -554,6 +573,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum11b = array_sum($test11b);
+        $testsum11b = $testsum11b*0.25;
 
         $data['jopsi12a'] = $this->db->query("select Jopsi12a as jopsi12a,COUNT(jopsi12a) as count from jawaban group by jopsi12a")->result();
         $jopsi12a = $data['jopsi12a'];
@@ -579,6 +599,7 @@ class Admin extends MY_Controller
         }
 
         $testsum12 = array_sum($test12);
+        $testsum12 = $testsum12*0.25;
 
         $data['jopsi12b'] = $this->db->query("select Jopsi12b as jopsi12b,COUNT(jopsi12b) as count from jawaban group by jopsi12b")->result();
         $jopsi12b = $data['jopsi12b'];
@@ -600,6 +621,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum12b = array_sum($test12b);
+        $testsum12b = $testsum12b*0.25;
 
         $data['jopsi13a'] = $this->db->query("select Jopsi13a as jopsi13a,COUNT(jopsi13a) as count from jawaban group by jopsi13a")->result();
         $jopsi13a = $data['jopsi13a'];
@@ -624,6 +646,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum13 = array_sum($test13);
+        $testsum13 = $testsum13*0.25;
 
         $data['jopsi13b'] = $this->db->query("select Jopsi13b as jopsi13b,COUNT(jopsi13b) as count from jawaban group by jopsi13b")->result();
         $jopsi13b = $data['jopsi13b'];
@@ -645,6 +668,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum13b = array_sum($test13b);
+        $testsum13b = $testsum13b*0.25;
 
         $data['jopsi14a'] = $this->db->query("select Jopsi14a as jopsi14a,COUNT(jopsi14a) as count from jawaban group by jopsi14a")->result();
         $jopsi14a = $data['jopsi14a'];
@@ -670,6 +694,7 @@ class Admin extends MY_Controller
         }
 
         $testsum14 = array_sum($test14);
+        $testsum14 = $testsum14*0.25;
 
         $data['jopsi14b'] = $this->db->query("select Jopsi14b as jopsi14b,COUNT(jopsi14b) as count from jawaban group by jopsi14b")->result();
         $jopsi14b = $data['jopsi14b'];
@@ -691,6 +716,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum14b = array_sum($test14b);
+        $testsum14b = $testsum14b*0.25;
 
         $data['jopsi15a'] = $this->db->query("select Jopsi15a as jopsi15a,COUNT(jopsi15a) as count from jawaban group by jopsi15a")->result();
         $jopsi15a = $data['jopsi15a'];
@@ -716,6 +742,7 @@ class Admin extends MY_Controller
         }
 
         $testsum15 = array_sum($test15);
+        $testsum15 = $testsum15*0.25;
 
         $data['jopsi15b'] = $this->db->query("select Jopsi15b as jopsi15b,COUNT(jopsi15b) as count from jawaban group by jopsi15b")->result();
         $jopsi15b = $data['jopsi15b'];
@@ -737,6 +764,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum15b = array_sum($test15b);
+        $testsum15b = $testsum15b*0.25;
 
         $data['jopsi16a'] = $this->db->query("select Jopsi16a as jopsi16a,COUNT(jopsi16a) as count from jawaban group by jopsi16a")->result();
         $jopsi16a = $data['jopsi16a'];
@@ -761,6 +789,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum16 = array_sum($test16);
+        $testsum16 = $testsum16*0.25;
 
         $data['jopsi16b'] = $this->db->query("select Jopsi16b as jopsi16b,COUNT(jopsi16b) as count from jawaban group by jopsi16b")->result();
         $jopsi16b = $data['jopsi16b'];
@@ -782,6 +811,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum16b = array_sum($test16b);
+        $testsum16b = $testsum16b*0.25;
 
         $data['jopsi17a'] = $this->db->query("select Jopsi17a as jopsi17a,COUNT(jopsi17a) as count from jawaban group by jopsi17a")->result();
         $jopsi17a = $data['jopsi17a'];
@@ -807,6 +837,7 @@ class Admin extends MY_Controller
         }
 
         $testsum17 = array_sum($test17);
+        $testsum17 = $testsum17*0.25;
 
         $data['jopsi17b'] = $this->db->query("select Jopsi17b as jopsi17b,COUNT(jopsi17b) as count from jawaban group by jopsi17b")->result();
         $jopsi17b = $data['jopsi17b'];
@@ -828,6 +859,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum17b = array_sum($test17b);
+        $testsum17b = $testsum17b*0.25;
 
         $data['jopsi18a'] = $this->db->query("select Jopsi18a as jopsi18a,COUNT(jopsi18a) as count from jawaban group by jopsi18a")->result();
         $jopsi18a = $data['jopsi18a'];
@@ -853,6 +885,8 @@ class Admin extends MY_Controller
         }
 
         $testsum18 = array_sum($test18);
+        $testsum18 = $testsum18*0.25;
+
         $data['jopsi18b'] = $this->db->query("select Jopsi18b as jopsi18b,COUNT(jopsi18b) as count from jawaban group by jopsi18b")->result();
         $jopsi18b = $data['jopsi18b'];
 
@@ -873,6 +907,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum18b = array_sum($test18b);
+        $testsum18b = $testsum18b*0.25;
 
         $data['jopsi19a'] = $this->db->query("select Jopsi19a as jopsi19a,COUNT(jopsi19a) as count from jawaban group by jopsi19a")->result();
         $jopsi19a = $data['jopsi19a'];
@@ -898,6 +933,8 @@ class Admin extends MY_Controller
         }
 
         $testsum19 = array_sum($test19);
+        $testsum19 = $testsum19*0.25;
+
         $data['jopsi19b'] = $this->db->query("select Jopsi19b as jopsi19b,COUNT(jopsi19b) as count from jawaban group by jopsi19b")->result();
         $jopsi19b = $data['jopsi19b'];
 
@@ -918,6 +955,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum19b = array_sum($test19b);
+        $testsum19b = $testsum19b*0.25;
 
         $data['jopsi20a'] = $this->db->query("select Jopsi20a as jopsi20a,COUNT(jopsi20a) as count from jawaban group by jopsi20a")->result();
         $jopsi20a = $data['jopsi20a'];
@@ -943,6 +981,7 @@ class Admin extends MY_Controller
         }
 
         $testsum20 = array_sum($test20);
+        $testsum20 = $testsum20*0.25;
 
         $data['jopsi20b'] = $this->db->query("select Jopsi20b as jopsi20b,COUNT(jopsi20b) as count from jawaban group by jopsi20b")->result();
         $jopsi20b = $data['jopsi20b'];
@@ -964,6 +1003,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum20b = array_sum($test20b);
+        $testsum20b = $testsum20b*0.25;
 
         $arraysum = array(
             0 => "$testsum", 1 => "$testsum2", 2 => "$testsum3", 3 => "$testsum4", 4 => "$testsum5", 5 => "$testsum6", 6 => "$testsum7",

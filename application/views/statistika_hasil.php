@@ -67,7 +67,7 @@
                   <div class="col-md-6" style="margin: 0px">
                     <p class="count" style="font-size:120px; text-align:right; "><?php foreach ($data_responden as $d) { ?>
                         <?php echo  $d->count; ?>
-                        <?php $d=$d->count; ?>
+                        <?php $d = $d->count; ?>
                       <?php } ?>
                       <p>
                   </div>
@@ -112,6 +112,7 @@
                     ?>&nbsp;&nbsp;&nbsp
                     <?php ?>
                   <?php } ?>
+                </label>
               </div>
             </div>
             <div class="card card-info">
@@ -123,7 +124,10 @@
                 <br>
                 <label><?php foreach ($jeniskelamin as $j) { ?>
                     <?php echo  $j->jenis_kelamin; ?>:
-                    <?php echo  $j->count; ?>&nbsp;&nbsp;&nbsp
+                    <?php $a = $j->count;
+                          $a = $a * 100 / $d;
+                          echo number_format($a, 2) . '%';
+                    ?>&nbsp;&nbsp;&nbsp
                   <?php } ?>
                 </label>
               </div>
@@ -140,7 +144,10 @@
                 <br>
                 <label><?php foreach ($pendidikan as $p) { ?>
                     <?php echo  $p->pendidikan; ?>:
-                    <?php echo  $p->count; ?>&nbsp;&nbsp;&nbsp
+                    <?php $a = $p->count;
+                          $a = $a * 100 / $d;
+                          echo number_format($a, 2) . '%';
+                    ?>&nbsp;&nbsp;&nbsp
                   <?php } ?>
                 </label>
               </div>
@@ -152,9 +159,12 @@
               <div class="card-body text-center">
                 <canvas id="pekerjaan_responden" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                 <br>
-                <label style="font-size: 12px"><?php foreach ($pekerjaan as $pj) { ?>
+                <label><?php foreach ($pekerjaan as $pj) { ?>
                     <?php echo  $pj->pekerjaan; ?>:
-                    <?php echo  $pj->count; ?>&nbsp;&nbsp;&nbsp
+                    <?php $a = $pj->count;
+                          $a = $a * 100 / $d;
+                          echo number_format($a, 2) . '%';
+                    ?>&nbsp;&nbsp;&nbsp
                   <?php } ?>
                 </label>
               </div>
@@ -178,7 +188,10 @@
                     <div class="col">
                       <label><?php foreach ($jopsi1a as $j1a) { ?>
                           <?php echo  $j1a->jopsi1a; ?>:
-                          <?php echo  $j1a->count; ?>&nbsp;&nbsp;&nbsp
+                          <?php $a = $j1a->count;
+                                $a = $a * 100 / $d;
+                                echo number_format($a, 2) . '%';
+                          ?>&nbsp;&nbsp;&nbsp
                         <?php } ?>
                       </label>
                       <br>
@@ -190,7 +203,10 @@
                     <br>
                     <label><?php foreach ($jopsi1b as $j1b) { ?>
                         <?php echo  $j1b->jopsi1b; ?>:
-                        <?php echo  $j1b->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j1b->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -212,7 +228,10 @@
                     <br>
                     <label><?php foreach ($jopsi2a as $j2a) { ?>
                         <?php echo  $j2a->jopsi2a; ?>:
-                        <?php echo  $j2a->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j2a->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -222,7 +241,10 @@
                     <br>
                     <label><?php foreach ($jopsi2b as $j2b) { ?>
                         <?php echo  $j2b->jopsi2b; ?>:
-                        <?php echo  $j2b->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j2b->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -243,7 +265,10 @@
                     <br>
                     <label><?php foreach ($jopsi3a as $j3a) { ?>
                         <?php echo  $j3a->jopsi3a; ?>:
-                        <?php echo  $j3a->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j3a->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -253,7 +278,10 @@
                     <br>
                     <label><?php foreach ($jopsi3b as $j3b) { ?>
                         <?php echo  $j3b->jopsi3b; ?>:
-                        <?php echo  $j3b->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j3b->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -274,7 +302,10 @@
                     <br>
                     <label><?php foreach ($jopsi4a as $j4a) { ?>
                         <?php echo  $j4a->jopsi4a; ?>:
-                        <?php echo  $j4a->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j4a->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -284,7 +315,10 @@
                     <br>
                     <label><?php foreach ($jopsi4b as $j4b) { ?>
                         <?php echo  $j4b->jopsi4b; ?>:
-                        <?php echo  $j4b->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j4b->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -305,7 +339,10 @@
                     <br>
                     <label><?php foreach ($jopsi5a as $j5a) { ?>
                         <?php echo  $j5a->jopsi5a; ?>:
-                        <?php echo  $j5a->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j5a->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -315,7 +352,10 @@
                     <br>
                     <label><?php foreach ($jopsi5b as $j5b) { ?>
                         <?php echo  $j5b->jopsi5b; ?>:
-                        <?php echo  $j5b->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j5b->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -336,7 +376,10 @@
                     <br>
                     <label><?php foreach ($jopsi6a as $j6a) { ?>
                         <?php echo  $j6a->jopsi6a; ?>:
-                        <?php echo  $j6a->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j6a->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -346,7 +389,10 @@
                     <br>
                     <label><?php foreach ($jopsi6b as $j6b) { ?>
                         <?php echo  $j6b->jopsi6b; ?>:
-                        <?php echo  $j6b->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j6b->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -367,7 +413,10 @@
                     <br>
                     <label><?php foreach ($jopsi7a as $j7a) { ?>
                         <?php echo  $j7a->jopsi7a; ?>:
-                        <?php echo  $j7a->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j7a->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -377,7 +426,10 @@
                     <br>
                     <label><?php foreach ($jopsi7b as $j7b) { ?>
                         <?php echo  $j7b->jopsi7b; ?>:
-                        <?php echo  $j7b->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j7b->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -392,8 +444,17 @@
                   <div class="card-header">
                     <h3 class="card-title">8. Bagaimana pendapat Saudara tentang Prosedur pelayanan alur pelayanan jelas dan sederhana di staklim semarang</h3>
                   </div>
-                  <div class="card-body">
+                  <div class="card-body text-center">
                     <canvas id="jopsi8" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                    <br>
+                    <label><?php foreach ($jopsi8 as $j8) { ?>
+                        <?php echo  $j8->jopsi8; ?>:
+                        <?php $a = $j8->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
+                      <?php } ?>
+                    </label>
                   </div>
                 </div>
               </div>
@@ -402,8 +463,17 @@
                   <div class="card-header">
                     <h3 class="card-title">9. Bagaimana pendapat Saudara tentang sistem dan prosedur pelayanan masih berpeluang menimbulkan KKN di Staklim Semarang</h3>
                   </div>
-                  <div class="card-body">
+                  <div class="card-body text-center">
                     <canvas id="jopsi9" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                    <br>
+                    <label><?php foreach ($jopsi9 as $j9) { ?>
+                        <?php echo  $j9->jopsi9; ?>:
+                        <?php $a = $j9->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
+                      <?php } ?>
+                    </label>
                   </div>
                 </div>
               </div>
@@ -422,7 +492,10 @@
                     <br>
                     <label><?php foreach ($jopsi10a as $j10a) { ?>
                         <?php echo  $j10a->jopsi10a; ?>:
-                        <?php echo  $j10a->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j10a->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -432,7 +505,10 @@
                     <br>
                     <label><?php foreach ($jopsi10b as $j10b) { ?>
                         <?php echo  $j10b->jopsi10b; ?>:
-                        <?php echo  $j10b->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j10b->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -453,7 +529,10 @@
                     <br>
                     <label><?php foreach ($jopsi11a as $j11a) { ?>
                         <?php echo  $j11a->jopsi11a; ?>:
-                        <?php echo  $j11a->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j11a->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -463,7 +542,10 @@
                     <br>
                     <label><?php foreach ($jopsi11b as $j11b) { ?>
                         <?php echo  $j11b->jopsi11b; ?>:
-                        <?php echo  $j11b->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j11b->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -484,7 +566,10 @@
                     <br>
                     <label><?php foreach ($jopsi12a as $j12a) { ?>
                         <?php echo  $j12a->jopsi12a; ?>:
-                        <?php echo  $j12a->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j12a->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -494,7 +579,10 @@
                     <br>
                     <label><?php foreach ($jopsi12b as $j12b) { ?>
                         <?php echo  $j12b->jopsi12b; ?>:
-                        <?php echo  $j12b->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j12b->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -515,7 +603,10 @@
                     <br>
                     <label><?php foreach ($jopsi13a as $j13a) { ?>
                         <?php echo  $j13a->jopsi13a; ?>:
-                        <?php echo  $j13a->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j13a->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -525,7 +616,10 @@
                     <br>
                     <label><?php foreach ($jopsi13b as $j13b) { ?>
                         <?php echo  $j13b->jopsi13b; ?>:
-                        <?php echo  $j13b->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j13b->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -546,7 +640,10 @@
                     <br>
                     <label><?php foreach ($jopsi14a as $j14a) { ?>
                         <?php echo  $j14a->jopsi14a; ?>:
-                        <?php echo  $j14a->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j14a->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -556,7 +653,10 @@
                     <br>
                     <label><?php foreach ($jopsi14b as $j14b) { ?>
                         <?php echo  $j14b->jopsi14b; ?>:
-                        <?php echo  $j14b->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j14b->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -577,7 +677,10 @@
                     <br>
                     <label><?php foreach ($jopsi15a as $j15a) { ?>
                         <?php echo  $j15a->jopsi15a; ?>:
-                        <?php echo  $j15a->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j15a->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -587,7 +690,10 @@
                     <br>
                     <label><?php foreach ($jopsi15b as $j15b) { ?>
                         <?php echo  $j15b->jopsi15b; ?>:
-                        <?php echo  $j15b->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j15b->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -608,7 +714,10 @@
                     <br>
                     <label><?php foreach ($jopsi16a as $j16a) { ?>
                         <?php echo  $j16a->jopsi16a; ?>:
-                        <?php echo  $j16a->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j16a->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -618,7 +727,10 @@
                     <br>
                     <label><?php foreach ($jopsi16b as $j16b) { ?>
                         <?php echo  $j16b->jopsi16b; ?>:
-                        <?php echo  $j16b->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j16b->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -639,7 +751,10 @@
                     <br>
                     <label><?php foreach ($jopsi17a as $j17a) { ?>
                         <?php echo  $j17a->jopsi17a; ?>:
-                        <?php echo  $j17a->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j17a->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -649,7 +764,10 @@
                     <br>
                     <label><?php foreach ($jopsi17b as $j17b) { ?>
                         <?php echo  $j17b->jopsi17b; ?>:
-                        <?php echo  $j17b->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j17b->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -670,7 +788,10 @@
                     <br>
                     <label><?php foreach ($jopsi18a as $j18a) { ?>
                         <?php echo  $j18a->jopsi18a; ?>:
-                        <?php echo  $j18a->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j18a->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -680,7 +801,10 @@
                     <br>
                     <label><?php foreach ($jopsi18b as $j18b) { ?>
                         <?php echo  $j18b->jopsi18b; ?>:
-                        <?php echo  $j18b->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j18b->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -701,7 +825,10 @@
                     <br>
                     <label><?php foreach ($jopsi19a as $j19a) { ?>
                         <?php echo  $j19a->jopsi19a; ?>:
-                        <?php echo  $j19a->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j19a->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -711,7 +838,10 @@
                     <br>
                     <label><?php foreach ($jopsi19b as $j19b) { ?>
                         <?php echo  $j19b->jopsi19b; ?>:
-                        <?php echo  $j19b->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j19b->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -732,7 +862,10 @@
                     <br>
                     <label><?php foreach ($jopsi20a as $j20a) { ?>
                         <?php echo  $j20a->jopsi20a; ?>:
-                        <?php echo  $j20a->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j20a->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
@@ -742,7 +875,10 @@
                     <br>
                     <label><?php foreach ($jopsi20b as $j20b) { ?>
                         <?php echo  $j20b->jopsi20b; ?>:
-                        <?php echo  $j20b->count; ?>&nbsp;&nbsp;&nbsp
+                        <?php $a = $j20b->count;
+                              $a = $a * 100 / $d;
+                              echo number_format($a, 2) . '%';
+                        ?>&nbsp;&nbsp;&nbsp
                       <?php } ?>
                     </label>
                   </div>
