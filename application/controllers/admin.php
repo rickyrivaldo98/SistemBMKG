@@ -53,6 +53,7 @@ class Admin extends MY_Controller
         foreach ($umur as $u) {
             $data['labelumur'][] = $u->umur;
             $data['dataumur'][] = $u->count;
+            
         }
 
 
@@ -104,16 +105,16 @@ class Admin extends MY_Controller
             $data['labeljopsi1a'][] = $j1a->jopsi1a;
             $data['datajopsi1a'][] = $j1a->count;
             if ($j1a->jopsi1a == 'Sangat Setuju') {
-                $test1[] = $j1a->count * 4;
+                $test1[] = $j1a->count * 4 * 0.25 ;
             }
             if ($j1a->jopsi1a == 'Setuju') {
-                $test1[] = $j1a->count * 3;
+                $test1[] = $j1a->count * 3* 0.25;
             }
             if ($j1a->jopsi1a == 'Kurang Setuju') {
-                $test1[] = $j1a->count * 2;
+                $test1[] = $j1a->count * 2* 0.25;
             }
             if ($j1a->jopsi1a == 'Tidak Setuju') {
-                $test1[] = $j1a->count * 1;
+                $test1[] = $j1a->count * 1* 0.25;
             }
         }
         $testsum = array_sum($test1);
@@ -138,6 +139,7 @@ class Admin extends MY_Controller
             }
         }
         $testsum1b = array_sum($test1b);
+        $testsum1b = $testsum1b*0.25;
 
         $data['jopsi2a'] = $this->db->query("select Jopsi2a as jopsi2a,COUNT(jopsi2a) as count from jawaban group by jopsi2a")->result();
         $jopsi2a = $data['jopsi2a'];

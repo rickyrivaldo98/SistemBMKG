@@ -135,7 +135,8 @@ class Page extends CI_Controller
 
     public function index(){
         $data['data_pemohon'] = $this->db->query('select idpemohon as id,COUNT(idpemohon) as count from pemohon')->result();
-      
+        $data['data_pemohon1'] = $this->db->query('select idpemohon as id,COUNT(idpemohon) as count from pemohon1')->result();
+        
 
         $this->load->view('landingpage/index', $data);
     }

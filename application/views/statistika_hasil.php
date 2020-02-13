@@ -183,7 +183,9 @@
                   <div class="row">
                     <div class="col-md-6" style="margin: 0px">
                       <p class="count" style="font-size:120px; text-align:right; "><?php foreach ($data_responden as $d) { ?>
-                          <?php echo  $d->count; ?>
+                          <?php echo  $d->count;
+                          $d = $d->count;
+                          ?>
                         <?php } ?>
                         <p>
                     </div>
@@ -221,8 +223,13 @@
                   <canvas id="umur_responden" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                   <br>
                   <label><?php foreach ($umur as $u) { ?>
-                      Umur <?php echo  $u->umur; ?>:
-                      <?php echo  $u->count; ?>&nbsp;&nbsp;&nbsp
+                      Umur <?php echo  $u->umur; ?> :
+                      <?php  $a=$u->count; 
+                       $a = $a *100/$d;
+                       echo number_format($a, 2).'%';
+                      ?>&nbsp;&nbsp;&nbsp
+
+                      <?php ; ?>
                     <?php } ?>
                   </label>
                 </div>

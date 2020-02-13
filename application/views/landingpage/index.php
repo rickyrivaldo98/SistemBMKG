@@ -20,19 +20,19 @@
     <!-- Navbar  -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-        <a class="navbar-brand" href="<?php echo base_url()?>">
-            <img src="<?php echo base_url() . 'assets/img/logo.png' ?>" alt="logo" class="brand-image elevation-3" style="opacity: .8; width:30px; ">
-        <span>BMKG</span> 
-    
-    
-    
-    </a>
+            <a class="navbar-brand" href="<?php echo base_url() ?>">
+                <img src="<?php echo base_url() . 'assets/img/logo.png' ?>" alt="logo" class="brand-image elevation-3" style="opacity: .8; width:30px; ">
+                <span>BMKG</span>
+
+
+
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link active" href="#">hehehe<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link active" href="#"><span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="#">Tentang</a>
                     <a class="nav-item nav-link" href="<?php echo base_url() . 'page/bantuan' ?>">Bantuan</a>
                 </div>
@@ -56,9 +56,9 @@
     <!-- video -->
 
     <div class="container">
-    <div class="row justify-content-center">
-        <img class="logo" src="<?php echo base_url() . 'assets/img/logo.png' ?>" alt="">
-    </div>  
+        <div class="row justify-content-center">
+            <img class="logo" src="<?php echo base_url() . 'assets/img/logo.png' ?>" alt="">
+        </div>
     </div>
 
     <div class="container">
@@ -167,16 +167,18 @@
 
                     <div id="kotak" class="col-lg-4 col-md-12">
                         <h1><?php foreach ($data_pemohon as $d) { ?>
-                          <?php echo  $d->count; ?>
-                        <?php } ?></h1>
+                                <?php echo $b= $d->count; ?>
+                            <?php } ?></h1>
                         <p>Informasi berbayar</p>
                     </div>
                     <div id="kotak" class="col-lg-4 col-md-12">
-                        <h1>1</h1>
+                        <h1><?php foreach ($data_pemohon1 as $d1) { ?>
+                                <?php echo $A= $d1->count; ?>
+                            <?php } ?></h1>
                         <p>Informasi 0 Rupiah</p>
                     </div>
                     <div id="kotak" class="col-lg-4 col-md-12">
-                        <h1>1</h1>
+                        <h1><?php echo $A+$b; ?> </h1>
                         <p>Total</p>
                     </div>
                 </div>

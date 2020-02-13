@@ -119,7 +119,7 @@ class modellayanan extends CI_Model
     {
         $config['upload_path']          = './upload/data/';
         $config['allowed_types']        = 'pdf';
-        $config['file_name']            = $this->idpemohon;
+        $config['file_name']            =  $this->idpemohon;
         $config['overwrite']            = true;
         $config['max_size']             = 1024; // 1MB
 
