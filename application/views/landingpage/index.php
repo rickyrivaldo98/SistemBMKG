@@ -110,7 +110,7 @@
 
 
                 <div id="kotak-info" class="info-panel text-center">
-                    <a class="icon-link" href="<?php echo base_url() . 'admin/skm' ?>">
+                    <a class="icon-link" href="<?php echo base_url() . 'page/skm' ?>">
 
                         <img id="survey" class="icon" src="https://img.icons8.com/ios/60/000000/survey.png">
 
@@ -121,7 +121,7 @@
             </div>
             <div class="col-lg-4 col-md-4">
                 <div id="kotak-info" class="info-panel text-center">
-                    <a class="icon-link" href="<?php echo base_url() . 'admin/kritik' ?>">
+                    <a class="icon-link" href="<?php echo base_url() . 'page/kritik' ?>">
 
                         <img id="timbangan" class="icon" src="https://img.icons8.com/dotty/60/000000/scales.png">
 
