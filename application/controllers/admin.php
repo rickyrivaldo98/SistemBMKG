@@ -1213,7 +1213,7 @@ class Admin extends MY_Controller
         );
         $this->modelresponden->insert_data($jawaban, 'jawaban');
 
-        redirect(base_url() . 'admin/skm');
+        redirect(base_url() . 'page/skm');
         // $this->load->view('skm');
     }
 

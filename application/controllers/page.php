@@ -7,6 +7,7 @@ class Page extends CI_Controller
         parent::__construct();
         $this->load->model('modellayanan');
         $this->load->helper('url');
+        $this->load->model('modelupload');
         $this->load->library('form_validation');
     }
     public function form(){
@@ -44,6 +45,34 @@ class Page extends CI_Controller
         redirect(base_url(). 'page/form');
 
 
+    }
+
+    public function kritik()
+    {
+        $data = array();
+        // $data['kritik'] = $this->modelupload->getRows();
+        if ($this->input->post('submit')) { // Jika user menekan tombol Submit (Simpan) pada form
+            // lakukan upload file dengan memanggil function upload yang ada di GambarModel.php
+            $upload = $this->modelupload->upload();
+
+            if ($upload['result'] == "success") { // Jika proses upload sukses
+                // Panggil function save yang ada di GambarModel.php untuk menyimpan data ke database
+                $this->modelupload->save($upload);
+
+                redirect(base_url() . 'page/kritik'); // Redirect kembali ke halaman awal / halaman view data
+            } else { // Jika proses upload gagal
+                $data['message'] = $upload['error']; // Ambil pesan error uploadnya untuk dikirim ke file form dan ditampilkan
+            }
+        }
+        $this->load->view('kritik', $data);
+    }
+
+    public function skm()
+    {
+        $data['jawaban'] = $this->db->query('select * from jawaban')->result();
+        $data['data_responden'] = $this->db->query('select * from data_responden')->result();
+
+        $this->load->view('skm');
     }
 
     public function upload_data()
