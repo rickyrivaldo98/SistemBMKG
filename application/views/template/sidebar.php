@@ -41,7 +41,7 @@
                     <img src="<?php echo base_url() . 'assets/img/avatar5.png' ?>" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">Admin</a>
+                    <a href="<?php echo base_url() . 'admin/profile/' . '1'?>" class="d-block">Admin</a>
                 </div>
             </div>
 
@@ -97,17 +97,17 @@
                     <li class="nav-header">SISTEM PEMETAAN CURAH HUJAN</li>
                     <li class="nav-item">
                         <a href="<?php echo base_url() . 'admin/list_data' ?>" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
+                            <i class="nav-icon fas fa-map"></i>
                             <p>
-                                List Data
+                                Data Curah Hujan
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="<?php echo base_url() . 'admin/upload_data' ?>" class="nav-link">
-                            <i class="nav-icon fas fa-edit"></i>
+                            <i class="nav-icon fas fa-file-import"></i>
                             <p>
-                                Upload Data
+                                Upload Data Curah Hujan
                             </p>
                         </a>
                     </li>
