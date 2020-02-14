@@ -9,11 +9,9 @@ class Page extends CI_Controller
         $this->load->helper('url');
         $this->load->model('modelupload');
         $this->load->library('form_validation');
-    }
-    public function form(){
 
-        $this->load->view('formberbayar');
     }
+   
     public function form1(){
         $this->load->view('formzero');
     }
@@ -22,27 +20,42 @@ class Page extends CI_Controller
     }
 
     //data berbayar
-    public function tambah_pemohon(){
-        $id = $this->input->post('idpemohon');
-        $nama = $this->input->post('nama');
-        $alamat = $this->input->post('alamat');
-        $nohp = $this->input->post('nohp');
-        $instansi = $this->input->post('instansi');
-        $email = $this->input->post('email');
-        $informasi = $this->input->post('informasi');
+    public function form(){
+
+        $this->form_validation->set_rules('nama', 'Nama', 'required|regex_match[/^[a-zA-Z ]+$/]|max_length[30]|trim');
+
+        $id = html_escape($this->input->post('idpemohon'));
+        $nama = html_escape($this->input->post('nama'));
+        $alamat = html_escape($this->input->post('alamat'));
+        $nohp = html_escape($this->input->post('nohp'));
+        $instansi = html_escape($this->input->post('instansi'));
+        $email = html_escape($this->input->post('email'));
+        $informasi = html_escape($this->input->post('informasi'));
+
+        $this->form_validation->set_message('required', '%s masih kosong, silahkan isi');
+        $this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');
+      
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('formberbayar');
 
 
-        $data = array(
-            'idpemohon'=> $id,
-            'nama' => $nama,
-            'alamat'=> $alamat,
-            'nohp'=> $nohp,
-            'instansi'=> $instansi,
-            'email'=> $email,
-            'informasi' => $informasi
-        );
+		} else{
+            $data = array(
+                'idpemohon'=> $id,
+                'nama' => $nama,
+                'alamat'=> $alamat,
+                'nohp'=> $nohp,
+                'instansi'=> $instansi,
+                'email'=> $email,
+                'informasi' => $informasi
+            );
+    
         $this->modellayanan->insert_data($data, 'pemohon');
-        redirect(base_url(). 'page/form');
+        redirect(base_url());
+
+        }
+
+
 
 
     }

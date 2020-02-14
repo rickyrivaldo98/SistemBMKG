@@ -5,3 +5,15 @@
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.form-group.has-error label {
+    color: #dd4b39;
+}
+
+.form-group.has-error {
+    color: #dd4b39;
+}
+
+.form-group.has-error .help-block {
+    color: #dd4b39;
+}

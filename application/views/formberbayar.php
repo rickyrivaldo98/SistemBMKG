@@ -34,7 +34,7 @@
                 </div>
             </div>
 
-            <form action="<?php echo base_url() . 'page/tambah_pemohon'; ?>" method="POST">
+            <form action="<?php echo base_url() . 'page/form'; ?>" method="POST">
 
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="card-body">
@@ -42,9 +42,10 @@
                             <label for="idpemohon">ID</label>
                             <input type="text"" name=" idpemohon" id="id" class="form-control" placeholder="ID Anda">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group <?=form_error('nama') ? 'has-error' : null ?>">
                             <label for="nama">Nama Pemohon</label>
-                            <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Lengkap Anda..." required>
+                            <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Lengkap Anda...">
+                            <?=form_error('nama')?>
                         </div>
                         <div class="form-group">
                             <label for="alamat">Alamat Pemohon</label>
@@ -67,7 +68,7 @@
                             <label for="informasi">Informasi yang dibutuhkan <p style="color: grey; font-size: 14px;">*Contoh : informasi curah hujan di kota semarang daerah simpang lima tanggal 20 januari 2020</p> </label>
 
 
-                            <textarea name="informasi" type="text" class="form-control" id="informasi" placeholder="Informasi yang dibutuhkan" required></textarea>
+                            <textarea name="informasi" type="text" class="form-control" id="informasi" placeholder="Informasi yang dibutuhkan"></textarea>
 
                         </div>
                         <div class="form-group">

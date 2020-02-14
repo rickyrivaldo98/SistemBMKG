@@ -9,6 +9,50 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="css/style.css"> -->
     <link rel="stylesheet" href="<?php echo base_url() . 'assets/css/style.css' ?>">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .ignielToTop {
+            display: none;
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1;
+            cursor: pointer;
+            border-radius: 100px;
+            transition: all .5s;
+            background: #008c5f url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z' fill='%23fff'/%3E%3C/svg%3E") no-repeat center center;
+        }
+
+        .ignielToTop:hover {
+            background: #1d2129 url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z' fill='%23fff'/%3E%3C/svg%3E") no-repeat center center;
+        }
+    </style>
+
+    <script>
+        // window.addEventListener('scroll',  () =>{
+        //     const scrollable = document.documentElement.scrollHeight = window.innerHeight;
+        //     const scrolled = window.scrollY;
+
+        //     if(Math.ceil(scrolled) === scrollable){
+
+
+        //     }
+
+        // });
+        $(document).scroll(function() {
+  var y = $(this).scrollTop();
+  if (y > 30) {
+    $('.ignielToTop').fadeIn();
+  } else {
+    $('.ignielToTop').fadeOut();
+  }
+});
+    </script>
 
 
 
@@ -33,7 +77,7 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
                     <a class="nav-item nav-link active" href="#"><span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="#">Tentang</a>
+                    <a class="nav-item nav-link" href="#video">Tentang</a>
                     <a class="nav-item nav-link" href="<?php echo base_url() . 'page/bantuan' ?>">Bantuan</a>
                 </div>
             </div>
@@ -62,15 +106,6 @@
     </div>
 
     <div class="container">
-        <div class="row justify-content-center">
-            <br><br><br><br><br>
-            <h1 id="text2" class="display-4">Profil Layanan BMKG Jateng</h1>
-            <!-- kotak video -->
-            <div id="video" class="info-panel">
-                <iframe width="612" height="312" src="https://www.youtube.com/embed/BxlxzgFhWdk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-        <!-- akhir video -->
 
         <br><br><br>
         <h1 style="text-align: center">Jenis Layanan</h1>
@@ -167,24 +202,39 @@
 
                     <div id="kotak" class="col-lg-4 col-md-12">
                         <h1><?php foreach ($data_pemohon as $d) { ?>
-                                <?php echo $b= $d->count; ?>
+                                <?php echo $b = $d->count; ?>
                             <?php } ?></h1>
                         <p>Informasi berbayar</p>
                     </div>
                     <div id="kotak" class="col-lg-4 col-md-12">
                         <h1><?php foreach ($data_pemohon1 as $d1) { ?>
-                                <?php echo $A= $d1->count; ?>
+                                <?php echo $A = $d1->count; ?>
                             <?php } ?></h1>
                         <p>Informasi 0 Rupiah</p>
                     </div>
                     <div id="kotak" class="col-lg-4 col-md-12">
-                        <h1><?php echo $A+$b; ?> </h1>
+                        <h1><?php echo $A + $b; ?> </h1>
                         <p>Total</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <br><br><br><br>
+    <!-- awal video -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <br><br><br><br><br>
+            <h1 id="text2" class="display-4">Profil Layanan BMKG Jateng</h1>
+            <!-- kotak video -->
+            <div id="video" class="info-panel">
+                <iframe width="612" height="312" src="https://www.youtube.com/embed/BxlxzgFhWdk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <!-- akhir video -->
+    </div>
+
+
 
     <br><br><br><br>
 
@@ -289,6 +339,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+    <a href="#" class="ignielToTop"></a>
 </body>
 
 
