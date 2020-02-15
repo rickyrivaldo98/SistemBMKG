@@ -134,7 +134,7 @@
                   <div class="icon">
                     <i class="ion ion-stats-bars"></i>
                   </div>
-                  <a href="<?php echo base_url() . 'admin/list_permintaan_data' ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a href="<?php echo base_url() . 'admin/list_permintaan_data' ?>" class="small-box-footer" style="color: white !important;">More info <i style="color: white;" class="fas fa-arrow-circle-right"></i></a>
                 </div>
                 <div class="small-box bg-primary">
                   <div class="inner">
