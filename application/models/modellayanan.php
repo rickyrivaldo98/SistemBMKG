@@ -99,14 +99,14 @@ class modellayanan extends CI_Model
     public function save()
     {
         $post = $this->input->post();
-        $this->idpemohon = $post["idpemohon"];
-        $this->nama = $post["nama"];
-        $this->alamat = $post["alamat"];
-        $this->email = $post["email"];
-        $this->instansi = $post["instansi"];
+        $this->idpemohon = html_escape($post["idpemohon"]);
+        $this->nama = html_escape($post["nama"]);
+        $this->alamat = html_escape($post["alamat"]);
+        $this->email = html_escape($post["email"]);
+        $this->instansi = html_escape($post["instansi"]);
 
-        $this->nohp = $post["nohp"];
-        $this->informasi = $post["informasi"];
+        $this->nohp = html_escape($post["nohp"]);
+        $this->informasi = html_escape($post["informasi"]);
 
 
         $this->suratpengantar = $this->_uploadPDF();
@@ -131,7 +131,7 @@ class modellayanan extends CI_Model
         if (!$this->upload->do_upload('PDF')) {
             $error = array('error' => $this->upload->display_errors());
             $this->session->set_flashdata('error', $error['error']);
-            redirect('page/upload_data1', 'refresh');
+            redirect('page/upload_data', 'refresh');
         } else {
             return $this->upload->data("file_name");
         }
