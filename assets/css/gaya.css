@@ -10,6 +10,10 @@
     color: #dd4b39;
 }
 
+.form-group.has-error input {
+    border-color: #dd4b39;
+}
+
 .form-group.has-error {
     color: #dd4b39;
 }

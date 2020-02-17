@@ -40,8 +40,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link active" href="#">hehehe<span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Tentang</a>
+                <!-- <a class="nav-item nav-link active" href="#">hehehe<span class="sr-only">(current)</span></a> -->
+                <a class="nav-item nav-link" href="<?php echo base_url() . '#video' ?>">Tentang</a>
                 <a class="nav-item nav-link"href="<?php echo base_url() . 'page/bantuan' ?>">Bantuan</a>
             </div>
         </div>

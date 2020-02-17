@@ -115,7 +115,7 @@
             <div class="col-lg-4 col-md-4">
                 <div id="kotak-info" class="info-panel text-center">
                     <a class="icon-link" href="<?php echo base_url() . 'page/form' ?>">
-                        <img id="berbayar" href="www.google.com" class="icon" src="https://img.icons8.com/wired/60/000000/pay-wall.png">
+                        <img alt="berbayar" id="berbayar" href="www.google.com" class="icon" src="https://img.icons8.com/wired/60/000000/pay-wall.png">
                         <h4>Berbayar</h4>
                         <p>Lorem, ipsum dolor.</p>
                     </a>
@@ -124,7 +124,7 @@
             <div class="col-lg-4 col-md-4">
                 <div id="kotak-info" class="info-panel text-center">
                     <a class="icon-link" href="<?php echo base_url() . 'page/syarat' ?>">
-                        <img id="0-rupiah" class="icon" src="https://img.icons8.com/wired/60/000000/gift.png">
+                        <img alt="0 rupiah" id="0-rupiah" class="icon" src="https://img.icons8.com/wired/60/000000/gift.png">
                         <h4>0 Rupiah</h4>
                         <p>Lorem, ipsum dolor.</p>
                     </a>
@@ -133,7 +133,7 @@
             <div class="col-lg-4 col-md-4">
                 <div id="kotak-info" class="info-panel text-center">
                     <a class="icon-link" href="<?php echo base_url() . 'page/redirect' ?>" target="blank">
-                        <img id="free-icon" class="icon" src="https://img.icons8.com/carbon-copy/60/000000/service.png">
+                        <img alt="free" id="free-icon" class="icon" src="https://img.icons8.com/carbon-copy/60/000000/service.png">
                         <div class="tulisan">
                             <h4>Informasi Gratis</h4>
                             <p>Lorem, ipsum dolor.</p>
@@ -147,7 +147,7 @@
                 <div id="kotak-info" class="info-panel text-center">
                     <a class="icon-link" href="<?php echo base_url() . 'page/skm' ?>">
 
-                        <img id="survey" class="icon" src="https://img.icons8.com/ios/60/000000/survey.png">
+                        <img alt="survei IKM" id="survey" class="icon" src="https://img.icons8.com/ios/60/000000/survey.png">
 
                         <h4>Survei IKM</h4>
                         <p>Lorem, ipsum dolor.</p>
@@ -158,7 +158,7 @@
                 <div id="kotak-info" class="info-panel text-center">
                     <a class="icon-link" href="<?php echo base_url() . 'page/kritik' ?>">
 
-                        <img id="timbangan" class="icon" src="https://img.icons8.com/dotty/60/000000/scales.png">
+                        <img alt="pengaduan" id="timbangan" class="icon" src="https://img.icons8.com/dotty/60/000000/scales.png">
 
                         <h4>Layanan Pengaduan</h4>
                         <p>Lorem, ipsum dolor.</p>
@@ -169,7 +169,7 @@
                 <div id="kotak-info" class="info-panel text-center">
                     <a class="icon-link" href="<?php echo base_url() . 'page/tracking' ?>">
 
-                        <img id="track-icon" class="icon" src="https://img.icons8.com/dotty/60/000000/order-shipped.png">
+                        <img alt="Tracking" id="track-icon" class="icon" src="https://img.icons8.com/dotty/60/000000/order-shipped.png">
 
                         <h4>Tracking</h4>
                         <p>Lorem, ipsum dolor.</p>
@@ -182,7 +182,7 @@
                 <div id="kotak-info" class="info-panel text-center">
                     <a class="icon-link" href="">
 
-                        <img id="informasi" class="icon" src="https://img.icons8.com/dotty/60/000000/info.png">
+                        <img alt="informasi dan layanan" id="informasi" class="icon" src="https://img.icons8.com/dotty/60/000000/info.png">
 
                         <h4>Informasi dan Layanan </h4>
                         <p>Lorem, ipsum dolor.</p>
@@ -228,7 +228,7 @@
             <h1 id="text2" class="display-4">Profil Layanan BMKG Jateng</h1>
             <!-- kotak video -->
             <div id="video" class="info-panel">
-                <iframe width="612" height="312" src="https://www.youtube.com/embed/BxlxzgFhWdk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="612" height="312" src="https://www.youtube.com/embed/Dkt0asxxfQg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
         <!-- akhir video -->
