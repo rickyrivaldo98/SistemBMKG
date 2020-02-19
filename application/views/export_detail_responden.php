@@ -34,10 +34,29 @@
     <p align="center">
         LAPORAN HASIL SURVEY KEPUASAN MASYARAKAT
     </p>
-    <p align="center">Responden ID
-        <?php foreach ($data_responden as $d) { ?>
-            <?php echo  $d->ID; ?>
-        <?php } ?></p>
+    <table style="width: 100%;" class="table-bordered">
+        <tr align="center" style="font-weight:bold;">
+            <td>No</td>
+            <td>Rincian</td>
+            <td>Pencacah</td>
+        </tr>
+        <tr>
+            <td align="center">1</td>
+            <td>Nama</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td align="center">2</td>
+            <td>Tanggal pencacahan/pengawasan</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td align="center">3</td>
+            <td>Tanda Tangan</td>
+            <td></td>
+        </tr>
+    </table>
+    <br>
 
     <!-- <div style="font-size: 10px;">
         <table class="table table-bordered">

@@ -25,63 +25,65 @@
 
 
 
-    <br>
-    <div class="container">
-        <div class="card">
-            <div style="background-color:#0099ff; color:white;" class="card-header">
-                <div class="section-headline text-center">
-                    <h2>Formulir Permohonan Data </h2>
-                </div>
-            </div>
-
-            <form action="<?php echo base_url() . 'page/form'; ?>" method="POST">
-
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label for="idpemohon">ID</label>
-                            <input type="text"" name=" idpemohon" id="id" class="form-control" placeholder="ID Anda">
-                        </div>
-                        <div class="form-group <?=form_error('nama') ? 'has-error' : null ?>">
-                            <label for="nama">Nama Pemohon</label>
-                            <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Lengkap Anda...">
-                            <?=form_error('nama')?>
-                        </div>
-                        <div class="form-group">
-                            <label for="alamat">Alamat Pemohon</label>
-                            <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Alamat Lengkap Anda...">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Pemohon</label>
-                            <input type="text" name="email" id="email" class="form-control" placeholder="Masukkan email anda">
-                        </div>
-                        <div class="form-group">
-                            <label for="instansi">Asal Instansi Pemohon</label>
-                            <input type="text" name="instansi" id="instansi" class="form-control" placeholder="Asal instansi anda">
-                        </div>
-                        <div class="form-group">
-                            <label for="nohp">Nomor HP Pemohon</label>
-                            <input type="text" name="nohp" id="hp" class="form-control" placeholder="Masukkan no. HP anda">
-                        </div>
-                        <div class="form-group">
-
-                            <label for="informasi">Informasi yang dibutuhkan <p style="color: grey; font-size: 14px;">*Contoh : informasi curah hujan di kota semarang daerah simpang lima tanggal 20 januari 2020</p> </label>
-
-
-                            <textarea name="informasi" type="text" class="form-control" id="informasi" placeholder="Informasi yang dibutuhkan"></textarea>
-
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-primary" name="submit" id="btn" value="Submit">Submit</button>
-
-                        </div>
+        <br>
+        <div class="container">
+            <div class="card">
+                <div style="background-color:#0099ff; color:white;" class="card-header">
+                    <div class="section-headline text-center">
+                        <h2>Formulir Permohonan Data </h2>
                     </div>
                 </div>
-            </form>
 
+                <form action="<?php echo base_url() . 'page/form'; ?>" method="POST">
+
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="idpemohon">ID</label>
+                                <input type="text"" name=" idpemohon" id="id" class="form-control" placeholder="ID Anda">
+                            </div>
+                            <div class="form-group <?= form_error('nama') ? 'has-error' : null ?>">
+                                <label for="nama">Nama Pemohon</label>
+                                <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Lengkap Anda...">
+                                <?= form_error('nama') ?>
+                            </div>
+                            <div class="form-group <?= form_error('alamat') ? 'has-error' : null ?>">
+                                <label for="alamat">Alamat Pemohon</label>
+                                <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Alamat Lengkap Anda...">
+                                <?= form_error('alamat') ?>
+                            </div>
+                            <div class="form-group <?= form_error('nohp') ? 'has-error' : null ?>">
+                                <label for="email">Email Pemohon</label>
+                                <input type="text" name="email" id="email" class="form-control" placeholder="Masukkan email anda">
+                                <?= form_error('email') ?>
+
+                            </div>
+                            <div class="form-group <?= form_error('instansi') ? 'has-error' : null ?>">
+                                <label for="instansi">Asal Instansi Pemohon</label>
+                                <input type="text" name="instansi" id="instansi" class="form-control" placeholder="Asal instansi anda">
+                                <?= form_error('instansi') ?>
+                            </div>
+                            <div class="form-group  <?= form_error('nohp') ? 'has-error' : null ?>">
+                                <label for="nohp ">Nomor HP Pemohon <p style="color: grey; font-size: 14px;">*Diutamakan nomor yang sudah terhubung dengan WhatsApp</p></label>
+                                <input type="text" name="nohp" id="hp" class="form-control" placeholder="Masukkan no. HP anda">
+                                <?= form_error('nohp') ?>
+                            </div>
+                            <div class="form-group <?= form_error('informasi') ? 'has-error' : null ?>">
+                                <label for="informasi">Informasi yang dibutuhkan <p style="color: grey; font-size: 14px;">*Contoh : informasi curah hujan di kota semarang daerah simpang lima tanggal 20 januari 2020</p> </label>
+                                <textarea name="informasi" type="text" class="form-control" id="informasi" placeholder="Informasi yang dibutuhkan"></textarea>
+                                <?= form_error('informasi') ?>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary" name="submit" id="btn" value="Submit">Submit</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
         </div>
-    </div>
-    <br><br><br>
+        <br><br><br>
 
     </div>
 

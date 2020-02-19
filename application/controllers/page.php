@@ -1,28 +1,36 @@
-<?php 
+<?php
 defined('BASEPATH') or exit('No direct script access allowes');
 
 class Page extends CI_Controller
 {
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct();
         $this->load->model('modellayanan');
         $this->load->helper('url');
         $this->load->model('modelupload');
         $this->load->library('form_validation');
-
     }
-   
-    public function form1(){
+
+    public function form1()
+    {
         $this->load->view('formzero');
     }
-    public function form2(){
+    public function form2()
+    {
         $this->load->view('formzero1');
     }
 
     //data berbayar
-    public function form(){
+    public function form()
+    {
 
-        $this->form_validation->set_rules('nama', 'Nama', 'required|regex_match[/^[a-zA-Z ]+$/]|max_length[30]|trim');
+        $this->form_validation->set_rules('nama', 'Nama', 'required|regex_match[/^[a-zA-Z ]+$/]|min_length[4]|max_length[30]|trim');
+        $this->form_validation->set_rules('nohp', 'Nomor HP', 'required|numeric|min_length[8]|trim');
+        $this->form_validation->set_rules('alamat', 'Alamat', 'required|min_length[8]|trim');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email|trim');
+        $this->form_validation->set_rules('instansi', 'Instansi', 'required|trim');
+        $this->form_validation->set_rules('informasi', 'Informasi', 'required|min_length[8]|trim');
 
         $id = html_escape($this->input->post('idpemohon'));
         $nama = html_escape($this->input->post('nama'));
@@ -33,31 +41,25 @@ class Page extends CI_Controller
         $informasi = html_escape($this->input->post('informasi'));
 
         $this->form_validation->set_message('required', '%s masih kosong, silahkan isi');
+
         $this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');
-      
+
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('formberbayar');
-
-
-		} else{
+        } else {
             $data = array(
-                'idpemohon'=> $id,
+                'idpemohon' => $id,
                 'nama' => $nama,
-                'alamat'=> $alamat,
-                'nohp'=> $nohp,
-                'instansi'=> $instansi,
-                'email'=> $email,
+                'alamat' => $alamat,
+                'nohp' => $nohp,
+                'instansi' => $instansi,
+                'email' => $email,
                 'informasi' => $informasi
             );
-    
-        $this->modellayanan->insert_data($data, 'pemohon');
-        redirect(base_url());
 
+            $this->modellayanan->insert_data($data, 'pemohon');
+            redirect(base_url());
         }
-
-
-
-
     }
 
     public function kritik()
@@ -99,8 +101,7 @@ class Page extends CI_Controller
             // $this->session->set_flashdata('success', 'Berhasil disimpan');
         }
         $this->load->view("formzero");
-        redirect(base_url(). 'page/form1');
-
+        redirect(base_url() . 'page/form1');
     }
     public function upload_data1()
     {
@@ -113,8 +114,7 @@ class Page extends CI_Controller
             // $this->session->set_flashdata('success', 'Berhasil disimpan');
         }
         $this->load->view("formzero1");
-        redirect(base_url(). 'page/form2');
-
+        redirect(base_url() . 'page/form2');
     }
 
 
@@ -150,50 +150,47 @@ class Page extends CI_Controller
 
     // }
 
-    public function syarat(){
+    public function syarat()
+    {
         $this->load->view('syarat');
     }
 
-    public function search(){
+    public function search()
+    {
 
 
         $keyword = $this->input->post('keyword');
-        $data['pencarian']=$this->modellayanan->get_pencarian($keyword);
-        $this->load->view('search',$data);
-
-
+        $data['pencarian'] = $this->modellayanan->get_pencarian($keyword);
+        $this->load->view('search', $data);
     }
-    public function tracking(){
-    $this->load->view('template/header');
+    public function tracking()
+    {
+        $this->load->view('template/header');
 
         $this->load->view('tracking');
-    $this->load->view('template/footer');
-
+        $this->load->view('template/footer');
     }
-    public function redirect(){
+    public function redirect()
+    {
         $this->load->view('dataonline');
-
     }
 
-    public function index(){
+    public function index()
+    {
         $data['data_pemohon'] = $this->db->query('select idpemohon as id,COUNT(idpemohon) as count from pemohon')->result();
         $data['data_pemohon1'] = $this->db->query('select idpemohon as id,COUNT(idpemohon) as count from pemohon1')->result();
-        
+
 
         $this->load->view('landingpage/index', $data);
     }
-    public function bantuan(){
+    public function bantuan()
+    {
         $this->load->view('bantuan');
     }
-    public function header(){
+    public function header()
+    {
     }
-    public function footer(){
+    public function footer()
+    {
     }
-
 }
-
-    
-
-
-
-?>
