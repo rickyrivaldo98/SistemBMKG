@@ -16,9 +16,9 @@
         <ul class="navbar-nav ml-auto">
             <!-- Notifications Dropdown Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url() . 'auth/logout' ?>">
-                    <span class="">Keluar</span>
+                <a class="nav-link" href="<?php echo base_url() . 'auth/logout' ?>" style="font-weight: bold">
                     <i class="fas fa-sign-out-alt"></i>
+                    Keluar
                 </a>
             </li>
         </ul>
@@ -41,7 +41,7 @@
                     <img src="<?php echo base_url() . 'assets/img/avatar5.png' ?>" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="<?php echo base_url() . 'admin/profile/' . '1'?>" class="d-block">Admin</a>
+                    <a href="<?php echo base_url() . 'admin/profile/' . '1' ?>" class="d-block">Admin</a>
                 </div>
             </div>
 
@@ -93,7 +93,6 @@
                             </p>
                         </a>
                     </li>
-
                     <li class="nav-header">SISTEM PEMETAAN CURAH HUJAN</li>
                     <li class="nav-item">
                         <a href="<?php echo base_url() . 'admin/list_data' ?>" class="nav-link">
