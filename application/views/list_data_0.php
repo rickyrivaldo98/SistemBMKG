@@ -114,16 +114,28 @@
                             ?></td>
 
                         <td><?php
-                            if ($k->status == null) {
+                            if ($k->status == 'no') {
                               echo  "belum dikonfirmasi";
                             } else {
-                              echo $k->proposal;
+                              if($k->status =='yes'){
+                                echo "Telah dikonfirmasi";
+                              }
                             }
 
                             ?></td>
                         <td>
-                          <a  id="confirm" class="btn btn-xs btn-block btn-primary">Confirm</a>
-                          <a href="<?php echo base_url() . 'admin/edit_list_data/' . $k->idpemohon ?>" class="btn btn-xs btn-block btn-info">Edit</a>
+                          
+                        <?php
+                          if ($k->status == 'yes') { ?>
+                            <button class="btn btn-xs btn-block btn-primary" disabled>Confirm</button>
+                            <?php  } else {
+                            if ($k->status == null) { ?>
+                              <a href="<?php echo base_url() . 'admin/konfirmasi2/' . $k->idpemohon ?>" class="btn btn-xs btn-block btn-primary">Confirm</a>
+                          <?php }
+                          }
+                          ?>
+
+                          <a href="<?php echo base_url() . 'admin/edit_list_data_0/' . $k->idpemohon ?>" class="btn btn-xs btn-block btn-info">Edit</a>
                           <a onclick="deleteConfirm('<?php echo base_url() . 'admin/hapus_data1/' . $k->idpemohon ?>')" href="#!" class="btn btn-xs btn-block btn-danger">Hapus</a>
 
                         </td>
@@ -196,23 +208,7 @@
               <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script> -->
 
   <!-- Script -->
-  <!-- <script type="text/javascript" src="<?php echo base_url() . 'assets/js/script.js' ?>"></script> -->
-  <script>
-    function deleteConfirm(url) {
-      $('#btn-delete').attr('href', url);
-      $('#deleteModal').modal();
-    }
-  </script>
-
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $("#confirm").click(function() {
-        $(this).prop("disabled", true);
-        $(this).css("cursor", "not-allowed");
-      })
-
-    })
-  </script>
+  <script type="text/javascript" src="<?php echo base_url() . 'assets/js/script.js' ?>"></script>
   <!-- jQuery -->
   <script src="<?php echo base_url() . 'assets/plugins/jquery/jquery.min.js' ?>"></script>
   <!-- jQuery UI 1.11.4 -->
@@ -250,6 +246,13 @@
   <script src="<?php echo base_url() . 'assets/plugins/datatables/jquery.dataTables.js' ?>"></script>
   <script src="<?php echo base_url() . 'assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js' ?>"></script>
   <!-- page script -->
+  <!-- page script -->
+  <script>
+    function deleteConfirm(url) {
+      $('#btn-delete').attr('href', url);
+      $('#deleteModal').modal();
+    }
+  </script>
   <script>
     $(function() {
       $("#example1").DataTable();

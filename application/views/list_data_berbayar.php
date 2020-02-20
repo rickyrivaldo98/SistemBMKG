@@ -118,8 +118,8 @@
 
 
                           ?>
-                          <a href="<?php echo base_url() . 'admin/edit_list_data/' . $k->idpemohon ?>" class="btn btn-xs btn-block btn-info">Edit</a>
-                          <a onclick="deleteConfirm('<?php echo base_url() . 'admin/hapus_data/' . $k->idpemohon ?>')" href="#!" class="btn btn-xs btn-block btn-danger">Hapus</a>
+                          <a href="<?php echo base_url() . 'admin/edit_list_data/'.$k->idpemohon ?>" class="btn btn-xs btn-block btn-info">Edit</a>
+                          <a onclick="deleteConfirm('<?php echo base_url() . 'admin/hapus_data/'.$k->idpemohon ?>')" href="#!" class="btn btn-xs btn-block btn-danger">Hapus</a>
 
                         </td>
                       </tr>

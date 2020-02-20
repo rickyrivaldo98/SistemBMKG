@@ -106,7 +106,7 @@ class Page extends CI_Controller
     public function upload_data()
     {
 
-            //belum
+        //belum
 
 
         //    $validation->set_message('required', '%s masih kosong, silahkan isi');
@@ -136,7 +136,6 @@ class Page extends CI_Controller
             $this->load->view("formzero");
             redirect(base_url());
         }
-      
     }
 
     public function upload_data11()
@@ -168,7 +167,7 @@ class Page extends CI_Controller
         redirect(base_url() . 'page/form2');
     }
 
-  
+
 
 
 

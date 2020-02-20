@@ -1105,6 +1105,12 @@ class Admin extends MY_Controller
         $data['pemohon'] = $this->db->query("select * from pemohon where idpemohon = '$id'")->result();
         $this->load->view('edit_list_data', $data);
     }
+    public function edit_list_data_0($id)
+    {
+        $this->load->database();
+        $data['pemohon'] = $this->db->query("select * from pemohon1 where idpemohon = '$id'")->result();
+        $this->load->view('edit_list_data_0', $data);
+    }
 
     public function profile($Id_user = null)
     {
@@ -1129,9 +1135,40 @@ class Admin extends MY_Controller
         $this->load->view('edit_profile', $data);
     }
 
-    
-    public function konfirmasi($id){
-    
+
+    public function konfirmasi($id)
+    {
+
+
+
+
+
+
+        $data['coba'] = $this->db->query("select * from pemohon where idpemohon ='$id'")->result();
+        $coba = $data['coba'];
+
+        foreach ($coba as $bisa) {
+            $id = $bisa->idpemohon;
+            $nama = $bisa->nama;
+            $alamat = $bisa->alamat;
+            $nohp = $bisa->nohp;
+            $email = $bisa->email;
+            $instansi = $bisa->instansi;
+            $informasi = $bisa->informasi;
+        }
+
+
+        $data1 = array(
+            'idpemohon' => $id,
+            'nama' => $nama,
+            'alamat' => $alamat,
+            'nohp' => $nohp,
+            'instansi' => $instansi,
+            'email' => $email,
+            'informasi' => $informasi
+        );
+        $this->modelresponden->insert_data($data1, 'pemohon3');
+
 
         $data = array(
             'status' => 'yes'
@@ -1140,19 +1177,34 @@ class Admin extends MY_Controller
         $where = array(
             'idpemohon' => $id
         );
-        
+
         $this->modelresponden->update_data($where, $data, 'pemohon');
-        redirect(base_url().'admin/list_data_berbayar');
-    
 
 
+
+        redirect(base_url() . 'admin/list_data_berbayar');
+    }
+    public function konfirmasi2($id)
+    {
+
+
+        $data = array(
+            'status' => 'yes'
+        );
+
+        $where = array(
+            'idpemohon' => $id
+        );
+
+        $this->modelresponden->update_data($where, $data, 'pemohon1');
+        redirect(base_url() . 'admin/list_data_0');
     }
 
 
     public function edit_data_berbayar()
     {
-        $id = $this->input->post('idpemohon', true);
-        $nama = $this->input->post('nama', true);
+        $id = $this->input->post('idpemohon');
+        $nama = $this->input->post('nama');
         $alamat = $this->input->post('alamat');
         $nohp = $this->input->post('nohp');
         $instansi = $this->input->post('instansi');
@@ -1174,6 +1226,32 @@ class Admin extends MY_Controller
         );
         $this->modelresponden->update_data($where, $data, 'pemohon');
         redirect(base_url() . 'admin/list_data_berbayar');
+    }
+    public function edit_data_0()
+    {
+        $id = $this->input->post('idpemohon');
+        $nama = $this->input->post('nama');
+        $alamat = $this->input->post('alamat');
+        $nohp = $this->input->post('nohp');
+        $instansi = $this->input->post('instansi');
+        $email = $this->input->post('email');
+        $informasi = $this->input->post('informasi');
+
+
+        $data = array(
+            'nama' => $nama,
+            'alamat' => $alamat,
+            'nohp' => $nohp,
+            'instansi' => $instansi,
+            'email' => $email,
+            'informasi' => $informasi
+        );
+
+        $where = array(
+            'idpemohon' => $id
+        );
+        $this->modelresponden->update_data($where, $data, 'pemohon1');
+        redirect(base_url() . 'admin/list_data_0');
     }
 
 
