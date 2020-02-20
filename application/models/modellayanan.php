@@ -104,7 +104,6 @@ class modellayanan extends CI_Model
         $this->alamat = html_escape($post["alamat"]);
         $this->email = html_escape($post["email"]);
         $this->instansi = html_escape($post["instansi"]);
-
         $this->nohp = html_escape($post["nohp"]);
         $this->informasi = html_escape($post["informasi"]);
 

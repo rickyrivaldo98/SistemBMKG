@@ -117,7 +117,7 @@
                     <a class="icon-link" href="<?php echo base_url() . 'page/form' ?>">
                         <img alt="berbayar" id="berbayar" href="www.google.com" class="icon" src="https://img.icons8.com/wired/60/000000/pay-wall.png">
                         <h4>Berbayar</h4>
-                        <p>Lorem, ipsum dolor.</p>
+                        <p>Layanan Informasi Berbayar</p>
                     </a>
                 </div>
             </div>
@@ -126,7 +126,7 @@
                     <a class="icon-link" href="<?php echo base_url() . 'page/syarat' ?>">
                         <img alt="0 rupiah" id="0-rupiah" class="icon" src="https://img.icons8.com/wired/60/000000/gift.png">
                         <h4>0 Rupiah</h4>
-                        <p>Lorem, ipsum dolor.</p>
+                        <p>Layanan Informasi 0 rupiah</p>
                     </a>
                 </div>
             </div>
@@ -136,7 +136,7 @@
                         <img alt="free" id="free-icon" class="icon" src="https://img.icons8.com/carbon-copy/60/000000/service.png">
                         <div class="tulisan">
                             <h4>Informasi Gratis</h4>
-                            <p>Lorem, ipsum dolor.</p>
+                            <p>Layanan Informasi tanpa biaya</p>
                         </div>
                     </a>
                 </div>
@@ -150,7 +150,7 @@
                         <img alt="survei IKM" id="survey" class="icon" src="https://img.icons8.com/ios/60/000000/survey.png">
 
                         <h4>Survei IKM</h4>
-                        <p>Lorem, ipsum dolor.</p>
+                        <p>Survei IKM terhadap Layanan BMKG</p>
                 </div>
                 </a>
             </div>
@@ -161,7 +161,7 @@
                         <img alt="pengaduan" id="timbangan" class="icon" src="https://img.icons8.com/dotty/60/000000/scales.png">
 
                         <h4>Layanan Pengaduan</h4>
-                        <p>Lorem, ipsum dolor.</p>
+                        <p>Pengaduan Terhadap Pungli</p>
                     </a>
                 </div>
             </div>
@@ -172,7 +172,7 @@
                         <img alt="Tracking" id="track-icon" class="icon" src="https://img.icons8.com/dotty/60/000000/order-shipped.png">
 
                         <h4>Tracking</h4>
-                        <p>Lorem, ipsum dolor.</p>
+                        <p>Lacak Proses permohonan</p>
                     </a>
 
                 </div>
@@ -185,7 +185,7 @@
                         <img alt="informasi dan layanan" id="informasi" class="icon" src="https://img.icons8.com/dotty/60/000000/info.png">
 
                         <h4>Informasi dan Layanan </h4>
-                        <p>Lorem, ipsum dolor.</p>
+                        <p>Informasi dan layanan BMKG</p>
                     </a>
                 </div>
 
@@ -239,90 +239,7 @@
     <br><br><br><br>
 
     <!-- Footer -->
-    <div class="container">
-        <footer class="page-footer font-small blue pt-4">
-
-            <!-- Footer Links -->
-            <div class="container-fluid text-center text-md-left">
-
-                <!-- Grid row -->
-                <div class="row">
-
-                    <!-- Grid column -->
-                    <div class="col-md-6 mt-md-0 mt-3">
-
-                        <!-- Content -->
-                        <h5 class="text-uppercase">BMKG Jawa Tengah</h5>
-                        <p>Melayani anda dengan sepenuh hati</p>
-
-                    </div>
-                    <!-- Grid column -->
-
-                    <hr class="clearfix w-100 d-md-none pb-3">
-
-                    <!-- Grid column -->
-                    <div class="col-md-3 mb-md-0 mb-3">
-
-                        <!-- Links -->
-                        <h5 class="text-uppercase">Links</h5>
-
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="#!">Link 1</a>
-                            </li>
-                            <li>
-                                <a href="#!">Link 2</a>
-                            </li>
-                            <li>
-                                <a href="#!">Link 3</a>
-                            </li>
-                            <li>
-                                <a href="#!">Link 4</a>
-                            </li>
-                        </ul>
-
-                    </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-3 mb-md-0 mb-3">
-
-                        <!-- Links -->
-                        <h5 class="text-uppercase">Links</h5>
-
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="#!">Link 1</a>
-                            </li>
-                            <li>
-                                <a href="#!">Link 2</a>
-                            </li>
-                            <li>
-                                <a href="#!">Link 3</a>
-                            </li>
-                            <li>
-                                <a href="#!">Link 4</a>
-                            </li>
-                        </ul>
-
-                    </div>
-                    <!-- Grid column -->
-
-                </div>
-                <!-- Grid row -->
-
-            </div>
-            <!-- Footer Links -->
-
-            <!-- Copyright -->
-            <div class="footer-copyright text-center py-3">© 2020 Copyright:
-                <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-            </div>
-            <!-- Copyright -->
-
-        </footer>
-        <!-- Footer -->
-    </div>
+                    <?php $this->load->view('template/footer')  ?>
 
 
 

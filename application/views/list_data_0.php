@@ -27,6 +27,7 @@
   <!-- summernote -->
   <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/summernote/summernote-bs4.css' ?>">
   <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css' ?>">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -71,6 +72,10 @@
                     <th>Email</th>
                     <th>Instansi</th>
                     <th>Informasi</th>
+                    <th>Surat Pengantar</th>
+                    <th>Surat Pernyataan</th>
+                    <th>Proposal</th>
+                    <th>status</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -81,7 +86,7 @@
                 </style>
                 <div>
                   <tbody class="belang">
-                    <?php foreach ($pemohon as $k) {
+                    <?php foreach ($pemohon1 as $k) {
                     ?>
                       <tr>
                         <td><?php echo  $k->idpemohon; ?></td>
@@ -91,13 +96,35 @@
                         <td><?php echo  $k->email; ?></td>
                         <td><?php echo  $k->instansi; ?></td>
                         <td><?php echo  $k->informasi; ?></td>
+                        <td><?php echo  $k->suratpengantar; ?></td>
+                        <td><?php
+                            if ($k->suratpernyataan == null) {
+                              echo  "Tidak ada File Pendukung";
+                            } else {
+                              echo $k->suratpernyataan;
+                            }
+                            ?></td>
+                        <td><?php
+                            if ($k->proposal == null) {
+                              echo  "Tidak ada File Pendukung";
+                            } else {
+                              echo $k->proposal;
+                            }
 
+                            ?></td>
 
+                        <td><?php
+                            if ($k->status == null) {
+                              echo  "belum dikonfirmasi";
+                            } else {
+                              echo $k->proposal;
+                            }
 
-
+                            ?></td>
                         <td>
-
-                          <a onclick="deleteConfirm('<?php echo base_url() . 'admin/hapus_data/' . $k->idpemohon ?>')" href="#!" class="btn btn-xs btn-block btn-danger">Hapus</a>
+                          <a  id="confirm" class="btn btn-xs btn-block btn-primary">Confirm</a>
+                          <a href="<?php echo base_url() . 'admin/edit_list_data/' . $k->idpemohon ?>" class="btn btn-xs btn-block btn-info">Edit</a>
+                          <a onclick="deleteConfirm('<?php echo base_url() . 'admin/hapus_data1/' . $k->idpemohon ?>')" href="#!" class="btn btn-xs btn-block btn-danger">Hapus</a>
 
                         </td>
                       </tr>
@@ -113,6 +140,10 @@
                     <th>Email</th>
                     <th>Instansi</th>
                     <th>Informasi</th>
+                    <th>Surat Pengantar</th>
+                    <th>Surat Pernyataan</th>
+                    <th>Proposal</th>
+
                     <th>Aksi</th>
                   </tr>
                 </tfoot>
@@ -146,23 +177,42 @@
     </div>
 
 
-  </div>
-  <br>
-  <br>
-
-  <!-- /.content-wrapper -->
-  <footer class="main-footer fixed-bottom">
-    <strong>Copyright &copy; Turu Teams
-      All rights reserved.
-      <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 0.0.1
-      </div>
-  </footer>
+    <!-- /.content -->
+    <!-- /.content-wrapper -->
+    <footer class="main-footer fixed-bottom">
+      <strong>Copyright &copy; Turu Teams
+        All rights reserved.
+        <div class="float-right d-none d-sm-inline-block">
+          <b>Version</b> 0.0.1
+        </div>
+    </footer>
 
 
   </div>
   <!-- ./wrapper -->
+  <!-- D3.js Source -->
+  <!-- <script src="https://d3js.org/d3.v4.min.js"></script>
+              <script src="https://d3js.org/topojson.v3.min.js"></script>
+              <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script> -->
 
+  <!-- Script -->
+  <!-- <script type="text/javascript" src="<?php echo base_url() . 'assets/js/script.js' ?>"></script> -->
+  <script>
+    function deleteConfirm(url) {
+      $('#btn-delete').attr('href', url);
+      $('#deleteModal').modal();
+    }
+  </script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#confirm").click(function() {
+        $(this).prop("disabled", true);
+        $(this).css("cursor", "not-allowed");
+      })
+
+    })
+  </script>
   <!-- jQuery -->
   <script src="<?php echo base_url() . 'assets/plugins/jquery/jquery.min.js' ?>"></script>
   <!-- jQuery UI 1.11.4 -->
@@ -197,16 +247,9 @@
   <script src="<?php echo base_url() . 'assets/js/pages/dashboard.js' ?>"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="<?php echo base_url() . 'assets/js/demo.js' ?>"></script>
-  <!-- DataTables -->
   <script src="<?php echo base_url() . 'assets/plugins/datatables/jquery.dataTables.js' ?>"></script>
   <script src="<?php echo base_url() . 'assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js' ?>"></script>
   <!-- page script -->
-  <script>
-    function deleteConfirm(url) {
-      $('#btn-delete').attr('href', url);
-      $('#deleteModal').modal();
-    }
-  </script>
   <script>
     $(function() {
       $("#example1").DataTable();

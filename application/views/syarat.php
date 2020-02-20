@@ -46,7 +46,7 @@ $this->load->view('template/header');
         </div>
         <div class="atas">
             <h5>
-                BERDASARKAN PERATURAN KEPALA BMKG NO 8 TAHUN 2013 MAKA KEGIATAN PENGENAAN TARIF SEBESAR RP.0,00 (NOL RUPIAH) TERDIRI ATAS
+                BERDASARKAN PERATURAN KEPALA BMKG NO 12 TAHUN 2019 MAKA KEGIATAN PENGENAAN TARIF SEBESAR RP.0,00 (NOL RUPIAH) TERDIRI ATAS
             </h5>
             <ol>
                 <li>
@@ -72,7 +72,7 @@ $this->load->view('template/header');
                     <li>Untuk kegiatan no 6 melampirkan persyaratan sebagai berikut:</li>
 
                     <ol type='a'>
-                        <li>Surat pengantar dari sekolah/kampus ditujukan ke Stasiun Meteorologi Maritim Tanjung Emas Semarang</li>
+                        <li>Surat pengantar dari sekolah/kampus ditujukan ke Stasiun Meteorologi Klimatologi dan Geofisika Jawa Tengah</li>
                         <li>Proposal penelitian</li>
                         <li>Surat pernyataan bermaterai </li>
                         <li>Kartu identitas</li>

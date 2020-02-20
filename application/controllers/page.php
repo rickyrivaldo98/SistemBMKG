@@ -54,10 +54,23 @@ class Page extends CI_Controller
                 'nohp' => $nohp,
                 'instansi' => $instansi,
                 'email' => $email,
-                'informasi' => $informasi
+                'informasi' => $informasi,
+                'status' => 'no'
             );
 
             $this->modellayanan->insert_data($data, 'pemohon');
+
+            //input ke data pemohon admin lama
+            $data1 = array(
+                'idpemohon' => $id,
+                'nama' => $nama,
+                'alamat' => $alamat,
+                'nohp' => $nohp,
+                'instansi' => $instansi,
+                'email' => $email
+            );
+            $this->modellayanan->insert_data($data1, 'pemohon2');
+
             redirect(base_url());
         }
     }
@@ -92,6 +105,42 @@ class Page extends CI_Controller
 
     public function upload_data()
     {
+
+            //belum
+
+
+        //    $validation->set_message('required', '%s masih kosong, silahkan isi');
+
+        //    $validation->set_error_delimiters('<span class="help-block">', '</span>');
+
+        $dataPDF = $this->modellayanan;
+        $validation = $this->form_validation;
+        $validation->set_rules('nama', 'Nama', 'required|regex_match[/^[a-zA-Z ]+$/]|min_length[4]|max_length[30]|trim');
+        $validation->set_rules('nohp', 'Nomor HP', 'required|numeric|min_length[8]|trim');
+        $validation->set_rules('alamat', 'Alamat', 'required|min_length[8]|trim');
+        $validation->set_rules('email', 'Email', 'required|valid_email|trim');
+        $validation->set_rules('instansi', 'Instansi', 'required|trim');
+        $validation->set_rules('informasi', 'Informasi', 'required|min_length[8]|trim');
+        $validation->set_rules($dataPDF->rules());
+
+        $validation->set_message('required', '%s masih kosong, silahkan isi');
+
+        $validation->set_error_delimiters('<span class="help-block">', '</span>');
+
+        if ($validation->run() == FALSE) {
+            $this->load->view("formzero");
+
+            // $this->session->set_flashdata('success', 'Berhasil disimpan');
+        } else {
+            $dataPDF->save();
+            $this->load->view("formzero");
+            redirect(base_url());
+        }
+      
+    }
+
+    public function upload_data11()
+    {
         $dataPDF = $this->modellayanan;
         $validation = $this->form_validation;
         $validation->set_rules($dataPDF->rules());
@@ -103,6 +152,8 @@ class Page extends CI_Controller
         $this->load->view("formzero");
         redirect(base_url() . 'page/form1');
     }
+
+
     public function upload_data1()
     {
         $dataPDF = $this->modellayanan;
@@ -117,6 +168,7 @@ class Page extends CI_Controller
         redirect(base_url() . 'page/form2');
     }
 
+  
 
 
 
@@ -153,6 +205,10 @@ class Page extends CI_Controller
     public function syarat()
     {
         $this->load->view('syarat');
+    }
+    public function informasi()
+    {
+        $this->load->view('informasi');
     }
 
     public function search()

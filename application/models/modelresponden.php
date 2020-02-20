@@ -35,4 +35,5 @@ class modelresponden extends CI_Model {
 	function insert_multiple($data, $table){
 		$this->db->insert_batch($table, $data);
 	}
+	
 }

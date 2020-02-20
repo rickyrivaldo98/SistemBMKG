@@ -78,7 +78,7 @@
                     </li>
                     <li class="nav-header">SISTEM PERMINTAAN DATA</li>
                     <li class="nav-item">
-                        <a href="<?php echo base_url() . 'admin/list_permintaan_data' ?>" class="nav-link">
+                        <a href="<?php echo base_url() . 'admin/list_data_berbayar' ?>" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
                                 Data Berbayar
@@ -86,7 +86,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?php echo base_url() . 'admin/list_ketersediaan_data' ?>" class="nav-link">
+                        <a href="<?php echo base_url() . 'admin/list_data_0' ?>" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
                                 Data 0 Rupiah
