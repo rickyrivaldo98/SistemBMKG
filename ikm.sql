@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 13, 2020 at 09:24 AM
+-- Generation Time: Feb 20, 2020 at 04:22 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -1115,21 +1115,19 @@ CREATE TABLE `pemohon` (
   `alamat` varchar(200) NOT NULL,
   `email` varchar(100) NOT NULL,
   `instansi` varchar(50) NOT NULL,
-  `informasi` varchar(200) NOT NULL
+  `informasi` varchar(200) NOT NULL,
+  `status` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pemohon`
 --
 
-INSERT INTO `pemohon` (`idpemohon`, `nama`, `nohp`, `alamat`, `email`, `instansi`, `informasi`) VALUES
-('123456', 'Ricky Rivaldo', '082174398682', 'Tembalang', 'rickyrivaldo98@gmail.com', 'UNDIP', 'Cuaca di UNDIP '),
-('980', 'Haikal Rahmadi', '091191919', 'jl Bulusan ', 'rahmadiihaikal@gmail.com', 'Undip', 'Mau minta informasi ini '),
-('AWAWAWAW', 'awawawa', '', '', '', '', ''),
-('BMKG-0001 ', 'sds', '', '', '', '', ''),
-('dfas', 'adasd', '', '', '', '', ''),
-('hai', 'haikal Rahmadi', '081372814632', 'Jl. Fajar 1 no 30d', 'rahmadiihaikal@gmail.com', 'Diponegoro University', ''),
-('sdfsdfdsf', 'sdfsdfsd', '', '', '', '', 'sdfds');
+INSERT INTO `pemohon` (`idpemohon`, `nama`, `nohp`, `alamat`, `email`, `instansi`, `informasi`, `status`) VALUES
+('908', 'haikalrahmadi', '0010013023', 'jl fajar198', 'rahmadiihaikal@gmail.com', 'UNDIP', '1111111111111111111111111', 'yes'),
+('asdaaaa', 'M Haikal rahmadi', '0010013023', 'adasdasdasd', 'rahmadiihaikal@gmail.com', 'asdasdasdassd', 'asdsadsadasdas', 'yes'),
+('BMKG091', 'M Haikal rahmadi', '0010013023', 'jl fajarasd', 'rahmadiihaikal@gmail.com', 'UNDIP', 'asdsa asd d asdsad asdsa ds', 'yes'),
+('oiqk', 'asdsadsa asdsa', '0010013023', 'asdsad asd asda', 'rahmadiihaikal@gmail.com', 'UNDIP', 'asd asd sad asd sad as', 'yes');
 
 -- --------------------------------------------------------
 
@@ -1148,33 +1146,53 @@ CREATE TABLE `pemohon1` (
   `informasi` varchar(200) NOT NULL,
   `suratpengantar` varchar(100) NOT NULL,
   `proposal` varchar(100) DEFAULT NULL,
-  `suratpernyataan` varchar(100) DEFAULT NULL
+  `suratpernyataan` varchar(100) DEFAULT NULL,
+  `status` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pemohon1`
 --
 
-INSERT INTO `pemohon1` (`idpemohon`, `nama`, `nohp`, `alamat`, `email`, `instansi`, `identitas`, `informasi`, `suratpengantar`, `proposal`, `suratpernyataan`) VALUES
-('121212121', '12121', '', '212121', '1212121', '12121', '', '121212121', '', '', ''),
-('12221134t3', 'dfgfd', 'fdgfdgfdgf', 'dfgfdgfd', 'dfgfdg', 'dfgfdgfd', '', 'dfgfdgfdgfdgfd df g dfg', '', '', ''),
-('2222', 'w2', '', '', '', '', '', 'w222', '', '', ''),
-('2424242', '22', '', '', '', '', '', '2424', '', '', ''),
-('324eherh', 'gdfgfdgfdg', '', '', '', '', '', 'dfgfdgfdgfd', '', '', ''),
-('56756756', '54675', '', '', '', '', '', '', '', '', ''),
-('980', 'Haikal Rahmadi', '091191919', 'jl Bulusan ', 'rahmadiihaikal@gmail.com', 'Undip', '', 'Mau minta informasi ini ', '', '', ''),
-('anasalqoyy', 'llkll', 'klklkl', 'klklkl', 'klklkl', 'klklkl', '', 'klklklk', '0.pdf', NULL, NULL),
-('annisaa', 'lkkllklk', 'kllklk', 'lklklk', 'lklkl', 'klklklkl', '', 'lklklklklklklk', 'annisaa.pdf', '', ''),
-('AWAWAWAW', 'awawawa', '', '', '', '', '', '', '', '', ''),
-('BMKG-0001 ', 'sds', '', '', '', '', '', '', '', '', ''),
-('dfas', 'adasd', '', '', '', '', '', '', '', '', ''),
-('hai', 'haikal Rahmadi', '081372814632', 'Jl. Fajar 1 no 30d', 'rahmadiihaikal@gmail.com', 'Diponegoro University', '', '', '', '', ''),
-('haikal', 'rahmadi', '12121', 'ayeyaeyae', '1211', '1212', '', '12121212', 'haikal.pdf', 'haikal.pdf', 'haikal.pdf'),
-('mhaikal', 'rahmadi', 'mungkinini', 'apa ya', 'hehehe', '', '', 'asdasdasd', 'rahmadi.pdf', 'rahmadi.pdf', 'rahmadi.pdf'),
-('opopopo', 'popopo', 'opopopop', 'popo', 'pop', 'opopop', '', 'popopop', 'opopopo.pdf', NULL, NULL),
-('popoppo', 'popopopo', 'popopopp', 'popop', 'opo', 'popopopo', '', 'popopopop', 'popopopo.pdf', 'popopopo.pdf', 'popopopo.pdf'),
-('rickkiiii', '1212', '', '1212121', '1212121', '121212', '', '112121212121', '', '', ''),
-('rickyyyr', 'klklklklk', 'lklklkl', 'klklklkl', 'klklklk', 'lklklk', '', 'lklklklklk', 'rickyyyr.pdf', 'rickyyyr.pdf', 'rickyyyr.pdf');
+INSERT INTO `pemohon1` (`idpemohon`, `nama`, `nohp`, `alamat`, `email`, `instansi`, `identitas`, `informasi`, `suratpengantar`, `proposal`, `suratpernyataan`, `status`) VALUES
+('980', 'Haikal Rahmadi', '091191919', 'jl Bulusan ', 'rahmadiihaikal@gmail.com', 'Undip', '', 'Mau minta informasi ini ', '', '', '', ''),
+('anasalqoyy', 'llkll', 'klklkl', 'klklkl', 'klklkl', 'klklkl', '', 'klklklk', '0.pdf', NULL, NULL, ''),
+('annisaaa', 'lklklkl', 'l;l', ';l;l', ';l;l', ';l;l;l;', '', 'sefkjdskjflkj', 'annisaaa.pdf', NULL, NULL, ''),
+('apakau', 'klkl', 'lklkl', 'klkl', 'klkl', 'klklk', '', 'klklklk', 'apakau.pdf', NULL, NULL, ''),
+('haikalgaul', 'jajajjja', '', 'asdsadasdasd', '', '', '', '', 'haikalgaul.pdf', NULL, NULL, ''),
+('haikalopp', 'lklklkl', '', 'lklklklklkl', '', '', '', '', 'haikalopp.pdf', NULL, NULL, ''),
+('mhaikal', 'rahmadi', 'mungkinini', 'apa ya', 'hehehe', '', '', 'asdasdasd', 'rahmadi.pdf', 'rahmadi.pdf', 'rahmadi.pdf', ''),
+('opopopo', 'popopo', 'opopopop', 'popo', 'pop', 'opopop', '', 'popopop', 'opopopo.pdf', NULL, NULL, ''),
+('pakiis', 'kjkjkjkj', '', 'kkjkjkjkjk', '', '', '', '', 'pakiis.pdf', NULL, NULL, ''),
+('popoppo', 'popopopo', 'popopopp', 'popop', 'opo', 'popopopo', '', 'popopopop', 'popopopo.pdf', 'popopopo.pdf', 'popopopo.pdf', ''),
+('rickyyyr', 'klklklklk', 'lklklkl', 'klklklkl', 'klklklk', 'lklklk', '', 'lklklklklk', 'rickyyyr.pdf', 'rickyyyr.pdf', 'rickyyyr.pdf', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pemohon2`
+--
+
+CREATE TABLE `pemohon2` (
+  `idpemohon` varchar(10) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `nohp` varchar(14) NOT NULL,
+  `alamat` varchar(200) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `instansi` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pemohon2`
+--
+
+INSERT INTO `pemohon2` (`idpemohon`, `nama`, `nohp`, `alamat`, `email`, `instansi`) VALUES
+('908', 'haikalrahmadi', '0010013023', 'jl fajar198', 'rahmadiihaikal@gmail.com', 'UNDIP'),
+('annisaku', 'M Haikal rahmadi', '0010013023', 'jl fajarasdasd', 'rahmadiihaikal@gmail.com', 'UNDIP'),
+('asdaaaa', 'M Haikal rahmadi', '0010013023', 'adasdasdasd', 'rahmadiihaikal@gmail.com', 'asdasdasdassd'),
+('BMKG091', 'M Haikal rahmadi', '0010013023', 'jl fajarasd', 'rahmadiihaikal@gmail.com', 'UNDIP'),
+('haikaliang', 'haikal cuguy', '0010013023', 'hhhkjhjhkhk', 'rahmadiihaikal@gmail.com', 'UNDIP'),
+('oiqk', 'asdsadsa asdsa', '0010013023', 'asdsad asd asda', 'rahmadiihaikal@gmail.com', 'UNDIP');
 
 -- --------------------------------------------------------
 
@@ -1241,6 +1259,12 @@ ALTER TABLE `pemohon`
 -- Indexes for table `pemohon1`
 --
 ALTER TABLE `pemohon1`
+  ADD PRIMARY KEY (`idpemohon`);
+
+--
+-- Indexes for table `pemohon2`
+--
+ALTER TABLE `pemohon2`
   ADD PRIMARY KEY (`idpemohon`);
 
 --
