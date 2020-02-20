@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 20, 2020 at 04:22 AM
+-- Generation Time: Feb 20, 2020 at 11:41 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -1124,9 +1124,9 @@ CREATE TABLE `pemohon` (
 --
 
 INSERT INTO `pemohon` (`idpemohon`, `nama`, `nohp`, `alamat`, `email`, `instansi`, `informasi`, `status`) VALUES
-('908', 'haikalrahmadi', '0010013023', 'jl fajar198', 'rahmadiihaikal@gmail.com', 'UNDIP', '1111111111111111111111111', 'yes'),
-('asdaaaa', 'M Haikal rahmadi', '0010013023', 'adasdasdasd', 'rahmadiihaikal@gmail.com', 'asdasdasdassd', 'asdsadsadasdas', 'yes'),
-('BMKG091', 'M Haikal rahmadi', '0010013023', 'jl fajarasd', 'rahmadiihaikal@gmail.com', 'UNDIP', 'asdsa asd d asdsad asdsa ds', 'yes'),
+('908', 'fdsds', '     001001302', '     jl fajar198', '     rahmadiihaikal@gmail.com', '     UNDIP', 'mau apa aja kau', 'yes'),
+('asdaaaa', 'M Haikal rahmadi', ' 0010013023', 'abnagstattarttrtaurauw', ' rahmadiihaikal@gmail.com', ' asdasdasdassd', 'asdsadsadasdas', 'yes'),
+('BMKG091', 'M Haikal rahmadi', ' 0010013023', 'anjing abi bangsat', ' rahmadiihaikal@gmail.com', ' UNDIP', 'asdsa asd d asdsad asdsa ds', 'yes'),
 ('oiqk', 'asdsadsa asdsa', '0010013023', 'asdsad asd asda', 'rahmadiihaikal@gmail.com', 'UNDIP', 'asd asd sad asd sad as', 'yes');
 
 -- --------------------------------------------------------
@@ -1155,17 +1155,7 @@ CREATE TABLE `pemohon1` (
 --
 
 INSERT INTO `pemohon1` (`idpemohon`, `nama`, `nohp`, `alamat`, `email`, `instansi`, `identitas`, `informasi`, `suratpengantar`, `proposal`, `suratpernyataan`, `status`) VALUES
-('980', 'Haikal Rahmadi', '091191919', 'jl Bulusan ', 'rahmadiihaikal@gmail.com', 'Undip', '', 'Mau minta informasi ini ', '', '', '', ''),
-('anasalqoyy', 'llkll', 'klklkl', 'klklkl', 'klklkl', 'klklkl', '', 'klklklk', '0.pdf', NULL, NULL, ''),
-('annisaaa', 'lklklkl', 'l;l', ';l;l', ';l;l', ';l;l;l;', '', 'sefkjdskjflkj', 'annisaaa.pdf', NULL, NULL, ''),
-('apakau', 'klkl', 'lklkl', 'klkl', 'klkl', 'klklk', '', 'klklklk', 'apakau.pdf', NULL, NULL, ''),
-('haikalgaul', 'jajajjja', '', 'asdsadasdasd', '', '', '', '', 'haikalgaul.pdf', NULL, NULL, ''),
-('haikalopp', 'lklklkl', '', 'lklklklklkl', '', '', '', '', 'haikalopp.pdf', NULL, NULL, ''),
-('mhaikal', 'rahmadi', 'mungkinini', 'apa ya', 'hehehe', '', '', 'asdasdasd', 'rahmadi.pdf', 'rahmadi.pdf', 'rahmadi.pdf', ''),
-('opopopo', 'popopo', 'opopopop', 'popo', 'pop', 'opopop', '', 'popopop', 'opopopo.pdf', NULL, NULL, ''),
-('pakiis', 'kjkjkjkj', '', 'kkjkjkjkjk', '', '', '', '', 'pakiis.pdf', NULL, NULL, ''),
-('popoppo', 'popopopo', 'popopopp', 'popop', 'opo', 'popopopo', '', 'popopopop', 'popopopo.pdf', 'popopopo.pdf', 'popopopo.pdf', ''),
-('rickyyyr', 'klklklklk', 'lklklkl', 'klklklkl', 'klklklk', 'lklklk', '', 'lklklklklk', 'rickyyyr.pdf', 'rickyyyr.pdf', 'rickyyyr.pdf', '');
+('popoppo', 'awawaw', ' popopopo.pdf', ' popop', ' opo', ' popopopo', '', 'popopopop', 'popopopo.pdf', 'popopopo.pdf', 'popopopo.pdf', 'yes');
 
 -- --------------------------------------------------------
 
@@ -1182,17 +1172,30 @@ CREATE TABLE `pemohon2` (
   `instansi` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `pemohon2`
+-- Table structure for table `pemohon3`
 --
 
-INSERT INTO `pemohon2` (`idpemohon`, `nama`, `nohp`, `alamat`, `email`, `instansi`) VALUES
-('908', 'haikalrahmadi', '0010013023', 'jl fajar198', 'rahmadiihaikal@gmail.com', 'UNDIP'),
-('annisaku', 'M Haikal rahmadi', '0010013023', 'jl fajarasdasd', 'rahmadiihaikal@gmail.com', 'UNDIP'),
-('asdaaaa', 'M Haikal rahmadi', '0010013023', 'adasdasdasd', 'rahmadiihaikal@gmail.com', 'asdasdasdassd'),
-('BMKG091', 'M Haikal rahmadi', '0010013023', 'jl fajarasd', 'rahmadiihaikal@gmail.com', 'UNDIP'),
-('haikaliang', 'haikal cuguy', '0010013023', 'hhhkjhjhkhk', 'rahmadiihaikal@gmail.com', 'UNDIP'),
-('oiqk', 'asdsadsa asdsa', '0010013023', 'asdsad asd asda', 'rahmadiihaikal@gmail.com', 'UNDIP');
+CREATE TABLE `pemohon3` (
+  `idpemohon` varchar(10) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `nohp` varchar(14) NOT NULL,
+  `alamat` varchar(200) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `instansi` varchar(50) NOT NULL,
+  `informasi` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pemohon3`
+--
+
+INSERT INTO `pemohon3` (`idpemohon`, `nama`, `nohp`, `alamat`, `email`, `instansi`, `informasi`) VALUES
+('908', 'bangsatttttt', '   0010013023', '   jl fajar198', '   rahmadiihaikal@gmail.com', '   UNDIP', 'mau apa aja kau'),
+('asdaaaa', 'M Haikal rahmadi', '0010013023', 'adasdasdasd', 'rahmadiihaikal@gmail.com', 'asdasdasdassd', 'asdsadsadasdas'),
+('oiqk', 'asdsadsa asdsa', '0010013023', 'asdsad asd asda', 'rahmadiihaikal@gmail.com', 'UNDIP', 'asd asd sad asd sad as');
 
 -- --------------------------------------------------------
 
@@ -1265,6 +1268,12 @@ ALTER TABLE `pemohon1`
 -- Indexes for table `pemohon2`
 --
 ALTER TABLE `pemohon2`
+  ADD PRIMARY KEY (`idpemohon`);
+
+--
+-- Indexes for table `pemohon3`
+--
+ALTER TABLE `pemohon3`
   ADD PRIMARY KEY (`idpemohon`);
 
 --
