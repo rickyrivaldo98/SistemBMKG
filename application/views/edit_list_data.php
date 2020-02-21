@@ -47,28 +47,25 @@
                     <div id="title" class="col-sm-6">
                         <h1 class="m-0 text-dark">Edit Data</h1>
                         <br>
-                        <?php if ($this->session->flashdata('error')) : ?>
-                            <div class="alert alert-danger" role="alert">
-                                <?php echo $this->session->flashdata('error'); ?>
-                            </div>
-                        <?php endif; ?>
-                        <?php if ($this->session->flashdata('success')) : ?>
-                            <div class="alert alert-success" role="alert">
-                                <?php echo $this->session->flashdata('success'); ?>
-                            </div>
-                        <?php endif; ?>
+
+
                         <div class="card mb-4">
                             <div class="card-header">
                                 <a href="<?php echo site_url('admin/list_data_berbayar') ?>"><i class="fas fa-arrow-left"></i>
                                     Kembali</a>
                             </div>
                             <div class="card-body">
+                                <?php if ($this->session->flashdata('success')) : ?>
+                                    <div class="alert alert-success" role="alert">
+                                        <?php echo $this->session->flashdata('success'); ?>
+                                    </div>
+                                <?php endif; ?>
                                 <?php foreach ($pemohon as $p) { ?>
 
                                     <form action="<?php echo base_url() . 'admin/edit_data_berbayar' ?>" method="post">
                                         <div class="form-group">
                                             <label for="idpemohon">ID</label>
-                                            <input type="text"" name=" idpemohon" id="id" class="form-control" value="<?php echo $p->idpemohon;?>" placeholder="ID Anda" readonly>
+                                            <input type="text"" name=" idpemohon" id="id" class="form-control" value="<?php echo $p->idpemohon; ?>" placeholder="ID Anda" readonly>
                                         </div>
                                         <div class="form-group">
                                             <label for="nama">Nama Pemohon</label>
@@ -76,19 +73,19 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="alamat">Alamat Pemohon</label>
-                                            <input type="text" name="alamat" id="alamat" class="form-control" value=" <?php echo $p->alamat; ?>" placeholder="Alamat Lengkap Anda...">
+                                            <input type="text" name="alamat" id="alamat" class="form-control" value="<?php echo $p->alamat; ?>" placeholder="Alamat Lengkap Anda...">
                                         </div>
                                         <div class="form-group">
                                             <label for="email">Email Pemohon</label>
-                                            <input type="text" name="email" id="email" class="form-control" value=" <?php echo $p->email; ?>" placeholder="Masukkan email anda">
+                                            <input type="text" name="email" id="email" class="form-control" value="<?php echo $p->email; ?>" placeholder="Masukkan email anda">
                                         </div>
                                         <div class="form-group">
                                             <label for="instansi">Asal Instansi Pemohon</label>
-                                            <input type="text" name="instansi" id="instansi" class="form-control" value=" <?php echo $p->instansi; ?>" placeholder="Asal instansi anda">
+                                            <input type="text" name="instansi" id="instansi" class="form-control" value="<?php echo $p->instansi; ?>" placeholder="Asal instansi anda">
                                         </div>
                                         <div class="form-group">
                                             <label for="nohp">Nomor HP Pemohon</label>
-                                            <input type="text" name="nohp" id="hp" class="form-control" value=" <?php echo $p->nohp; ?>" placeholder="Masukkan no. HP anda">
+                                            <input type="text" name="nohp" id="hp" class="form-control" value="<?php echo $p->nohp; ?>" placeholder="Masukkan no. HP anda">
                                         </div>
                                         <div class="form-group">
 

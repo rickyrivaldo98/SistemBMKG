@@ -52,7 +52,7 @@
                                 <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Alamat Lengkap Anda...">
                                 <?= form_error('alamat') ?>
                             </div>
-                            <div class="form-group <?= form_error('nohp') ? 'has-error' : null ?>">
+                            <div class="form-group <?= form_error('email') ? 'has-error' : null ?>">
                                 <label for="email">Email Pemohon</label>
                                 <input type="text" name="email" id="email" class="form-control" placeholder="Masukkan email anda">
                                 <?= form_error('email') ?>

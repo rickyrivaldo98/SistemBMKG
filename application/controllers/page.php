@@ -20,7 +20,9 @@ class Page extends CI_Controller
     {
         $this->load->view('formzero1');
     }
-
+    public function test(){
+        $this->load->view('test');
+    }
     //data berbayar
     public function form()
     {
@@ -107,20 +109,18 @@ class Page extends CI_Controller
     {
 
         //belum
-
-
         //    $validation->set_message('required', '%s masih kosong, silahkan isi');
 
         //    $validation->set_error_delimiters('<span class="help-block">', '</span>');
 
         $dataPDF = $this->modellayanan;
         $validation = $this->form_validation;
-        $validation->set_rules('nama', 'Nama', 'required|regex_match[/^[a-zA-Z ]+$/]|min_length[4]|max_length[30]|trim');
-        $validation->set_rules('nohp', 'Nomor HP', 'required|numeric|min_length[8]|trim');
-        $validation->set_rules('alamat', 'Alamat', 'required|min_length[8]|trim');
-        $validation->set_rules('email', 'Email', 'required|valid_email|trim');
-        $validation->set_rules('instansi', 'Instansi', 'required|trim');
-        $validation->set_rules('informasi', 'Informasi', 'required|min_length[8]|trim');
+        // $validation->set_rules('nama', 'Nama', 'required|regex_match[/^[a-zA-Z ]+$/]|min_length[4]|max_length[30]|trim');
+        // $validation->set_rules('nohp', 'Nomor HP', 'required|numeric|min_length[8]|trim');
+        // $validation->set_rules('alamat', 'Alamat', 'required|min_length[8]|trim');
+        // $validation->set_rules('email', 'Email', 'required|valid_email|trim');
+        // $validation->set_rules('instansi', 'Instansi', 'required|trim');
+        // $validation->set_rules('informasi', 'Informasi', 'required|min_length[8]|trim');
         $validation->set_rules($dataPDF->rules());
 
         $validation->set_message('required', '%s masih kosong, silahkan isi');

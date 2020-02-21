@@ -59,6 +59,12 @@
                       </div> -->
             <!-- /.card-header -->
             <div class="card-body">
+            <?php if ($this->session->flashdata('success')) : ?>
+                                    <div class="alert alert-success" role="alert">
+                                    <button aria-label="Close" data-dismiss="alert" class="close" type="button" ><span aria-hidden="true" class="fa fa-times"></span></button>
+                                        <?php echo $this->session->flashdata('success'); ?>
+                                    </div>
+                                <?php endif; ?>
 
 
               <table id="example1" class="table table-bordered table-striped">
@@ -96,10 +102,10 @@
                         <td>
                           <?php
                           if ($k->status == 'no') {
-                            echo  "belum konfirmasi";
+                            echo  "<b style='color:red;'>belum dikonfirmasi</b>";
                           } else {
                             if ($k->status == 'yes') {
-                              echo "telah dikonfirmasi";
+                              echo "<b style='color:green;'>telah dikonfirmasi</b>";
                             }
                           }
                           ?>
@@ -108,17 +114,18 @@
 
                           <?php
                           if ($k->status == 'yes') { ?>
-                            <button class="btn btn-xs btn-block btn-primary" disabled>Confirm</button>
+                            <button class="btn btn-xs btn-block btn-success" disabled>Confirm</button>
                             <?php  } else {
                             if ($k->status == 'no') { ?>
-                              <a href="<?php echo base_url() . 'admin/konfirmasi/' . $k->idpemohon ?>" class="btn btn-xs btn-block btn-primary">Confirm</a>
+                              <a onclick="Confirm('<?php echo base_url() . 'admin/konfirmasi/' . $k->idpemohon ?>')" href="#konfirmasidata" class="btn btn-xs btn-block btn-success">Confirm</a>
+                          <a href="<?php echo base_url() . 'admin/edit_list_data/'.$k->idpemohon ?>" class="btn btn-xs btn-block btn-info">Edit</a>
+
                           <?php }
                           }
 
 
 
                           ?>
-                          <a href="<?php echo base_url() . 'admin/edit_list_data/'.$k->idpemohon ?>" class="btn btn-xs btn-block btn-info">Edit</a>
                           <a onclick="deleteConfirm('<?php echo base_url() . 'admin/hapus_data/'.$k->idpemohon ?>')" href="#!" class="btn btn-xs btn-block btn-danger">Hapus</a>
 
                         </td>
@@ -149,6 +156,8 @@
       <!-- /.row -->
     </section>
     <!-- /.content -->
+
+    <!-- Modal Delete -->
     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -162,6 +171,25 @@
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
             <a id="btn-delete" class="btn btn-danger" href="#">Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Confirm -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Anda yakin?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Data yang sudah dikonfirmasi tidak bisa diubah</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a id="btn-confirm" class="btn btn-warning" href="#">Konfirmasi</a>
           </div>
         </div>
       </div>
@@ -227,6 +255,10 @@
     function deleteConfirm(url) {
       $('#btn-delete').attr('href', url);
       $('#deleteModal').modal();
+    }
+    function Confirm(url) {
+      $('#btn-confirm').attr('href', url);
+      $('#confirmModal').modal();
     }
   </script>
   <script>

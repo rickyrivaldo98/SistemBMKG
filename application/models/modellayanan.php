@@ -106,6 +106,7 @@ class modellayanan extends CI_Model
         $this->instansi = html_escape($post["instansi"]);
         $this->nohp = html_escape($post["nohp"]);
         $this->informasi = html_escape($post["informasi"]);
+        $this->status = 'no';
 
 
         $this->suratpengantar = $this->_uploadPDF();

@@ -72,23 +72,23 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="nama">Nama Pemohon</label>
-                                            <input type="text" name="nama" id="nama" class="form-control" value="<?php echo $p->nama; ?>" placeholder="Nama Lengkap Anda...">
+                                            <input type="text" name="nama" id="nama" class="form-control" value="<?php echo $p->nama;?>" placeholder="Nama Lengkap Anda...">
                                         </div>
                                         <div class="form-group">
                                             <label for="alamat">Alamat Pemohon</label>
-                                            <input type="text" name="alamat" id="alamat" class="form-control" value=" <?php echo $p->alamat; ?>" placeholder="Alamat Lengkap Anda...">
+                                            <input type="text" name="alamat" id="alamat" class="form-control" value="<?php echo $p->alamat;?>" placeholder="Alamat Lengkap Anda...">
                                         </div>
                                         <div class="form-group">
                                             <label for="email">Email Pemohon</label>
-                                            <input type="text" name="email" id="email" class="form-control" value=" <?php echo $p->email; ?>" placeholder="Masukkan email anda">
+                                            <input type="text" name="email" id="email" class="form-control" value="<?php echo $p->email;?>" placeholder="Masukkan email anda">
                                         </div>
                                         <div class="form-group">
                                             <label for="instansi">Asal Instansi Pemohon</label>
-                                            <input type="text" name="instansi" id="instansi" class="form-control" value=" <?php echo $p->instansi; ?>" placeholder="Asal instansi anda">
+                                            <input type="text" name="instansi" id="instansi" class="form-control" value="<?php echo $p->instansi;?>" placeholder="Asal instansi anda">
                                         </div>
                                         <div class="form-group">
                                             <label for="nohp">Nomor HP Pemohon</label>
-                                            <input type="text" name="nohp" id="hp" class="form-control" value=" <?php echo $p->nohp; ?>" placeholder="Masukkan no. HP anda">
+                                            <input type="text" name="nohp" id="hp" class="form-control" value="<?php echo $p->nohp;?>" placeholder="Masukkan no. HP anda">
                                         </div>
                                         <div class="form-group">
 
@@ -97,15 +97,15 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="nohp">Surat pengantar</label>
-                                            <input type="text" name="nohp" id="hp" class="form-control" value=" <?php echo $p->suratpengantar; ?>" placeholder="Masukkan no. HP anda">
+                                            <input type="text" name="nohp" id="hp" class="form-control" value="<?php echo $p->suratpengantar;?>" placeholder="Masukkan no. HP anda">
                                         </div>
                                         <div class="form-group">
                                             <label for="nohp">surat pernyataan</label>
-                                            <input type="text" name="nohp" id="hp" class="form-control" value=" <?php echo $p->suratpernyataan; ?>" placeholder="Masukkan no. HP anda">
+                                            <input type="text" name="nohp" id="hp" class="form-control" value="<?php echo $p->suratpernyataan;?>" placeholder="Masukkan no. HP anda">
                                         </div>
                                         <div class="form-group">
                                             <label for="nohp">Proposal</label>
-                                            <input type="text" name="nohp" id="hp" class="form-control" value=" <?php echo $p->proposal; ?>" placeholder="Masukkan no. HP anda">
+                                            <input type="text" name="nohp" id="hp" class="form-control" value="<?php echo $p->proposal;?>" placeholder="Masukkan no. HP anda">
                                         </div>
                                     <?php  } ?>
                                     <input class="btn btn-success" type="submit" name="btn" value="Simpan" />

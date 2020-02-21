@@ -9,23 +9,32 @@
 </head>
 
 <body>
-    <?php foreach ($jeniskelamin as $j) {
-        $testarray = array($j->count);
-        print_r($testarray);
-    } ?>
+
     <br>
     <button id="tombol">
         klik
     </button>
     <script>
+        var base_url = '<?php echo base_url(); ?>';
         document.querySelector("#tombol").addEventListener('click', function() {
             swal.fire({
 
                 icon: 'success',
                 title: 'Your work has been saved',
+                text: 'kontolll',
                 showConfirmButton: true,
 
             });
+          
+            window.setTimeout(function(){ 
+                window.location.replace(base_url)
+
+  } ,3000); 
+
+
+
+
+
 
         });
     </script>
