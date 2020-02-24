@@ -40,36 +40,40 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="idpemohon">ID</label>
-                                <input type="text"" name=" idpemohon" id="id" class="form-control" placeholder="ID Anda">
+                                <input type="text"" name=" idpemohon" id="id" value="<?php echo $idpemohon;?>" class="form-control" placeholder="ID Anda" readonly>
                             </div>
                             <div class="form-group  <?= form_error('nama') ? 'has-error' : null ?>">
                                 <label for="nama">Nama Pemohon</label>
                                 <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Lengkap Anda..." >
                                 <?php echo form_error('nama') ?>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group  <?= form_error('alamat') ? 'has-error' : null ?>">
                                 <label for="alamat">Alamat Pemohon</label>
                                 <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Alamat Lengkap Anda...">
+                                <?php echo form_error('alamat') ?>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group  <?= form_error('email') ? 'has-error' : null ?>">
                                 <label for="email">Email Pemohon</label>
                                 <input type="text" name="email" id="email" class="form-control" placeholder="Masukkan email anda">
+                                <?php echo form_error('email') ?>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group  <?= form_error('instansi') ? 'has-error' : null ?>">
                                 <label for="instansi">Asal Instansi Pemohon</label>
                                 <input type="text" name="instansi" id="instansi" class="form-control" placeholder="Asal instansi anda">
+                                <?php echo form_error('instansi') ?>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group  <?= form_error('nohp') ? 'has-error' : null ?>">
                                 <label for="nohp">Nomor HP Pemohon</label>
                                 <input type="text" name="nohp" id="hp" class="form-control" placeholder="Masukkan no. HP anda">
+                                <?php echo form_error('nohp') ?>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group  <?= form_error('informasi') ? 'has-error' : null ?>">
 
                                 <label for="informasi">Informasi yang dibutuhkan <p style="color: grey; font-size: 14px;">*Contoh : informasi curah hujan di kota semarang daerah simpang lima tanggal 20 januari 2020</p> </label>
 
 
                                 <textarea name="informasi" type="text" class="form-control" id="informasi" placeholder="Informasi yang dibutuhkan"></textarea>
-
+                                <?php echo form_error('informasi') ?>
                             </div>
                             <label for="pdf">Unggah file surat pengantar <span style="color: red">(PDF)</span> </label>
 

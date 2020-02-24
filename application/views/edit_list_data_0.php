@@ -59,7 +59,7 @@
                         <?php endif; ?>
                         <div class="card mb-4">
                             <div class="card-header">
-                                <a href="<?php echo site_url('admin/list_data_berbayar') ?>"><i class="fas fa-arrow-left"></i>
+                                <a href="<?php echo site_url('admin/list_data_0') ?>"><i class="fas fa-arrow-left"></i>
                                     Kembali</a>
                             </div>
                             <div class="card-body">
@@ -95,7 +95,7 @@
                                             <label for="informasi">Informasi yang dibutuhkan <p style="color: grey; font-size: 14px;">*Contoh : informasi curah hujan di kota semarang daerah simpang lima tanggal 20 januari 2020</p> </label>
                                             <textarea name="informasi" type="text" class="form-control" id="informasi" placeholder="Informasi yang dibutuhkan"><?php echo $p->informasi; ?></textarea>
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <label for="nohp">Surat pengantar</label>
                                             <input type="text" name="nohp" id="hp" class="form-control" value="<?php echo $p->suratpengantar;?>" placeholder="Masukkan no. HP anda">
                                         </div>
@@ -106,7 +106,7 @@
                                         <div class="form-group">
                                             <label for="nohp">Proposal</label>
                                             <input type="text" name="nohp" id="hp" class="form-control" value="<?php echo $p->proposal;?>" placeholder="Masukkan no. HP anda">
-                                        </div>
+                                        </div> -->
                                     <?php  } ?>
                                     <input class="btn btn-success" type="submit" name="btn" value="Simpan" />
                                     </form>

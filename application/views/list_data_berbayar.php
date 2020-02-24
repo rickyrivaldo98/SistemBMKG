@@ -59,12 +59,18 @@
                       </div> -->
             <!-- /.card-header -->
             <div class="card-body">
-            <?php if ($this->session->flashdata('success')) : ?>
-                                    <div class="alert alert-success" role="alert">
-                                    <button aria-label="Close" data-dismiss="alert" class="close" type="button" ><span aria-hidden="true" class="fa fa-times"></span></button>
-                                        <?php echo $this->session->flashdata('success'); ?>
-                                    </div>
-                                <?php endif; ?>
+              <?php if ($this->session->flashdata('success')) : ?>
+                <div class="alert alert-success" role="alert">
+                  <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true" class="fa fa-times"></span></button>
+                  <?php echo $this->session->flashdata('success'); ?>
+                </div>
+                <?php endif; ?>
+                <?php if ($this->session->flashdata('danger')) : ?>
+                  <div class="alert alert-danger" role="alert">
+                    <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true" class="fa fa-times"></span></button>
+                    <?php echo $this->session->flashdata('danger'); ?>
+                  </div>
+              <?php endif; ?>
 
 
               <table id="example1" class="table table-bordered table-striped">
@@ -118,7 +124,7 @@
                             <?php  } else {
                             if ($k->status == 'no') { ?>
                               <a onclick="Confirm('<?php echo base_url() . 'admin/konfirmasi/' . $k->idpemohon ?>')" href="#konfirmasidata" class="btn btn-xs btn-block btn-success">Confirm</a>
-                          <a href="<?php echo base_url() . 'admin/edit_list_data/'.$k->idpemohon ?>" class="btn btn-xs btn-block btn-info">Edit</a>
+                              <a href="<?php echo base_url() . 'admin/edit_list_data/' . $k->idpemohon ?>" class="btn btn-xs btn-block btn-info">Edit</a>
 
                           <?php }
                           }
@@ -126,7 +132,7 @@
 
 
                           ?>
-                          <a onclick="deleteConfirm('<?php echo base_url() . 'admin/hapus_data/'.$k->idpemohon ?>')" href="#!" class="btn btn-xs btn-block btn-danger">Hapus</a>
+                          <a onclick="deleteConfirm('<?php echo base_url() . 'admin/hapus_data/' . $k->idpemohon ?>')" href="#!" class="btn btn-xs btn-block btn-danger">Hapus</a>
 
                         </td>
                       </tr>
@@ -256,6 +262,7 @@
       $('#btn-delete').attr('href', url);
       $('#deleteModal').modal();
     }
+
     function Confirm(url) {
       $('#btn-confirm').attr('href', url);
       $('#confirmModal').modal();

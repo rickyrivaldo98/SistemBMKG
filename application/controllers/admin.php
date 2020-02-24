@@ -1179,6 +1179,8 @@ class Admin extends MY_Controller
     }
 
 
+
+
     public function konfirmasi2($id)
     {
         $data['coba'] = $this->db->query("select * from pemohon1 where idpemohon ='$id'")->result();
@@ -1498,8 +1500,8 @@ class Admin extends MY_Controller
             'idpemohon' => $id
         );
         $this->modelresponden->delete_data($where, 'pemohon');
-
-
+        $this->modelresponden->delete_data($where, 'pemohon2');
+        $this->session->set_flashdata('danger', 'Data Berhasil dihapus');
         redirect(base_url() . 'admin/list_data_berbayar');
     }
     public function hapus_data1($id)
@@ -1508,8 +1510,7 @@ class Admin extends MY_Controller
             'idpemohon' => $id
         );
         $this->modelresponden->delete_data($where, 'pemohon1');
-
-
+        $this->session->set_flashdata('danger', 'Data Berhasil dihapus');
         redirect(base_url() . 'admin/list_data_0');
     }
     public function test()
@@ -1548,6 +1549,13 @@ class Admin extends MY_Controller
         $this->load->helper('download');
         $fileinfo = $this->modelupload->download($id);
         $file = 'upload/kritik/' . $fileinfo['File'];
+        force_download($file, NULL);
+    }
+
+    public function downloadpdf($id)
+    {
+        $fileinfo = $this->modelupload->download($id);
+        $file = 'upload/data/' . $fileinfo['File'];
         force_download($file, NULL);
     }
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 20, 2020 at 11:41 AM
+-- Generation Time: Feb 24, 2020 at 08:12 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -41,7 +41,7 @@ CREATE TABLE `data_hujan` (
 --
 
 INSERT INTO `data_hujan` (`id`, `id_data`, `Bulan`, `Tahun`, `CSV`) VALUES
-(3, '5e3bffe2090be', 'Januari', '2019', '5e3bffe2090be.csv'),
+(3, '5e3bffe2090be', 'Januari', '1111', '5e3bffe2090be.csv'),
 (4, '5e42a01023f24', 'rrr', '333', '5e42a01023f24.csv'),
 (5, '5e42a30d23f6d', 'rrr', 'reterter', '5e42a30d23f6d.csv'),
 (6, '5e42a77b0f454', 'rrr', 'reterter', '5e42a77b0f454.csv');
@@ -151,7 +151,8 @@ INSERT INTO `kritik` (`ID`, `Nama`, `Email`, `Kritik`, `File`) VALUES
 (6, 'awas', 'anas@gmail.com', 'ssss', 'logo2.png'),
 (7, 'awas', 'Haikal@gmail.com', 'sssss', 'Laporan_Detail_Responden_(4).pdf'),
 (8, 'Anas Alqoyyum', 'doublezero13@gmail.com', 'Jfhefiej', 'default.csv'),
-(9, 'Anas Alqoyyum', 'doublezero13@gmail.com', 'hai', 'default1.csv');
+(9, 'Anas Alqoyyum', 'doublezero13@gmail.com', 'hai', 'default1.csv'),
+(10, 'jhjhjhjhjhjh', 'rahhh@gmail.com', 'jhjhjhjhjhj', '18225045_ml1.jpg');
 
 -- --------------------------------------------------------
 
@@ -1109,7 +1110,7 @@ INSERT INTO `pelayanan` (`nolayanan`, `idpemohon`, `layanan`, `disposisi`, `ket`
 --
 
 CREATE TABLE `pemohon` (
-  `idpemohon` varchar(10) NOT NULL,
+  `idpemohon` varchar(12) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `nohp` varchar(14) NOT NULL,
   `alamat` varchar(200) NOT NULL,
@@ -1119,16 +1120,6 @@ CREATE TABLE `pemohon` (
   `status` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `pemohon`
---
-
-INSERT INTO `pemohon` (`idpemohon`, `nama`, `nohp`, `alamat`, `email`, `instansi`, `informasi`, `status`) VALUES
-('908', 'fdsds', '     001001302', '     jl fajar198', '     rahmadiihaikal@gmail.com', '     UNDIP', 'mau apa aja kau', 'yes'),
-('asdaaaa', 'M Haikal rahmadi', ' 0010013023', 'abnagstattarttrtaurauw', ' rahmadiihaikal@gmail.com', ' asdasdasdassd', 'asdsadsadasdas', 'yes'),
-('BMKG091', 'M Haikal rahmadi', ' 0010013023', 'anjing abi bangsat', ' rahmadiihaikal@gmail.com', ' UNDIP', 'asdsa asd d asdsad asdsa ds', 'yes'),
-('oiqk', 'asdsadsa asdsa', '0010013023', 'asdsad asd asda', 'rahmadiihaikal@gmail.com', 'UNDIP', 'asd asd sad asd sad as', 'yes');
-
 -- --------------------------------------------------------
 
 --
@@ -1136,7 +1127,7 @@ INSERT INTO `pemohon` (`idpemohon`, `nama`, `nohp`, `alamat`, `email`, `instansi
 --
 
 CREATE TABLE `pemohon1` (
-  `idpemohon` varchar(10) NOT NULL,
+  `idpemohon` varchar(12) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `nohp` varchar(14) NOT NULL,
   `alamat` varchar(200) NOT NULL,
@@ -1150,13 +1141,6 @@ CREATE TABLE `pemohon1` (
   `status` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `pemohon1`
---
-
-INSERT INTO `pemohon1` (`idpemohon`, `nama`, `nohp`, `alamat`, `email`, `instansi`, `identitas`, `informasi`, `suratpengantar`, `proposal`, `suratpernyataan`, `status`) VALUES
-('popoppo', 'awawaw', ' popopopo.pdf', ' popop', ' opo', ' popopopo', '', 'popopopop', 'popopopo.pdf', 'popopopo.pdf', 'popopopo.pdf', 'yes');
-
 -- --------------------------------------------------------
 
 --
@@ -1164,7 +1148,7 @@ INSERT INTO `pemohon1` (`idpemohon`, `nama`, `nohp`, `alamat`, `email`, `instans
 --
 
 CREATE TABLE `pemohon2` (
-  `idpemohon` varchar(10) NOT NULL,
+  `idpemohon` varchar(12) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `nohp` varchar(14) NOT NULL,
   `alamat` varchar(200) NOT NULL,
@@ -1179,7 +1163,7 @@ CREATE TABLE `pemohon2` (
 --
 
 CREATE TABLE `pemohon3` (
-  `idpemohon` varchar(10) NOT NULL,
+  `idpemohon` varchar(12) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `nohp` varchar(14) NOT NULL,
   `alamat` varchar(200) NOT NULL,
@@ -1187,15 +1171,6 @@ CREATE TABLE `pemohon3` (
   `instansi` varchar(50) NOT NULL,
   `informasi` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `pemohon3`
---
-
-INSERT INTO `pemohon3` (`idpemohon`, `nama`, `nohp`, `alamat`, `email`, `instansi`, `informasi`) VALUES
-('908', 'bangsatttttt', '   0010013023', '   jl fajar198', '   rahmadiihaikal@gmail.com', '   UNDIP', 'mau apa aja kau'),
-('asdaaaa', 'M Haikal rahmadi', '0010013023', 'adasdasdasd', 'rahmadiihaikal@gmail.com', 'asdasdasdassd', 'asdsadsadasdas'),
-('oiqk', 'asdsadsa asdsa', '0010013023', 'asdsad asd asda', 'rahmadiihaikal@gmail.com', 'UNDIP', 'asd asd sad asd sad as');
 
 -- --------------------------------------------------------
 
@@ -1308,7 +1283,7 @@ ALTER TABLE `jawaban`
 -- AUTO_INCREMENT for table `kritik`
 --
 ALTER TABLE `kritik`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `user`

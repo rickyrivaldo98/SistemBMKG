@@ -34,14 +34,16 @@
                     </div>
                 </div>
 
-                <form action="<?php echo base_url() . 'page/form'; ?>" method="POST">
+                <form action="<?php echo base_url() . 'page/tambah'; ?>" method="POST">
 
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="card-body">
                             <div class="form-group">
+
                                 <label for="idpemohon">ID</label>
-                                <input type="text"" name=" idpemohon" id="id" class="form-control" placeholder="ID Anda">
+                                <input type="text"" name=" idpemohon" id="id" value="<?php echo $idpemohon;?>" class=" form-control" placeholder="ID Anda" readonly>
                             </div>
+
                             <div class="form-group <?= form_error('nama') ? 'has-error' : null ?>">
                                 <label for="nama">Nama Pemohon</label>
                                 <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Lengkap Anda...">

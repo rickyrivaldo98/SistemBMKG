@@ -78,7 +78,7 @@
                 <div class="navbar-nav ml-auto">
                     <a class="nav-item nav-link active" href="#"><span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="#video">Tentang</a>
-                    <a class="nav-item nav-link" href="<?php echo base_url() . 'page/bantuan' ?>">Bantuan</a>
+                    <a class="nav-item nav-link " href="<?php echo base_url() . 'page/bantuan' ?>">Bantuan</a>
                 </div>
             </div>
         </div>

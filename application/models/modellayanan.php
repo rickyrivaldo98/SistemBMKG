@@ -6,9 +6,9 @@ class modellayanan extends CI_Model
     private $_table = "pemohon1";
 
     public $idpemohon;
-    public $suratpengantar;
-    public $proposal;
-    public $suratpernyataan;
+    // public $suratpengantar;
+    // public $proposal;
+    // public $suratpernyataan;
     public $nama;
     public $alamat;
     public $nohp;
@@ -95,6 +95,58 @@ class modellayanan extends CI_Model
         $this->db->insert_batch($table, $data);
     }
 
+    public function get_id()
+    {
+        // where LEFT(idpemohon,4)=(select date_format(CURRENT_DATE,'%y%m'))
+        $id = $this->db->query("SELECT MAX(RIGHT(idpemohon,4)) as max from pemohon");
+        $kd = '';
+
+        if ($id->num_rows() > 0) {
+            foreach ($id->result() as $hasil) {
+                $tmp = ((int) $hasil->max) + 1;
+                $kd = sprintf("%04s", $tmp);
+            }
+        } else {
+            $kd = "0001";
+        }
+        date_default_timezone_set('Asia/Jakarta');
+        $kd = "BMKG" . $kd;
+        $kd = date('ym') . $kd;
+        return $kd;
+    }
+
+    public function tambah()
+    {
+        $post = $this->input->post();
+        $this->idpemohon = html_escape($post["idpemohon"]);
+        $this->nama = html_escape($post["nama"]);
+        $this->alamat = html_escape($post["alamat"]);
+        $this->email = html_escape($post["email"]);
+        $this->instansi = html_escape($post["instansi"]);
+        $this->nohp = html_escape($post["nohp"]);
+        $this->informasi = html_escape($post["informasi"]);
+        $this->status = 'no';
+        $this->db->insert('pemohon', $this);
+
+        $id = $this->idpemohon;
+        $nama = $this->nama;
+        $alamat = $this->alamat;
+        $email = $this->email;
+        $instansi = $this->instansi;
+        $nohp = $this->nohp;
+
+        $data = array(
+                    'idpemohon' => $id,
+                    'nama' => $nama,
+                    'alamat' => $alamat,
+                    'nohp' => $nohp,
+                    'instansi' => $instansi,
+                    'email' => $email
+                
+                );
+        
+        $this->db->insert('pemohon2', $data);
+    }
 
     public function save()
     {
@@ -119,7 +171,8 @@ class modellayanan extends CI_Model
     {
         $config['upload_path']          = './upload/data/';
         $config['allowed_types']        = 'pdf';
-        $config['file_name']            =  $this->idpemohon;
+        $config['file_name']            = "suratpengantar-" . $this->idpemohon;
+        // $config['encrypt_name']            = true;
         $config['overwrite']            = true;
         $config['max_size']             = 1024; // 1MB
 
@@ -135,39 +188,36 @@ class modellayanan extends CI_Model
         } else {
             return $this->upload->data("file_name");
         }
-
         // return "data_kosong.csv";
     }
-
-
 
     public function save1()
     {
         $post = $this->input->post();
-        $this->idpemohon = $post["idpemohon"];
-        $this->nama = $post["nama"];
-        $this->alamat = $post["alamat"];
-        $this->email = $post["email"];
-        $this->instansi = $post["instansi"];
+        $this->idpemohon = html_escape($post["idpemohon"]);
+        $this->nama = html_escape($post["nama"]);
+        $this->alamat = html_escape($post["alamat"]);
+        $this->email = html_escape($post["email"]);
+        $this->instansi = html_escape($post["instansi"]);
+        $this->nohp = html_escape($post["nohp"]);
+        $this->informasi = html_escape($post["informasi"]);
+        $this->status = 'no';
 
-        $this->nohp = $post["nohp"];
-        $this->informasi = $post["informasi"];
-
-
-        $this->suratpengantar = $this->uploadPDF1();
-        $this->proposal = $this->uploadPDF2();
-        $this->suratpernyataan = $this->uploadPDF3();
-
-
-
+        $this->suratpernyataan = $this->_uploadPDF2();
+        $this->proposal = $this->_uploadPDF3();
+        $this->suratpengantar = $this->_uploadPDF1();
         return $this->db->insert($this->_table, $this);
     }
-    public function uploadPDF1()
+
+
+
+    public function _uploadPDF1()
     {
         $config['upload_path']          = './upload/data/';
         $config['allowed_types']        = 'pdf';
-        $config['file_name']            = $this->nama;
-        $config['overwrite']            = true;
+        $config['file_name']            = "suratpengantar-" . $this->idpemohon;
+        // $config['encrypt_name']            = true;
+        // $config['overwrite']            = true;
         $config['max_size']             = 1024; // 1MB
 
         $this->load->library('upload', $config);
@@ -180,17 +230,18 @@ class modellayanan extends CI_Model
             $this->session->set_flashdata('error', $error['error']);
             redirect('page/upload_data1', 'refresh');
         } else {
-            return $this->upload->data("file_name");
+            $nama = $this->upload->data('file_name');
+            return $nama;
         }
-
         // return "data_kosong.csv";
     }
-    public function uploadPDF2()
+    public function _uploadPDF2()
     {
         $config['upload_path']          = './upload/data/';
         $config['allowed_types']        = 'pdf';
-        $config['file_name']            = $this->alamat;
-        $config['overwrite']            = true;
+        $config['file_name']            = "suratpernyataan-" . $this->idpemohon;
+        // $config['encrypt_name']            = true;
+        // $config['overwrite']            = true;
         $config['max_size']             = 1024; // 1MB
 
         $this->load->library('upload', $config);
@@ -203,17 +254,19 @@ class modellayanan extends CI_Model
             $this->session->set_flashdata('error', $error['error']);
             redirect('page/upload_data1', 'refresh');
         } else {
-            return $this->upload->data("file_name");
+            $nama2 = $this->upload->data('file_name');
+            return $nama2;
         }
-
         // return "data_kosong.csv";
     }
-    public function uploadPDF3()
+
+    public function _uploadPDF3()
     {
         $config['upload_path']          = './upload/data/';
         $config['allowed_types']        = 'pdf';
-        $config['file_name']            = $this->nohp;
-        $config['overwrite']            = true;
+        $config['file_name']            = "proposal-" . $this->idpemohon;
+        // $config['encrypt_name']            = true;
+        // $config['overwrite']            = true;
         $config['max_size']             = 1024; // 1MB
 
         $this->load->library('upload', $config);
@@ -226,9 +279,9 @@ class modellayanan extends CI_Model
             $this->session->set_flashdata('error', $error['error']);
             redirect('page/upload_data1', 'refresh');
         } else {
-            return $this->upload->data("file_name");
+            $nama3 = $this->upload->data('file_name');
+            return $nama3;
         }
-
         // return "data_kosong.csv";
     }
 }

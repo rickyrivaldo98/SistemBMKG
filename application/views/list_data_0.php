@@ -60,8 +60,18 @@
                       </div> -->
             <!-- /.card-header -->
             <div class="card-body">
-
-
+            <?php if ($this->session->flashdata('success')) : ?>
+                <div class="alert alert-success" role="alert">
+                  <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true" class="fa fa-times"></span></button>
+                  <?php echo $this->session->flashdata('success'); ?>
+                </div>
+                <?php endif; ?>
+                <?php if ($this->session->flashdata('danger')) : ?>
+                  <div class="alert alert-danger" role="alert">
+                    <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true" class="fa fa-times"></span></button>
+                    <?php echo $this->session->flashdata('danger'); ?>
+                  </div>
+              <?php endif; ?>
               <table id="example1" class="table table-bordered table-striped">
                 <thead style="background-color: white;">
                   <tr>
@@ -96,14 +106,20 @@
                         <td><?php echo  $k->email; ?></td>
                         <td><?php echo  $k->instansi; ?></td>
                         <td><?php echo  $k->informasi; ?></td>
-                        <td><?php echo  $k->suratpengantar; ?></td>
+                        <td>
+
+                          <a href="<?php echo base_url(). 'upload/data/' .$k->suratpengantar;?>">surat Pengantar</a>
+
+                        
+                        </td>
                         <td><?php
                             if ($k->suratpernyataan == null) {
                               echo  "Tidak ada File Pendukung";
                             } else {
                               echo $k->suratpernyataan;
-                            }
-                            ?></td>
+                            
+                            } ?>
+                            </td>
                         <td><?php
                             if ($k->proposal == null) {
                               echo  "Tidak ada File Pendukung";
@@ -135,7 +151,6 @@
                           <?php }
                           }
                           ?>
-
                           <a onclick="deleteConfirm('<?php echo base_url() . 'admin/hapus_data1/' . $k->idpemohon ?>')" href="#!" class="btn btn-xs btn-block btn-danger">Hapus</a>
 
                         </td>
