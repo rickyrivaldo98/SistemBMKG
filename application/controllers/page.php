@@ -19,11 +19,10 @@ class Page extends CI_Controller
         $this->load->view('formzero', $id);
     }
     public function form2()
-    
+
     {
         $id['idpemohon'] = $this->modellayanan->get_id();
         $this->load->view('formzero1', $id);
-
     }
     public function test()
     {
@@ -138,8 +137,9 @@ class Page extends CI_Controller
             // $this->session->set_flashdata('success', 'Berhasil disimpan');
         } else {
             $simpan->tambah();
-            $this->load->view("formberbayar");
+        $this->session->set_flashdata('flash', ' Berhasil ditambahkan');
             redirect(base_url());
+            
         }
     }
     public function upload_data()
@@ -162,6 +162,7 @@ class Page extends CI_Controller
         } else {
             $dataPDF->save();
             $this->load->view("formzero");
+        $this->session->set_flashdata('flash', ' Berhasil ditambahkan');
             redirect(base_url());
         }
     }

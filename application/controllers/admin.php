@@ -1174,7 +1174,7 @@ class Admin extends MY_Controller
             'idpemohon' => $id
         );
         $this->modelresponden->update_data($where, $data, 'pemohon');
-        $this->session->set_flashdata('success', 'Data Berhasil Dikonfirmasi');
+        $this->session->set_flashdata('info', 'Data Berhasil Dikonfirmasi');
         redirect(base_url() . 'admin/list_data_berbayar');
     }
 
@@ -1212,7 +1212,7 @@ class Admin extends MY_Controller
             'idpemohon' => $id
         );
         $this->modelresponden->update_data($where, $data, 'pemohon1');
-        $this->session->set_flashdata('success', 'Data Berhasil Dikonfirmasi');
+        $this->session->set_flashdata('info', 'Data Berhasil Dikonfirmasi');
         redirect(base_url() . 'admin/list_data_0');
     }
 
@@ -1252,7 +1252,7 @@ class Admin extends MY_Controller
             'idpemohon' => $id
         );
         $this->modelresponden->update_data($where, $data, 'pemohon');
-        $this->session->set_flashdata('success', 'Data Berhasil diubah');
+        $this->session->set_flashdata('warning', 'Data Berhasil diubah');
         redirect(base_url() . 'admin/list_data_berbayar');
     }
     public function edit_data_0()
@@ -1277,6 +1277,7 @@ class Admin extends MY_Controller
             'idpemohon' => $id
         );
         $this->modelresponden->update_data($where, $data, 'pemohon1');
+        $this->session->set_flashdata('warning', 'Data Berhasil diubah');
         redirect(base_url() . 'admin/list_data_0');
     }
 

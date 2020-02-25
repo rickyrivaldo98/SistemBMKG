@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,6 +10,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="css/style.css"> -->
     <link rel="stylesheet" href="<?php echo base_url() . 'assets/css/style.css' ?>">
+    <link rel="stylesheet" href="<?php echo base_url() . 'assets/dist/aos.css' ?>">
+
+
     <style>
         html {
             scroll-behavior: smooth;
@@ -33,28 +37,6 @@
         }
     </style>
 
-    <script>
-        // window.addEventListener('scroll',  () =>{
-        //     const scrollable = document.documentElement.scrollHeight = window.innerHeight;
-        //     const scrolled = window.scrollY;
-
-        //     if(Math.ceil(scrolled) === scrollable){
-
-
-        //     }
-
-        // });
-        //         $(document).scroll(function() {
-        //   var y = $(this).scrollTop();
-        //   if (y > 30) {
-        //     $('.ignielToTop').fadeIn();
-        //   } else {
-        //     $('.ignielToTop').fadeOut();
-        //   }
-        // });
-    </script>
-
-
 
     <title>Selamat datang di website</title>
 </head>
@@ -64,6 +46,10 @@
     <!-- Navbar  -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
+            <div class="flash-data" data-flashdata="<?php echo $this->session->flashdata('flash'); ?>"></div>
+            <?php if ($this->session->flashdata('flash')) : ?>
+
+            <?php endif; ?>
             <a class="navbar-brand" href="<?php echo base_url() ?>">
                 <img src="<?php echo base_url() . 'assets/img/logo.png' ?>" alt="logo" class="brand-image elevation-3" style="opacity: .8; width:30px; ">
                 <span>BMKG</span>
@@ -89,7 +75,7 @@
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <div id="text" class="text-center">
+            <div data-aos="fade-up-right" data-aos-duration="1700" id="text" class="text-center">
                 <h1 class="display-4">Selamat Datang Di Sistem Pelayanan Online BMKG Jawa Tengah</h1>
             </div>
         </div>
@@ -99,20 +85,20 @@
 
     <!-- video -->
 
-    <div class="container">
+    <div  data-aos="fade-down"  class="container">
         <div class="row justify-content-center">
             <img class="logo" src="<?php echo base_url() . 'assets/img/logo.png' ?>" alt="">
         </div>
     </div>
 
-    <div class="container">
+    <div   class="container">
 
         <br><br><br>
-        <h1 style="text-align: center">Jenis Layanan</h1>
+        <h1  data-aos="fade-up"  style="text-align: center">Jenis Layanan</h1>
         <br><br><br><br>
         <div id="apa" class="row justify-content-center">
 
-            <div class="col-lg-4 col-md-4">
+            <div  data-aos="fade-up"  class="col-lg-4 col-md-4">
                 <div id="kotak-info" class="info-panel text-center">
                     <a class="icon-link" href="<?php echo base_url() . 'page/form' ?>">
                         <img alt="berbayar" id="berbayar" href="www.google.com" class="icon" src="https://img.icons8.com/wired/60/000000/pay-wall.png">
@@ -121,7 +107,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4">
+            <div  data-aos="fade-up"  class="col-lg-4 col-md-4">
                 <div id="kotak-info" class="info-panel text-center">
                     <a class="icon-link" href="<?php echo base_url() . 'page/syarat' ?>">
                         <img alt="0 rupiah" id="0-rupiah" class="icon" src="https://img.icons8.com/wired/60/000000/gift.png">
@@ -130,7 +116,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4">
+            <div  data-aos="fade-up"  class="col-lg-4 col-md-4">
                 <div id="kotak-info" class="info-panel text-center">
                     <a class="icon-link" href="<?php echo base_url() . 'page/redirect' ?>" target="blank">
                         <img alt="free" id="free-icon" class="icon" src="https://img.icons8.com/carbon-copy/60/000000/service.png">
@@ -141,7 +127,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4">
+            <div  data-aos="fade-up"  class="col-lg-4 col-md-4">
 
 
                 <div id="kotak-info" class="info-panel text-center">
@@ -154,7 +140,7 @@
                 </div>
                 </a>
             </div>
-            <div class="col-lg-4 col-md-4">
+            <div  data-aos="fade-up"  class="col-lg-4 col-md-4">
                 <div id="kotak-info" class="info-panel text-center">
                     <a class="icon-link" href="<?php echo base_url() . 'page/kritik' ?>">
 
@@ -165,7 +151,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4">
+            <div  data-aos="fade-up"  class="col-lg-4 col-md-4">
                 <div id="kotak-info" class="info-panel text-center">
                     <a class="icon-link" href="<?php echo base_url() . 'page/tracking' ?>">
 
@@ -177,7 +163,7 @@
 
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4">
+            <div  data-aos="fade-up"  class="col-lg-4 col-md-4">
 
                 <div id="kotak-info" class="info-panel text-center">
                     <a class="icon-link" href="">
@@ -222,7 +208,7 @@
     </div>
     <br><br><br><br>
     <!-- awal video -->
-    <div class="container">
+    <div data-aos="fade-left" class="container">
         <div class="row justify-content-center">
             <br><br><br><br><br>
             <h1 id="text2" class="display-4">Profil Layanan BMKG Jateng</h1>
@@ -242,7 +228,7 @@
     <?php $this->load->view('template/footer')  ?>
 
 
-  
+
 
 
 
@@ -253,10 +239,20 @@
 
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-   
+    <script src="js/jquery-3.4.1.min.js"> </script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="<?php echo base_url() . 'assets/js/package/dist/sweetalert2.all.min.js' ?>"></script>
+    <script src="<?php echo base_url() . 'assets/js/app.js' ?>"></script>
+    <script src="<?php echo base_url() . 'assets/dist/aos.js' ?>"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            delay: 200
+        });
+    </script>
+
 
     <a href="#" class="ignielToTop"></a>
 </body>

@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo base_url() . 'assets/css/gaya.css' ?>">
-
 </head>
 
 <body>
@@ -22,11 +21,9 @@
     ?>
     <div class="jumbotron">
 
-
-
-
         <br>
         <div class="container">
+
             <div class="card">
                 <div style="background-color:#0099ff; color:white;" class="card-header">
                     <div class="section-headline text-center">
@@ -34,14 +31,14 @@
                     </div>
                 </div>
 
-                <form action="<?php echo base_url() . 'page/tambah'; ?>" method="POST">
+                <form id="form" action="<?php echo base_url() . 'page/tambah'; ?>" method="POST">
 
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="card-body">
                             <div class="form-group">
 
                                 <label for="idpemohon">ID</label>
-                                <input type="text"" name=" idpemohon" id="id" value="<?php echo $idpemohon;?>" class=" form-control" placeholder="ID Anda" readonly>
+                                <input type="text"" name=" idpemohon" id="id" value="<?php echo $idpemohon; ?>" class=" form-control" placeholder="ID Anda" readonly>
                             </div>
 
                             <div class="form-group <?= form_error('nama') ? 'has-error' : null ?>">
@@ -89,11 +86,25 @@
 
     </div>
 
+
     <?php
 
     $this->load->view('template/footer');
 
     ?>
+    <script>
+        // const tombol = document.querySelector('#tombol');
+        // tombol.addEventListener('click', function() {
+        //     swal.fire({
+
+        //         icon: 'success',
+        //         title: 'Your work has been saved',
+        //         text: 'kontolll',
+        //         showConfirmButton: true,
+
+        //     });
+        // });
+    </script>
 
 
 
@@ -105,6 +116,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
+    <script src="<?php echo base_url() . 'assets/js/package/dist/sweetalert2.all.min.js' ?>"></script>
+    <script src="<?php echo base_url() . 'assets/js/app.js' ?>"></script>
+
 
 
 

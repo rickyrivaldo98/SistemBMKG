@@ -25,11 +25,12 @@
                 showConfirmButton: true,
 
             });
-          
-            window.setTimeout(function(){ 
+
+            window.setTimeout(function() {
+
                 window.location.replace(base_url)
 
-  } ,3000); 
+            }, 3000);
 
 
 
