@@ -1145,6 +1145,13 @@ class Admin extends MY_Controller
 
     public function konfirmasi($id)
     {
+        $data1['pemohon'] = $this->db->query("SELECT (MAX(nolayanan)+1) as max from pelayanan")->result();
+        $data =   $data1['pemohon'];
+        foreach ($data as $as) {
+            $nolayanan = $as->max;
+        }
+
+
         $data['coba'] = $this->db->query("select * from pemohon where idpemohon ='$id'")->result();
         $coba = $data['coba'];
 
@@ -1157,16 +1164,23 @@ class Admin extends MY_Controller
             $instansi = $bisa->instansi;
             $informasi = $bisa->informasi;
         }
+
+
+
+
+
         $data1 = array(
             'idpemohon' => $id,
-            'nama' => $nama,
-            'alamat' => $alamat,
-            'nohp' => $nohp,
-            'instansi' => $instansi,
-            'email' => $email,
-            'informasi' => $informasi
+            'nolayanan' => $nolayanan,
+            'tgl' => date('Y-m-d'),
+            // 'nama' => $nama,
+            // 'alamat' => $alamat,
+            // 'nohp' => $nohp,
+            // 'instansi' => $instansi,
+            // 'email' => $email,
+            'layanan' => $informasi
         );
-        $this->modelresponden->insert_data($data1, 'pemohon3');
+        $this->modelresponden->insert_data($data1, 'pelayanan');
         $data = array(
             'status' => 'yes'
         );
@@ -1327,6 +1341,7 @@ class Admin extends MY_Controller
         );
 
         $this->modelresponden->delete_data($where, 'data_responden');
+        $this->session->set_flashdata('danger', 'Data berhasil dihapus');
 
 
         redirect(base_url() . 'admin/hasil_survey');
@@ -1491,6 +1506,8 @@ class Admin extends MY_Controller
             'ID' => $id
         );
         $this->modelresponden->delete_data($where, 'kritik');
+        $this->session->set_flashdata('danger', 'Data Berhasil dihapus');
+
 
 
         redirect(base_url() . 'admin/hasil_pengaduan');

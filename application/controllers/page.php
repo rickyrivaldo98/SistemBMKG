@@ -14,14 +14,14 @@ class Page extends CI_Controller
 
     public function form1()
     {
-        $id['idpemohon'] = $this->modellayanan->get_id();
+        $id['idpemohon'] = $this->modellayanan->get_id1();
 
         $this->load->view('formzero', $id);
     }
     public function form2()
 
     {
-        $id['idpemohon'] = $this->modellayanan->get_id();
+        $id['idpemohon'] = $this->modellayanan->get_id1();
         $this->load->view('formzero1', $id);
     }
     public function test()
@@ -133,8 +133,10 @@ class Page extends CI_Controller
         $validation->set_message('required', '%s masih kosong, silahkan isi');
         $validation->set_error_delimiters('<span class="help-block">', '</span>');
         if ($validation->run() == FALSE) {
+            $this->session->set_flashdata('danger', 'Data Gagal ditambahkan');
+
             $this->load->view("formberbayar", $id);
-            // $this->session->set_flashdata('success', 'Berhasil disimpan');
+
         } else {
             $simpan->tambah();
         $this->session->set_flashdata('flash', ' Berhasil ditambahkan');
@@ -144,7 +146,7 @@ class Page extends CI_Controller
     }
     public function upload_data()
     {
-        $id['idpemohon'] = $this->modellayanan->get_id();
+        $id['idpemohon1'] = $this->modellayanan->get_id1();
         $dataPDF = $this->modellayanan;
         $validation = $this->form_validation;
         $validation->set_rules('nama', 'Nama', 'required|regex_match[/^[a-zA-Z ]+$/]|min_length[4]|max_length[30]|trim');
@@ -157,6 +159,7 @@ class Page extends CI_Controller
         $validation->set_message('required', '%s masih kosong, silahkan isi');
         $validation->set_error_delimiters('<span class="help-block">', '</span>');
         if ($validation->run() == FALSE) {
+            $this->session->set_flashdata('danger', 'Data Gagal ditambahkan');
             $this->load->view("formzero", $id);
             // $this->session->set_flashdata('success', 'Berhasil disimpan');
         } else {
@@ -169,6 +172,7 @@ class Page extends CI_Controller
 
     public function upload_data1()
     {
+        $id['idpemohon1'] = $this->modellayanan->get_id1();
         $dataPDF = $this->modellayanan;
         $validation = $this->form_validation;
         $validation->set_rules('nama', 'Nama', 'required|regex_match[/^[a-zA-Z ]+$/]|min_length[4]|max_length[30]|trim');
@@ -184,12 +188,14 @@ class Page extends CI_Controller
         $validation->set_error_delimiters('<span class="help-block">', '</span>');
 
         if ($validation->run() == FALSE) {
-            $this->load->view("formzero1");
+            $this->session->set_flashdata('danger', 'Data Gagal ditambahkan');
+            $this->load->view("formzero1", $id);
 
             // $this->session->set_flashdata('success', 'Berhasil disimpan');
         } else {
             $dataPDF->save1();
             $this->load->view("formzero1");
+        $this->session->set_flashdata('flash', ' Berhasil ditambahkan');
             redirect(base_url());
         }
     }

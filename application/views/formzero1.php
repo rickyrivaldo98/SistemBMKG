@@ -20,11 +20,8 @@
     $this->load->view('template/header');
 
     ?>
+    
     <div class="jumbotron">
-
-
-
-
         <br>
         <div class="container">
             <div class="card">
@@ -38,6 +35,12 @@
 
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="card-body">
+                        <?php if ($this->session->flashdata('danger')) : ?>
+                                <div data-aos="fade-up" class="alert alert-danger" role="alert">
+                                    <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true" class="fa fa-times"></span></button>
+                                    <?php echo $this->session->flashdata('danger'); ?>
+                                </div>
+                            <?php endif; ?>
                             <div class="form-group">
                                 <label for="idpemohon">ID</label>
                                 <input type="text"" name=" idpemohon" id="id" value="<?php echo $idpemohon;?>"  class="form-control" placeholder="ID Anda" readonly>
@@ -136,6 +139,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
     <script src="<?php echo base_url() . 'assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js' ?>"></script>
+    
 
     <script>
         $(document).ready(function() {
