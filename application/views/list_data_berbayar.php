@@ -285,7 +285,10 @@
   </script>
   <script>
     $(function() {
-      $("#example1").DataTable();
+      $("#example1").DataTable({
+        "scrollX":"1999px",
+        "scrollCollapse": true,
+      });
       $('#example2').DataTable({
         "paging": true,
         "lengthChange": false,
