@@ -8,7 +8,7 @@ Jangan Lupa Follow GitHub nya ya, atau ada yg ingin menambahkan atau memperbaiki
 ~~~~~OUR TEAM~~~~~
 ******************
 
-~ Ricky Rivaldo 		Informatika UNDIP 2017
+~ Ricky Keren 		Informatika UNDIP 2017
 ~ Anas Alqoyyum 		Informatika UNDIP 2017
 ~ M Haikal Rahmadi	Informatika UNDIP 2017
 
