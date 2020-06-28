@@ -314,6 +314,8 @@
         "ordering": true,
         "info": true,
         "autoWidth": false,
+        "scrollY":        '30vh',
+        "scrollCollapse": true,
       });
     });
   </script>

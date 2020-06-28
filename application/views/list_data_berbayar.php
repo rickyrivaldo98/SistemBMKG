@@ -78,11 +78,13 @@
                 </div>
                 <?php endif; ?>
                 <?php if ($this->session->flashdata('danger')) : ?>
-                  <div class="alert alert-danger" role="alert">
+                  <div  data-aos="fade-up" class="alert alert-danger" role="alert">
                     <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true" class="fa fa-times"></span></button>
                     <?php echo $this->session->flashdata('danger'); ?>
                   </div>
               <?php endif; ?>
+
+             
 
 
               <table id="example1" class="table table-bordered table-striped">
@@ -268,6 +270,7 @@
   <!-- DataTables -->
   <script src="<?php echo base_url() . 'assets/plugins/datatables/jquery.dataTables.js' ?>"></script>
   <script src="<?php echo base_url() . 'assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js' ?>"></script>
+  
   <!-- page script -->
   <script>
     function deleteConfirm(url) {
@@ -282,7 +285,10 @@
   </script>
   <script>
     $(function() {
-      $("#example1").DataTable();
+      $("#example1").DataTable({
+        "scrollX":"1999px",
+        "scrollCollapse": true,
+      });
       $('#example2').DataTable({
         "paging": true,
         "lengthChange": false,

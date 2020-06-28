@@ -24,6 +24,7 @@
         <br>
         <div class="container">
 
+
             <div class="card">
                 <div style="background-color:#0099ff; color:white;" class="card-header">
                     <div class="section-headline text-center">
@@ -35,6 +36,12 @@
 
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="card-body">
+                            <?php if ($this->session->flashdata('danger')) : ?>
+                                <div data-aos="fade-up" class="alert alert-danger" role="alert">
+                                    <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true" class="fa fa-times"></span></button>
+                                    <?php echo $this->session->flashdata('danger'); ?>
+                                </div>
+                            <?php endif; ?>
                             <div class="form-group">
 
                                 <label for="idpemohon">ID</label>
@@ -117,7 +124,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
     <script src="<?php echo base_url() . 'assets/js/package/dist/sweetalert2.all.min.js' ?>"></script>
-    <script src="<?php echo base_url() . 'assets/js/app.js' ?>"></script>
 
 
 

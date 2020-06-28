@@ -114,6 +114,40 @@ class modellayanan extends CI_Model
         $kd = date('ym') . $kd;
         return $kd;
     }
+    public function get_id1()
+    {
+        // where LEFT(idpemohon,4)=(select date_format(CURRENT_DATE,'%y%m'))
+        $id = $this->db->query("SELECT MAX(RIGHT(idpemohon,4)) as max from pemohon1");
+        $kd = '';
+
+        if ($id->num_rows() > 0) {
+            foreach ($id->result() as $hasil) {
+                $tmp = ((int) $hasil->max) + 1;
+                $kd = sprintf("%04s", $tmp);
+            }
+        } else {
+            $kd = "0001";
+        }
+        date_default_timezone_set('Asia/Jakarta');
+        $kd = "BMKGU" . $kd;
+        $kd = date('ym') . $kd;
+        return $kd;
+    }
+    public function get_id2()
+    {
+        // where LEFT(idpemohon,4)=(select date_format(CURRENT_DATE,'%y%m'))
+        $id = $this->db->query("SELECT (MAX(nolayanan)) as max from pelayanan");
+        $kd = '';
+
+        if ($id->num_rows() > 0) {
+            foreach ($id->result() as $hasil) {
+                $tmp = ((int) $hasil->max) + 1;
+                $kd = $tmp;
+            }
+        return $kd;
+    }
+}
+
 
     public function tambah()
     {

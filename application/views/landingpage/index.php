@@ -75,8 +75,9 @@
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <div data-aos="fade-up-right" data-aos-duration="1700" id="text" class="text-center">
-                <h1 class="display-4">Selamat Datang Di Sistem Pelayanan Online BMKG Jawa Tengah</h1>
+            <div  id="text" class="text-center">
+                <h1 data-aos="fade-up-right" data-aos-duration="1700" class="display-4">Selamat Datang Di Sistem Pelayanan Online BMKG Jawa Tengah</h1> <br><br>
+                <h4 data-aos="fade-up-left" data-aos-duration="1700" data-aos-delay="1500" style="font-weight: 1px">Cepat, Tepat, Akurat, Luas, dan Mudah dipahami</h4>
             </div>
         </div>
     </div>
@@ -166,7 +167,7 @@
             <div  data-aos="fade-up"  class="col-lg-4 col-md-4">
 
                 <div id="kotak-info" class="info-panel text-center">
-                    <a class="icon-link" href="">
+                    <a class="icon-link" href="<?php echo base_url() . 'page/informasi' ?>">
 
                         <img alt="informasi dan layanan" id="informasi" class="icon" src="https://img.icons8.com/dotty/60/000000/info.png">
 
