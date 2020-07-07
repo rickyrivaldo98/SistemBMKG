@@ -70,7 +70,7 @@
                                     <div class="form-group">
                                         <label for="Bulan">Bulan*</label>
                                         <select class="form-control select2bs4 <?php echo form_error('Bulan') ? 'is-invalid' : '' ?>" name="Bulan" tabindex="-1">
-                                            <option value="<?php echo $data_hujan->Bulan ?>"><?php echo $data_hujan->Bulan ?></option>
+                                            <option value="<?php echo $data_hujan->Bulan ?>"><?php $this->load->helper('bulan_helper'); echo bulan($data_hujan->Bulan) ?></option>            
                                             <option value="1">Januari</option>;
                                             <option value="2">Februari</option>;
                                             <option value="3">Maret</option>;
@@ -120,7 +120,7 @@
 
                     <!-- /.content-wrapper -->
                     <footer class="main-footer fixed-bottom">
-                        <strong>Copyright &copy; Turu Teams
+                        <strong>Copyright &copy; BMKG Jawa Tengah
                             All rights reserved.
                             <div class="float-right d-none d-sm-inline-block">
                                 <b>Version</b> 0.0.1

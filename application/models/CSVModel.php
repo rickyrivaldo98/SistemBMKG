@@ -16,14 +16,31 @@ class CSVModel extends CI_Model
             [
                 'field' => 'Bulan',
                 'label' => 'Bulan',
-                'rules' => 'required'
+                'rules' => 'required',
+                'errors' => array(
+                    'required' => '%s masih kosong'
+                )
             ],
 
             [
                 'field' => 'Tahun',
                 'label' => 'Tahun',
-                'rules' => 'required'
+                'rules' => 'required',
+                'errors' => array(
+                    'required' => '%s masih kosong'
+                )
+            ],
+
+            [
+                'field' => 'Tahun',
+                'label' => 'Tahun',
+                'rules' => 'required',
+                'errors' => array(
+                    'required' => '%s masih kosong'
+                )
             ]
+
+
         ];
     }
 
@@ -49,7 +66,15 @@ class CSVModel extends CI_Model
         $this->Bulan = $post["Bulan"];
         $this->Tahun = $post["Tahun"];
         $this->CSV = $this->_uploadCSV();
-        return $this->db->insert($this->_table, $this);
+        $cek = array('Bulan' => $this->Bulan, 'Tahun' => $this->Tahun);
+        $cek = $this->db->where($cek);
+        $num = $this->db->count_all_results('data_hujan');
+        if ($num > 0) {
+            $this->session->set_flashdata('error', 'Data telah ada');
+            redirect('admin/upload_data', 'refresh');
+        } else {
+            return $this->db->insert($this->_table, $this);
+        }
     }
 
     public function update()
@@ -64,7 +89,15 @@ class CSVModel extends CI_Model
         } else {
             $this->CSV = $post["old_data"];
         }
-        return $this->db->update($this->_table, $this, array('id' => $post['id']));
+        $cek = array('Bulan' => $this->Bulan, 'Tahun' => $this->Tahun);
+        $cek = $this->db->where($cek);
+        $num = $this->db->count_all_results('data_hujan');
+        if ($num > 1) {
+            $this->session->set_flashdata('error', 'Data telah ada');
+            redirect(site_url('admin/edit_data/' . $this->id), 'refresh');
+        } else {
+            return $this->db->update($this->_table, $this, array('id' => $post['id']));
+        }
     }
 
     public function delete($id)
