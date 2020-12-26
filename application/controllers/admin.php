@@ -1055,10 +1055,13 @@ class Admin extends MY_Controller
         $data_hujan = $this->CSVModel;
         $validation = $this->form_validation;
         $validation->set_rules($data_hujan->rules());
+        if (empty($_FILES['CSV']['name'])) {
+            $this->form_validation->set_rules('CSV', 'CSV', 'required', array('required' => 'Data Curah Hujan masih kosong'));
+        }
 
         if ($validation->run()) {
             $data_hujan->save();
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
+            $this->session->set_flashdata('success', 'Data berhasil disimpan');
         }
         $this->load->view("upload_data");
     }

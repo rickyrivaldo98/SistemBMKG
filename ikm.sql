@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 24, 2020 at 08:12 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: Jul 07, 2020 at 07:31 AM
+-- Server version: 10.4.10-MariaDB
+-- PHP Version: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,10 +30,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `data_hujan` (
   `id` int(11) NOT NULL,
-  `id_data` varchar(50) NOT NULL,
-  `Bulan` varchar(50) NOT NULL,
-  `Tahun` varchar(50) NOT NULL,
-  `CSV` varchar(50) NOT NULL
+  `id_data` varchar(16) NOT NULL,
+  `Bulan` int(2) NOT NULL,
+  `Tahun` year(4) NOT NULL,
+  `CSV` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -41,10 +41,16 @@ CREATE TABLE `data_hujan` (
 --
 
 INSERT INTO `data_hujan` (`id`, `id_data`, `Bulan`, `Tahun`, `CSV`) VALUES
-(3, '5e3bffe2090be', 'Januari', '1111', '5e3bffe2090be.csv'),
-(4, '5e42a01023f24', 'rrr', '333', '5e42a01023f24.csv'),
-(5, '5e42a30d23f6d', 'rrr', 'reterter', '5e42a30d23f6d.csv'),
-(6, '5e42a77b0f454', 'rrr', 'reterter', '5e42a77b0f454.csv');
+(1, '5efbc1562a599', 1, 2020, '5efbc1562a599.csv'),
+(2, '5efbc1d13c276', 2, 2020, '5efbc1d13c276.csv'),
+(3, '5efbc1da74eaa', 3, 2020, '5efbc1da74eaa.csv'),
+(4, '5efbc1e132f9a', 4, 2020, '5efbc1e132f9a.csv'),
+(5, '5efbc1e749650', 5, 2020, '5efbc1e749650.csv'),
+(6, '5efbc2005cb97', 6, 2020, '5efbc2005cb97.csv'),
+(7, '5efbde88685d9', 7, 2020, '5efbde88685d9.csv'),
+(8, '5efbe37ab30c1', 1, 2021, '5efbe37ab30c1.csv'),
+(9, '5efbe77fc19a0', 9, 2020, '5efbe77fc19a0.csv'),
+(10, '5efbe80752df7', 11, 2020, '5efbe80752df7.csv');
 
 -- --------------------------------------------------------
 
@@ -1120,6 +1126,13 @@ CREATE TABLE `pemohon` (
   `status` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `pemohon`
+--
+
+INSERT INTO `pemohon` (`idpemohon`, `nama`, `nohp`, `alamat`, `email`, `instansi`, `informasi`, `status`) VALUES
+('2002BMKG0001', 'Anas Alqoyyum', '08975073379', 'Semarang', 'doublezero13@gmail.com', 'qqq', 'bgdbgdgdgbgdg', 'no');
+
 -- --------------------------------------------------------
 
 --
@@ -1156,6 +1169,13 @@ CREATE TABLE `pemohon2` (
   `instansi` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `pemohon2`
+--
+
+INSERT INTO `pemohon2` (`idpemohon`, `nama`, `nohp`, `alamat`, `email`, `instansi`) VALUES
+('2002BMKG0001', 'Anas Alqoyyum', '08975073379', 'Semarang', 'doublezero13@gmail.com', 'qqq');
+
 -- --------------------------------------------------------
 
 --
@@ -1179,9 +1199,9 @@ CREATE TABLE `pemohon3` (
 --
 
 CREATE TABLE `user` (
-  `Id_user` int(10) NOT NULL,
-  `Username` varchar(100) NOT NULL,
-  `Password` varchar(100) NOT NULL,
+  `Id_user` int(11) NOT NULL,
+  `Username` varchar(16) NOT NULL,
+  `Password` varchar(40) NOT NULL,
   `Level` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1190,7 +1210,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`Id_user`, `Username`, `Password`, `Level`) VALUES
-(1, '24060117130082', '123', 1);
+(1, '12345', 'caf1a3dfb505ffed0d024130f58c5cfa', 0);
 
 --
 -- Indexes for dumped tables
@@ -1255,7 +1275,8 @@ ALTER TABLE `pemohon3`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`Id_user`);
+  ADD PRIMARY KEY (`Username`),
+  ADD KEY `Id_user` (`Id_user`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1265,7 +1286,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `data_hujan`
 --
 ALTER TABLE `data_hujan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `data_responden`
@@ -1289,7 +1310,7 @@ ALTER TABLE `kritik`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `Id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables

@@ -68,7 +68,8 @@
                         ?>
                           <tr>
                             <td><?php echo  $h->id; ?></td>
-                            <td><?php echo  $h->Bulan; ?></td>
+                            <td><?php $this->load->helper('bulan_helper'); echo bulan($h->Bulan) ?></td>
+                            <!-- <td><?php echo  $h->Bulan; ?></td> -->
                             <td><?php echo  $h->Tahun; ?></td>
                             <td>Tersedia</td>
                             <td>
@@ -115,7 +116,7 @@
             <!-- /.content -->
             <!-- /.content-wrapper -->
             <footer class="main-footer fixed-bottom">
-              <strong>Copyright &copy; Turu Teams
+              <strong>Copyright &copy; BMKG Jawa Tengah
                 All rights reserved.
                 <div class="float-right d-none d-sm-inline-block">
                   <b>Version</b> 0.0.1

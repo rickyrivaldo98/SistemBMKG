@@ -41,7 +41,7 @@ class ProfileModel extends CI_Model
         $post = $this->input->post();
         $this->Id_user = $post["Id_user"];
         $this->Username = $post["Username"];
-        $this->Password = $post["Password"];
+        $this->Password = md5($post["Password"]);
         return $this->db->update($this->_table, $this, array('Id_user' => $post['Id_user']));
     }
 }

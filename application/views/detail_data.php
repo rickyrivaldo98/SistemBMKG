@@ -95,7 +95,7 @@
                                     <input id="fileinput" type="hidden" name="id_data" value="<?php echo $data_hujan->id_data ?>" />
                                 </form>
                                 <div id="info" class="col-12">
-                                    <div id="info-location">Perkiraan Curah Hujan Bulan <?php echo $data_hujan->Bulan ?> Tahun <?php echo $data_hujan->Tahun ?> di Jawa Tengah</div>
+                                    <div id="info-location">Perkiraan Curah Hujan Bulan <?php $this->load->helper('bulan_helper'); echo bulan($data_hujan->Bulan) ?> Tahun <?php echo $data_hujan->Tahun ?> di Jawa Tengah</div>
                                     <div id="info-details"></div>
                                     <div id="info-peta">
                                         <p><img class="img-fluid" src="<?php echo base_url() . 'assets/img/legenda.png' ?>" alt="Smiley face" style="float:center;width:511px;height:238px;"></p>
@@ -112,7 +112,7 @@
 
     <!-- /.content-wrapper -->
     <footer class="main-footer fixed-bottom">
-        <strong>Copyright &copy; Turu Teams
+        <strong>Copyright &copy; BMKG Jawa Tengah
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
                 <b>Version</b> 0.0.1
